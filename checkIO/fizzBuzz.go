@@ -1,7 +1,19 @@
 package main
 
+import "strconv"
+
 func fizzBuzz(inpt int) {
-	rslt := inpt
+	var rslt string
+	if inpt%(3*5) == 0 {
+		rslt = "Fizz Buzz"
+	} else if inpt%3 == 0 {
+		rslt = "Fizz"
+	} else if inpt%5 == 0 {
+		rslt = "Buzz"
+	} else {
+		t := strconv.Itoa(inpt)
+		rslt = t
+	}
 	println(rslt)
 }
 
