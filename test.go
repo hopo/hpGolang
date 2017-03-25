@@ -7,4 +7,3 @@ func main() {
 	t2 := time.Now().Hour()
 	println(t1, t2)
 }
-
