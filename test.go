@@ -1,5 +1,9 @@
 package main
 
+import "time"
+
 func main() {
-    println("test, Go!")
+	t := time.Now().Weekday()
+	println(t)
+
 }
