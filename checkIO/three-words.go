@@ -1,5 +1,24 @@
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+package main
 
+import "regexp"
+
+func threeWords(data string) {
+	re := regexp.MustCompile("d.")
+	mat := re.MatchString(data)
+	println(mat)
+}
+
+func main() {
+	println("* * * * * * * * * *")
+	threeWords("ccc www aaa")
+	threeWords("Hello World hello") //true
+	threeWords("He is 123 man") //false
+	threeWords("1 2 3 4") //true
+	threeWords("Hi") //false
+	println("* * * * * * * * * *")
+}
+
+/*
 function threeWords(data) {
     var words = data.split(" ");
 	var rslt = "";
@@ -22,7 +41,7 @@ function threeWords(data) {
     return /[a-z]+ [a-z]+ [a-z]+/ig.test(data);
 }
 */
-
+/*
 var assert = require('assert');
 
 if (!global.is_checking) {
@@ -33,3 +52,4 @@ if (!global.is_checking) {
     assert.equal(threeWords("Hi"), false, "Letters");
     console.log("Coding complete? Click 'Check' to review your tests and earn cool rewards!");
 }
+*/
