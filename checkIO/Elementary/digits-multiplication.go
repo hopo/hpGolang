@@ -7,12 +7,15 @@ import (
 
 func digitsMultip(data int) {
 	str := strconv.Itoa(data)
+	arr := strings.Split(str, "")
 	z := 1
-	for i := 0; i < len(str); i++ {
-		if str[i] != 0 {
-			z *= str[i]
+	for i := 0; i < len(arr); i++ {
+		n, _ := strconv.Atoi(arr[i])
+		if n != 0 {
+			z *= n
 		}
 	}
+	println(z)
 }
 
 func main() {
