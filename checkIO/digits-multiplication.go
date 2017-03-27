@@ -1,11 +1,16 @@
 package main
 
+import (
+	"strconv"
+	"strings"
+)
+
 func digitsMultip(data int) {
-	arr := Array.from(data)
+	str := strconv.Itoa(data)
 	z := 1
-	for i=0; i < len(arr); i++ {
-		if arr[i] != 0 {
-			z *= arr[i]
+	for i := 0; i < len(str); i++ {
+		if str[i] != 0 {
+			z *= str[i]
 		}
 	}
 }
