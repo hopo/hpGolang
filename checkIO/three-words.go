@@ -3,13 +3,12 @@ package main
 import "regexp"
 
 func threeWords(data string) {
-	re := regexp.MustCompile("d.")
+	re := regexp.MustCompile("[a-zA-Z]")
 	mat := re.MatchString(data)
 	println(mat)
 }
 
 func main() {
-	threeWords("ccc www aaa")
 	threeWords("Hello World hello") //true
 	threeWords("He is 123 man") //false
 	threeWords("1 2 3 4") //true

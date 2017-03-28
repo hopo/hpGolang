@@ -2,13 +2,27 @@ package main
 
 import (
 	"fmt"
+	// "regexp"
 	// "strconv"
 	// "strings"
 )
 
-func main(){
-
+func main() {
 }
+
+/*
+func regExpression(){
+	data := "He is 123 man"
+
+	re := regexp.MustCompile("[a-zA-Z]+")
+	rslt := re.FindAllString(data, -1) //-1:all
+	fmt.Println(rslt)
+	fmt.Printf("rslt: %T\n", rslt)
+
+	mat := re.MatchString(data)
+	fmt.Println(mat)
+}
+*/
 
 /*
 //convert between str and num
