@@ -3,15 +3,15 @@
 package main
 
 import (
-	"io"
-	"fmt"
-	"net/http"
+    "io"
+    "fmt"
+    "net/http"
 )
 
 func main() {
-	http.HandleFunc("/", foo)
-	http.Handle("/favicon.ico", http.NotFoundHandler())
-	http.ListenAndServe(":8080", nil)
+    http.HandleFunc("/", foo)
+    http.Handle("/favicon.ico", http.NotFoundHandler())
+    http.ListenAndServe(":8080", nil)
 }
 
 func foo(w http.ResponseWriter, req *http.Request) {

@@ -2,12 +2,16 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	// "regexp"
 	// "strconv"
 	// "strings"
 )
 
 func main() {
+	data := "abcde"
+	t := reflect.TypeOf(data)
+	fmt.Println(t)
 }
 
 /*
