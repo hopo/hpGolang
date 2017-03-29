@@ -6,13 +6,14 @@ import (
 )
 
 func commonWords(first, second string) {
-	rf := strings.Split(first, ",")
-	rs := strings.Split(second, ",")
+	frsl := strings.Split(first, ",")
+	srsl := strings.Split(second, ",")
 
-	for _, f := range rf {
-		fmt.Println(f)
+	for _, f := range frsl {
+		for _, s := range srsl {
+			fmt.Println(f, s)
+		}
 	}
-	fmt.Println(rs)
 }
 
 func main() {

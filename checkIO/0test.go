@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+    ConvertStrInt(16)
 }
 
 /*
@@ -36,7 +37,6 @@ func regExpression(data string){
 /*
 func ConvertStrInt(num int) {
 	x := strconv.Itoa(num)
-
 	i, _ := strconv.Atoi(x)
 
 	println(x, i)
