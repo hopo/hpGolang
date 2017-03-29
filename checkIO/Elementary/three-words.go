@@ -3,7 +3,7 @@ package main
 import "regexp"
 
 func threeWords(data string) {
-	re := regexp.MustCompile("[a-zA-Z]")
+	re := regexp.MustCompile("[a-zA-Z]+ [a-zA-Z]+ [a-zA-Z]+")
 	mat := re.MatchString(data)
 	println(mat)
 }
@@ -11,7 +11,8 @@ func threeWords(data string) {
 func main() {
 	threeWords("Hello World hello") //true
 	threeWords("He is 123 man") //false
-	threeWords("1 2 3 4") //true
+	threeWords("1 2 3 4") //false
+    threeWords("bla bla bla bla") //true
 	threeWords("Hi") //false
 }
 

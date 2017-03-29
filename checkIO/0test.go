@@ -2,22 +2,27 @@ package main
 
 import (
 	"fmt"
-	"reflect"
+	// "reflect"
 	// "regexp"
+    // "sort"
 	// "strconv"
 	// "strings"
 )
 
 func main() {
-	data := "abcde"
-	t := reflect.TypeOf(data)
-	fmt.Println(t)
 }
 
 /*
-func regExpression(){
-	data := "He is 123 man"
+func sortSlice(nums ...float64) {
+    fmt.Println(nums)
+    fmt.Println(reflect.TypeOf(nums))
+    sort.Float64s(nums) // no return value
+    fmt.Println(nums)
+}
+*/
 
+/*
+func regExpression(data string){
 	re := regexp.MustCompile("[a-zA-Z]+")
 	rslt := re.FindAllString(data, -1) //-1:all
 	fmt.Println(rslt)
@@ -29,9 +34,7 @@ func regExpression(){
 */
 
 /*
-//convert between str and num
-func strConvert() {
-	num := 1234
+func ConvertStrInt(num int) {
 	x := strconv.Itoa(num)
 
 	i, _ := strconv.Atoi(x)
