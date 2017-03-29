@@ -3,8 +3,17 @@ package main
 import "fmt"
 
 func countInversion(sli []int) {
-    fmt.Println(sli)
+	var check int
+	for i := 0; i < len(sli); i++ {
+		for j := 1; j < len(sli)-i; j++ {
+			if sli[i] > sli[i+j] {
+				check += 1
+			}
+		}
+	}
+    fmt.Println(check)
 }
+
 func main() {
     countInversion([]int{1, 2, 5, 3, 4, 7, 6}) //3
     countInversion([]int{0, 1, 2, 3}) //0
