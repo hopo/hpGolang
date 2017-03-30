@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-    // "math"
+    "math"
 	// "reflect"
 	// "regexp"
     "sort"
@@ -18,12 +18,12 @@ func (p ByAbs) Swap(i, j int) {
     p[i], p[j] = p[j], p[i]
 }
 func (p ByAbs) Less(i, j int) bool {
-    return p[i] < p[j]
+    return math.Abs(p[i]) < math.Abs(p[j])
 }
 
 
 func main() {
-    nums := []float64{15, -20, 10, -5,}
+    nums := []float64{-1, -2, -3, 0}
     sort.Sort(ByAbs(nums))
     fmt.Println(nums)
 }
