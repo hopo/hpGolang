@@ -2,18 +2,25 @@ package main
 
 import (
 	"fmt"
+    "sort"
 	"strings"
 )
 
 func commonWords(first, second string) {
 	frsl := strings.Split(first, ",")
 	srsl := strings.Split(second, ",")
+    var inter []string
 
 	for _, f := range frsl {
 		for _, s := range srsl {
-			fmt.Println(f, s)
+            if f == s {
+                inter = append(inter, f)
+            }
 		}
 	}
+    sort.Strings(inter)
+    rslt := strings.Join(inter, ",")
+    fmt.Println(rslt)
 }
 
 func main() {
