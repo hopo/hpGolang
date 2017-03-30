@@ -2,37 +2,25 @@ package main
 
 import (
 	"fmt"
-    "math"
+    // "math"
 	// "reflect"
 	// "regexp"
-    "sort"
+    // "sort"
 	// "strconv"
 	// "strings"
 )
 
+/*
 type ByAbs []float64
-func (p ByAbs) Len() int {
-    return len(p)
-}
-func (p ByAbs) Swap(i, j int) {
-    p[i], p[j] = p[j], p[i]
-}
-func (p ByAbs) Less(i, j int) bool {
-    return math.Abs(p[i]) < math.Abs(p[j])
-}
+func (p ByAbs) Len() int { return len(p) }
+func (p ByAbs) Swap(i, j int) { p[i], p[j] = p[j], p[i] }
+func (p ByAbs) Less(i, j int) bool { return math.Abs(p[i]) < math.Abs(p[j]) }
 
-
-func main() {
-    nums := []float64{-1, -2, -3, 0}
+func absoluteSorting(nums []float64) {
     sort.Sort(ByAbs(nums))
     fmt.Println(nums)
 }
-
-// func main() {
-    // absoluteSorting([]float64{-20, -5, 10, 15})  //[-5, 10, 15, -20]
-    // absoluteSorting([]float64{1, 2, 3, 0})   //[0, 1, 2, 3]
-    // absoluteSorting([]float64{-1, -2, -3, 0})    //[0, -1, -2, -3]
-// }
+*/
 
 /*
 func sortSlice(nums ...float64) {

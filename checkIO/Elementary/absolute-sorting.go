@@ -2,15 +2,17 @@ package main
 
 import (
     "fmt"
-    // "math"
+    "math"
     "sort"
 )
 
+type ByAbs []float64
+func (p ByAbs) Len() int { return len(p) }
+func (p ByAbs) Swap(i, j int) { p[i], p[j] = p[j], p[i] }
+func (p ByAbs) Less(i, j int) bool { return math.Abs(p[i]) < math.Abs(p[j]) }
+
 func absoluteSorting(nums []float64) {
-    func(a, b float64) bool {
-        return math.Abs(a) < math.Abs(b)
-    }
-    // sort.Float64s(nums)
+    sort.Sort(ByAbs(nums))
     fmt.Println(nums)
 }
 
