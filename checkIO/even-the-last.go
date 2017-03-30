@@ -5,7 +5,13 @@ import (
 )
 
 func evenLast(nums []int) {
-	fmt.Println(nums)
+	sum := 0
+	for i:= 0; i < len(nums); i++ {
+		if i % 2 == 0 {
+			sum += nums[i]
+		}
+	}
+	fmt.Println(sum*nums[len(nums)-1])
 }
 
 func main() {
