@@ -1,1 +1,1 @@
-# go_lab
+# go-lab
