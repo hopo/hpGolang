@@ -5,20 +5,24 @@ import (
 )
 
 func evenLast(nums []int) {
-	sum := 0
-	for i:= 0; i < len(nums); i++ {
-		if i % 2 == 0 {
-			sum += nums[i]
+    if len(nums) == 0 {
+        fmt.Println(0)
+    } else {
+		sum := 0
+		for i:= 0; i < len(nums); i++ {
+			if i % 2 == 0 {
+				sum += nums[i]
+			}
 		}
-	}
-	fmt.Println(sum*nums[len(nums)-1])
+		fmt.Println(sum*nums[len(nums)-1])
+    }
 }
 
 func main() {
     evenLast([]int{0, 1, 2, 3, 4, 5})	//30, "(0+2+4)*5=30"
     evenLast([]int{1, 3, 5})	//30, "(1+5)*5=30"
     evenLast([]int{6})	//36, "(6)*6=36"
-    //evenLast([]int)	//0, "An empty array = 0"
+    evenLast([]int{})	//0, "An empty array = 0"
 }
 
 /*

@@ -10,6 +10,9 @@ import (
 	// "strings"
 )
 
+func main() {
+}
+
 /*
 type ByAbs []float64
 func (p ByAbs) Len() int { return len(p) }
