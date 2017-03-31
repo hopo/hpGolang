@@ -1,5 +1,23 @@
-"use strict";
+package main
 
+import (
+	"fmt"
+	"sort"
+)
+
+func median(data []float64) {
+	sort.Float64s(data)
+	fmt.Println(data)
+}
+
+func main() {
+    median([]float64{1, 2, 3, 4, 5})	//3, "1st example"
+    median([]float64{3, 1, 2, 5, 3})	//3, "2nd example"
+	median([]float64{1, 300, 2, 200, 1})	//2, "3rd example"
+    median([]float64{3, 6, 20, 99, 10, 15})	//12.5, "4th example"
+}
+
+/*
 function median(data) {
 	var sdata = data.sort(function(a, b) {return a-b})
 	var x = data.length/2
@@ -9,13 +27,5 @@ function median(data) {
 	    return sdata[Math.floor(x)]
 	}
 }
+*/
 
-var assert = require('assert');
-
-if (!global.is_checking) {
-    assert.equal(median([1, 2, 3, 4, 5]), 3, "1st example");
-    assert.equal(median([3, 1, 2, 5, 3]), 3, "2nd example");
-    assert.equal(median([1, 300, 2, 200, 1]), 2, "3rd example");
-    assert.equal(median([3, 6, 20, 99, 10, 15]), 12.5, "4th example");
-    console.log("Coding complete? Click 'Check' to review your tests and earn cool rewards!");
-}
