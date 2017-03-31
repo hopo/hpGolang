@@ -7,7 +7,12 @@ import (
 
 func median(data []float64) {
 	sort.Float64s(data)
-	fmt.Println(data)
+	x := len(data)/2
+	if len(data)%2 == 0 {
+		fmt.Println((data[x-1]+data[x])/2)
+	} else {
+		fmt.Println(data[x])
+	}
 }
 
 func main() {
