@@ -6,11 +6,6 @@ import (
 )
 
 func nonUniqueElements(data []int) {
-    x := sort.SearchInts(data, 10)
-	// if indexOf(v) == lastIndexOf(v) {
-	// 	data.delete indexOf(v)
-	// }
-	fmt.Println(data, x)
 }
 
 func main() {

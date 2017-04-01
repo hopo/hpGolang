@@ -1,20 +1,18 @@
 package main
 
 import (
-    "fmt"
-    "sort"
+	"fmt"
+	"sort"
 )
 
 func main() {
-    checkUnq([]int{10, 9, 10, 10, 9, 8})
-}
+	a := []int{10, 9, 10, 10, 9, 8}
+	x := 10
 
-func checkUnq(data []int) {
-    x := data[0]
-
-    i := sort.Search(len(data), func(i int) bool { return data[i] >= x })
-    j := sort.Search(len(data), func(j int) bool { return data[j] <= x })
-    if i != j {
-        fmt.Println(data[i])
-    }
+	i := sort.Search(len(a), func(i int) bool { return a[i] >= x })
+	if i < len(a) && a[i] == x {
+		fmt.Printf("found %d at index %d in %v\n", x, i, a)
+	} else {
+		fmt.Printf("%d not found in %v\n", x, a)
+	}
 }
