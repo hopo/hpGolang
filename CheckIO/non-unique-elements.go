@@ -2,10 +2,24 @@ package main
 
 import (
 	"fmt"
-    "sort"
+    // "sort"
 )
 
+func RemoveIndex(s []int, index int) []int {
+    return append(s[:index], s[index+1:]...)
+}
+
 func nonUniqueElements(data []int) {
+    for i, _ := range data {
+        box := data[i]
+        data[i] = 0
+        for _, d := range data {
+            if box == d {
+                data[i] = box
+            }
+        }
+    }
+    fmt.Println(data)
 }
 
 func main() {
