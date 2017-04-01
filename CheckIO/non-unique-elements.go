@@ -2,13 +2,15 @@ package main
 
 import (
 	"fmt"
+    "sort"
 )
 
 func nonUniqueElements(data []int) {
-	if indexOf(v) == lastIndexOf(v) {
-		data.delete indexOf(v)
-	}
-	fmt.Println(data)
+    x := sort.SearchInts(data, 10)
+	// if indexOf(v) == lastIndexOf(v) {
+	// 	data.delete indexOf(v)
+	// }
+	fmt.Println(data, x)
 }
 
 func main() {
