@@ -5,6 +5,9 @@ import (
 )
 
 func nonUniqueElements(data []int) {
+	if indexOf(v) == lastIndexOf(v) {
+		data.delete indexOf(v)
+	}
 	fmt.Println(data)
 }
 
@@ -27,5 +30,5 @@ function nonUniqueElements(data) {
 */
 
 /*
-nonUniqueElements = a => a.filter(e => a.indexOf(e)!= a.lastIndexOf(e));
+nonUniqueElements = a => a.filter(e => a.indexOf(e) != a.lastIndexOf(e));
 */
