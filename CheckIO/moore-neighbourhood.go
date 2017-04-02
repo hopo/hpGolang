@@ -1,5 +1,34 @@
-"use strict";
+package main
 
+import (
+    "fmt"
+)
+
+func countNeighbours(data []int, row int, col int) {
+    
+}
+
+func main() {
+    countNeighbours([[1, 0, 0, 1, 0],
+                     [0, 1, 0, 0, 0],
+                     [0, 0, 1, 0, 1],
+                     [1, 0, 0, 0, 0],
+                     [0, 0, 1, 0, 0]], 1, 2) //3, "1st example"
+    countNeighbours([[1, 0, 0, 1, 0],
+                     [0, 1, 0, 0, 0],
+                     [0, 0, 1, 0, 1],
+                     [1, 0, 0, 0, 0],
+                     [0, 0, 1, 0, 0]], 0, 0) //1, "2nd example"
+    countNeighbours([[1, 1, 1],
+                     [1, 1, 1],
+                     [1, 1, 1]], 0, 2)   //3, "Dense corner"
+    countNeighbours([[0, 0, 0],
+                     [0, 1, 0],
+                     [0, 0, 0]], 1, 1)    // 0, "Single"
+}
+
+
+/*
 function countNeighbours(data, row, col) {
   var topl, topc, topr, bdyl, bdyr, botl, botc, botr;
   if(row == 0) {
@@ -24,29 +53,5 @@ function countNeighbours(data, row, col) {
   var rslt = topl+topc+topr+bdyl+bdyr+botl+botc+botr;
   return rslt;
 }
+*/
 
-var assert = require('assert');
-
-if (!global.is_checking) {
-    assert.equal(countNeighbours([[1, 0, 0, 1, 0],
-                                  [0, 1, 0, 0, 0],
-                                  [0, 0, 1, 0, 1],
-                                  [1, 0, 0, 0, 0],
-                                  [0, 0, 1, 0, 0]], 1, 2), 3, "1st example");
-
-    assert.equal(countNeighbours([[1, 0, 0, 1, 0],
-                                  [0, 1, 0, 0, 0],
-                                  [0, 0, 1, 0, 1],
-                                  [1, 0, 0, 0, 0],
-                                  [0, 0, 1, 0, 0]], 0, 0), 1, "2nd example");
-
-    assert.equal(countNeighbours([[1, 1, 1],
-                                  [1, 1, 1],
-                                  [1, 1, 1]], 0, 2), 3, "Dense corner");
-
-    assert.equal(countNeighbours([[0, 0, 0],
-                                  [0, 1, 0],
-                                  [0, 0, 0]], 1, 1), 0, "Single");
-
-    console.log("Coding complete? Click 'Check' to review your tests and earn cool rewards!");
-}
