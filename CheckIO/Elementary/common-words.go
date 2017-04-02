@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func commonWords(first, second string) {
+func commonWords(first, second string) string {
 	frsl := strings.Split(first, ",")
 	srsl := strings.Split(second, ",")
     var inter []string
@@ -20,13 +20,13 @@ func commonWords(first, second string) {
 	}
     sort.Strings(inter)
     rslt := strings.Join(inter, ",")
-    fmt.Println(rslt)
+    return rslt
 }
 
 func main() {
-    commonWords("hello,world", "hello,earth")	//"hello"
-	commonWords("one,two,three", "four,five,six")	//""
-    commonWords("one,two,three", "four,five,one,two,six,three")	//"one,three,two"
+    fmt.Println(commonWords("hello,world", "hello,earth"))	//"hello"
+	fmt.Println(commonWords("one,two,three", "four,five,six"))	//""
+    fmt.Println(commonWords("one,two,three", "four,five,one,two,six,three"))	//"one,three,two"
 }
 
 /*

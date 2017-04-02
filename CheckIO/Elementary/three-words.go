@@ -1,19 +1,20 @@
 package main
 
-import "regexp"
+import (
+    "fmt"
+    "regexp"
+)
 
-func threeWords(data string) {
-	re := regexp.MustCompile("[a-zA-Z]+ [a-zA-Z]+ [a-zA-Z]+")
-	mat := re.MatchString(data)
-	println(mat)
+func threeWords(data string) bool {
+	return regexp.MustCompile("[a-zA-Z]+ [a-zA-Z]+ [a-zA-Z]+").MatchString(data)
 }
 
 func main() {
-	threeWords("Hello World hello") //true
-	threeWords("He is 123 man") //false
-	threeWords("1 2 3 4") //false
-    threeWords("bla bla bla bla") //true
-	threeWords("Hi") //false
+	fmt.Println(threeWords("Hello World hello")) //true
+	fmt.Println(threeWords("He is 123 man")) //false
+	fmt.Println(threeWords("1 2 3 4")) //false
+    fmt.Println(threeWords("bla bla bla bla")) //true
+	fmt.Println(threeWords("Hi")) //false
 }
 
 /*

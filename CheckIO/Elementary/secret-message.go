@@ -5,15 +5,14 @@ import (
     "regexp"
 )
 
-func findMessage(data string) {
-    re := regexp.MustCompile("[^A-Z]")
-    fmt.Println(re.ReplaceAllString(data, ""))
+func findMessage(data string) string {
+    return regexp.MustCompile("[^A-Z]").ReplaceAllString(data, "")
 }
 
 func main() {
-    findMessage("How are you? Eh, ok. Low or Lower? Ohhh.") //"HELLO", "hello"
-    findMessage("hello world!") //"", "Nothing"
-    findMessage("HELLO WORLD!!!")   //"HELLOWORLD", "Capitals"
+    fmt.Println(findMessage("How are you? Eh, ok. Low or Lower? Ohhh.")) //"HELLO", "hello"
+    fmt.Println(findMessage("hello world!")) //"", "Nothing"
+    fmt.Println(findMessage("HELLO WORLD!!!"))   //"HELLOWORLD", "Capitals"
 }
 
 /*

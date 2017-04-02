@@ -1,11 +1,12 @@
 package main
 
 import (
+    "fmt"
 	"strconv"
 	"strings"
 )
 
-func digitsMultip(data int) {
+func digitsMultip(data int) int {
 	str := strconv.Itoa(data)
 	arr := strings.Split(str, "")
 	z := 1
@@ -15,14 +16,14 @@ func digitsMultip(data int) {
 			z *= n
 		}
 	}
-	println(z)
+	return z
 }
 
 func main() {
-	digitsMultip(123405) //120
-	digitsMultip(999) //729
-	digitsMultip(1000) //1
-	digitsMultip(1111) //1
+	fmt.Println(digitsMultip(123405)) //120
+	fmt.Println(digitsMultip(999)) //729
+	fmt.Println(digitsMultip(1000)) //1
+	fmt.Println(digitsMultip(1111)) //1
 }
 
 /*

@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func nonUniqueElements(data []int) {
+func nonUniqueElements(data []int) []int {
     var rslt []int
     for i, d := range data {
         for j, _ := range data {
@@ -14,14 +14,14 @@ func nonUniqueElements(data []int) {
             }
         }
     }
-    fmt.Println(rslt)
+    return rslt
 }
 
 func main() {
-    nonUniqueElements([]int{1, 2, 3, 1, 3})	//[1, 3, 1, 3], "1st example"
-    nonUniqueElements([]int{1, 2, 3, 4, 5})	//[], "2nd example"
-    nonUniqueElements([]int{5, 5, 5, 5, 5})	//[5, 5, 5, 5, 5], "3rd example"
-    nonUniqueElements([]int{10, 9, 10, 10, 9, 8})	//[10, 9, 10, 10, 9], "4th example"
+    fmt.Println(nonUniqueElements([]int{1, 2, 3, 1, 3}))	//[1, 3, 1, 3], "1st example"
+    fmt.Println(nonUniqueElements([]int{1, 2, 3, 4, 5}))	//[], "2nd example"
+    fmt.Println(nonUniqueElements([]int{5, 5, 5, 5, 5}))	//[5, 5, 5, 5, 5], "3rd example"
+    fmt.Println(nonUniqueElements([]int{10, 9, 10, 10, 9, 8}))	//[10, 9, 10, 10, 9], "4th example"
 }
 
 /*
