@@ -2,26 +2,19 @@ package main
 
 import (
 	"fmt"
-    // "sort"
 )
 
 func nonUniqueElements(data []int) {
-    for i, _ := range data {
-        box := data[i]
-        data[i] = 0
-        for _, d := range data {
-            if box == d {
-                data[i] = box
+    var rslt []int
+    for i, d := range data {
+        for j, _ := range data {
+            if i != j && d == data[j] {
+                rslt = append(rslt, d)
+                break
             }
         }
     }
-    fmt.Println(data)
-    for p := 0; p < len(data); p++ {
-        if data[p] == 0 {
-            data = append(data[:p], data[p+1:]...)
-        }
-    }
-    fmt.Println(data)
+    fmt.Println(rslt)
 }
 
 func main() {

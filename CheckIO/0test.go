@@ -2,15 +2,25 @@ package main
 
 import (
 	"fmt"
-	"sort"
+	// "sort"
 )
 
 func main() {
-    data := []int{1, 9, 4, 5, 4, 2}
-    i := data[2]
-    sort.Ints(data)
-    s := sort.SearchInts(data, i)
-    // i := 4
-    // data = append(data[:i], data[i+1:]...)
-    fmt.Println(data, s)
+    nonUniqueElements([]int{0, 1, 2, 1})
+
 }
+
+/*
+func nonUniqueElements(data []int) {
+    var rslt []int
+    for i, d := range data {
+        for j, _ := range data {
+            if i != j && d == data[j] {
+                rslt = append(rslt, d)
+                break
+            }
+        }
+    }
+    fmt.Println(rslt)
+}
+*/
