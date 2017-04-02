@@ -5,10 +5,6 @@ import (
     // "sort"
 )
 
-func RemoveIndex(s []int, index int) []int {
-    return append(s[:index], s[index+1:]...)
-}
-
 func nonUniqueElements(data []int) {
     for i, _ := range data {
         box := data[i]
