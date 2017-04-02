@@ -16,6 +16,12 @@ func nonUniqueElements(data []int) {
         }
     }
     fmt.Println(data)
+    for p := 0; p < len(data); p++ {
+        if data[p] == 0 {
+            data = append(data[:p], data[p+1:]...)
+        }
+    }
+    fmt.Println(data)
 }
 
 func main() {
