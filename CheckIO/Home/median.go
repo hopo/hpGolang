@@ -8,11 +8,8 @@ import (
 func median(data []float64) float64 {
 	sort.Float64s(data)
 	x := len(data)/2
-	if len(data)%2 == 0 {
-		return (data[x-1]+data[x])/2
-	} else {
-		return data[x]
-	}
+	if len(data)%2 == 0 { return (data[x-1]+data[x])/2 }
+	return data[x]
 }
 
 func main() {
