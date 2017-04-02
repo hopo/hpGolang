@@ -1,3 +1,4 @@
+// https://tour.golang.org/flowcontrol/8
 package main
 
 import (
@@ -10,5 +11,8 @@ func Sqrt(x float64) float64 {
 }
 
 func main() {
-	fmt.Println(Sqrt(2))
+    var z float64
+    for z = 0; z < 10 ; z++ {
+        fmt.Println(z, ":", Sqrt(z))
+    }
 }
