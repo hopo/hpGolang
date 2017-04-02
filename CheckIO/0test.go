@@ -6,7 +6,10 @@ import (
 )
 
 func main() {
-    nonUniqueElements([]int{0, 1, 2, 1})
+    data := []int{5, 6, 9}
+    for i, _ := range data {
+        if data[i] { fmt.Println(data[i]) } else { fmt.Println("-") }
+    }
 
 }
 
