@@ -22,7 +22,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	match := re.FindAllStringSubmatch(path, -1)
 
 	if match != nil {
-		fmt.Fprintf(w, "Hello, gopher %s\n", match[1])
+		fmt.Fprintf(w, "Hello, gopher %s\n", match[0][1])
 		return
 	}
 	fmt.Fprintf(w, "Hello, dear %s\n", path)

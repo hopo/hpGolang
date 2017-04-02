@@ -2,15 +2,13 @@ package main
 
 import (
 	"fmt"
-	// "sort"
 )
 
 func main() {
-    data := []int{5, 6, 9}
-    for i, _ := range data {
-        if data[i] { fmt.Println(data[i]) } else { fmt.Println("-") }
-    }
+    ss := []int{1, 2, 3, 4, 5}
 
+    p := ss[7]
+    fmt.Println(p)
 }
 
 /*
