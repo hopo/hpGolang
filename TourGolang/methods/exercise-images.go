@@ -1,3 +1,5 @@
+// https://tour.golang.org/methods/25
+
 package main
 
 import "golang.org/x/tour/pic"
@@ -18,4 +20,4 @@ func main() {
 
 //ColorModel should return color.RGBAModel.
 
-//At should return a color; the value v in the last picture generator corresponds to color.RGBA{v, v, 255, 255} in this one. 
+//At should return a color; the value v in the last picture generator corresponds to color.RGBA{v, v, 255, 255} in this one.

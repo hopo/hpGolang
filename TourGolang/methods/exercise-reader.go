@@ -1,3 +1,5 @@
+// https://tour.golang.org/methods/22
+
 package main
 
 import "golang.org/x/tour/reader"
@@ -11,4 +13,4 @@ func main() {
 }
 
 
-//Implement a Reader type that emits an infinite stream of the ASCII character 'A'. 
+//Implement a Reader type that emits an infinite stream of the ASCII character 'A'.

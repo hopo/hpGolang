@@ -1,3 +1,5 @@
+// https://tour.golang.org/moretypes/26
+
 package main
 
 import "fmt"

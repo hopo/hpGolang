@@ -1,3 +1,5 @@
+// https://tour.golang.org/moretypes/18
+
 package main
 
 import "golang.org/x/tour/pic"
@@ -19,4 +21,3 @@ func main() {
 //(You need to use a loop to allocate each []uint8 inside the [][]uint8.)
 
 //(Use uint8(intValue) to convert between types.)
-
