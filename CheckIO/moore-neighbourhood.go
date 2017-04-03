@@ -1,9 +1,5 @@
 package main
 
-import (
-    "fmt"
-)
-
 func countNeighbours(data [][]int, row int, col int) {
       var topl, topc, topr, bdyl, bdyr, botl, botc, botr int
       if row == 0 {
@@ -16,7 +12,7 @@ func countNeighbours(data [][]int, row int, col int) {
       bdyl = data[row][col-1] == undefined ? 0 : data[row][col-1];
       bdyr = data[row][col+1] == undefined ? 0 : data[row][col+1];
 
-      if row == data.length-1 {
+      if row == len(data)-1 {
         botl = 0, botc = 0, botr = 0;
       } else {
         botl = data[row+1][col-1] == undefined ? 0 : data[row+1][col-1];
@@ -24,8 +20,7 @@ func countNeighbours(data [][]int, row int, col int) {
         botr = data[row+1][col+1] == undefined ? 0 : data[row+1][col+1];
       }
 
-      rslt := topl+topc+topr+bdyl+bdyr+botl+botc+botr
-      fmt.Println(rslt)
+      return topl+topc+topr+bdyl+bdyr+botl+botc+botr
 }
 
 func main() {
