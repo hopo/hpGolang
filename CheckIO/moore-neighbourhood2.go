@@ -2,8 +2,34 @@ package main
 
 import "fmt"
 
+if r == 0 { a,b,c = 0 }
+if r == len(data)-1 {x,y,z = 0}
+
+a : data[rm][cm]
+b : data[rm][co]
+c : data[rm][cp]
+m : data[ro][cm]
+n : data[ro][cm]
+x : data[rp][co]
+y : data[rp][co]
+z : data[rp][cp]
+
 func countNeighbours(data [][]int, r int, c int) int {
     var rmcm, rmco, rmcp, rocm, rocp, rpcm, rpco, rpcp int
+    rm := r-1
+    rp := r+1
+    cm := c-1
+    cp := c+1
+    var rslt int
+
+    // []int{data[rm][cm], data[rm][co], data[rm][cp], data[ro][cm], data[ro][cm], data[rp][co], data[rp][co], data[rp][cp]}
+
+    checker := []int{data[rm][cm], data[rm][co], data[rm][cp], data[ro][cm], data[ro][cm], data[rp][co], data[rp][co], data[rp][cp]}
+
+    for i := 0; i < len(checker); i++ {
+        if checker[i] !=
+        rslt += checker[i]
+    }
 
     if r == 0 {
         rpco = data[r+1][c]

@@ -5,8 +5,24 @@ import (
     // "time"
 )
 
+type Data struct {
+    rmcm, rmco, rmcp, rocm, rocp, rpcm, rpco, rpcp int
+}
 
 func main() {
+    d := Data{}
+    fmt.Println(d)
+}
+
+// func countNeighbours(d Data, r int, c int) {
+//     fmt.Println(d.data[0], r, c)
+    // for i := 0; i < len(checker); i++ {
+        // rslt += checker[i]
+    // }
+// }
+
+/*
+func switchcase() {
     data := [][]int{
         {1,2,3},
         {1,2,3},
@@ -21,6 +37,7 @@ func main() {
     }
     fmt.Println(data)
 }
+*/
 
 /*
 func nonUniqueElements(data []int) {
