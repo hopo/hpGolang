@@ -2,61 +2,28 @@ package main
 
 import "fmt"
 
+func checker(data [][]int, n int, m int) int {
+    defer func() {
+        err := recover()
+        if err != nil { return }
+    }()
+    return data[n][m]
+}
+
 func countNeighbours(data [][]int, r int, c int) int {
-    var rmcm, rmco, rmcp, rocm, rocp, rpcm, rpco, rpcp int
+    var rm, rp, cm, cp int = r-1, r+1, c-1, c+1
+    rmcm := checker(data, rm, cm)
+    rmco := checker(data, rm, c)
+    rmcp := checker(data, rm, cp)
 
-    if r == 0 {
-        rpco = data[r+1][c]
-        if c == 0 {
-            rocp = data[r][c+1]
-            rpcp = data[r+1][c+1]
-        } else if c == len(data[r])-1 {
-            rocm = data[r][c-1]
-            rpcm = data[r+1][c-1]
-        } else {
-            rocm = data[r][c-1]
-            rocp = data[r][c+1]
-            rpcm = data[r+1][c-1]
-            rpcp = data[r+1][c+1]
-        }
-    }
+    rocm := checker(data, r, cm)
+    rocp := checker(data, r, cp)
 
-    if r == len(data)-1 {
-        rmco = data[r-1][c]
-        if c == 0 {
-            rmcp = data[r-1][c+1]
-            rocp = data[r][c+1]
-        } else if c == len(data[r])-1 {
-            rmcm = data[r-1][c-1]
-            rocm = data[r][c-1]
-        } else {
-            rmcm = data[r-1][c-1]
-            rmcp = data[r-1][c+1]
-            rocm = data[r][c-1]
-            rocp = data[r][c+1]
-        }
-    }
+    rpcm := checker(data, rp, cm)
+    rpco := checker(data, rp, c)
+    rpcp := checker(data, rp, cp)
 
-    if 0 < r && r < len(data)-1 {
-        rmco = data[r-1][c]
-        rpco = data[r+1][c]
-        if c == 0 {
-            rmcp = data[r-1][c+1]
-            rocp = data[r][c+1]
-            rpcp = data[r+1][c+1]
-        } else if c == len(data[r])-1 {
-            rmcm = data[r-1][c-1]
-            rocm = data[r][c-1]
-            rpcm = data[r+1][c-1]
-        } else {
-            rmcm = data[r-1][c-1]
-            rmcp = data[r-1][c+1]
-            rocm = data[r][c-1]
-            rocp = data[r][c+1]
-            rpcm = data[r+1][c-1]
-            rpcp = data[r+1][c+1]
-        }
-    }
+
     return rmcm+rmco+rmcp+rocm+rocp+rpcm+rpco+rpcp
 }
 

@@ -7,18 +7,21 @@ import (
     // "time"
 )
 
-func echk(s []int, n int) int {
+
+func chcker(data [][]int, r int, c int) int {
     defer func() {
-        if err := recover(); err != nil {
-            return
-        }
+        err := recover()
+        if err != nil { return }
     }()
-    return s[n]
+    return data[r][c]
 }
+
 func main() {
-    a := echk([]int{1,2,3}, 1)
-    fmt.Println(a)
+    d := chcker([][]int{{1, 0, 0}, {0, 1, 0}, {0, 1, 1}}, 0, 0)
+    fmt.Println(d)
 }
+
+
 /*
 type MyError struct{
     what string
