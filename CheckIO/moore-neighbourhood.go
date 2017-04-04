@@ -7,81 +7,87 @@ func countNeighbours(data [][]int, r int, c int) int {
     var rocm, rocp int
     var rpcm, rpco, rpcp int
 
-    switch r == 0{
-    case c == 0:
-        rocp = data[r][c+1]
-        rpco = data[r+1][c]
-        rpcp = data[r+1][c+1]
-    case c == len(data[r])-1:
-        rocm = data[r][c-1]
-        rpcm = data[r+1][c-1]
-        rpco = data[r+1][c]
+    if r == 0 {
+        if c == 0 {
+            rocp = data[r][c+1]
+            rpco = data[r+1][c]
+            rpcp = data[r+1][c+1]
+        } else if c == len(data[r])-1 {
+            rocm = data[r][c-1]
+            rpcm = data[r+1][c-1]
+            rpco = data[r+1][c]
+        } else {
+            rocm = data[r][c-1]
+            rocp = data[r][c+1]
+            rpcm = data[r+1][c-1]
+            rpco = data[r+1][c]
+            rpcp = data[r+1][c+1]
+        }
     }
 
-    switch r == len(data)-1 {
-    case c == 0:
-        rmco = data[r-1][c]
-        rmcp = data[r-1][c+1]
-        rocp = data[r][c+1]
-    case c == len(data[r])-1:
-        rmcm = data[r-1][c-1]
-        rmco = data[r-1][c]
-        rocm = data[r][c-1]
-    case 0 < c && c < len(data[r])-1:
-        rmcm = data[r-1][c-1]
-        rmco = data[r-1][c]
-        rmcp = data[r-1][c+1]
-        rocm = data[r][c-1]
-        rocp = data[r][c+1]
+    if r == len(data)-1 {
+        if c == 0 {
+            rmco = data[r-1][c]
+            rmcp = data[r-1][c+1]
+            rocp = data[r][c+1]
+        } else if c == len(data[r])-1 {
+            rmcm = data[r-1][c-1]
+            rmco = data[r-1][c]
+            rocm = data[r][c-1]
+        } else {
+            rmcm = data[r-1][c-1]
+            rmco = data[r-1][c]
+            rmcp = data[r-1][c+1]
+            rocm = data[r][c-1]
+            rocp = data[r][c+1]
+        }
     }
 
-    switch 0 < r && r < len(data)-1 {
-    case c == 0:
-        rmco = data[r-1][c]
-        rmcp = data[r-1][c+1]
-        rocp = data[r][c+1]
-        rpco = data[r+1][c]
-        rpcp = data[r+1][c+1]
-    case c == len(data[r])-1:
-        rmcm = data[r-1][c-1]
-        rmco = data[r-1][c]
-        rocm = data[r][c-1]
-        rpcm = data[r+1][c-1]
-        rpco = data[r+1][c]
-    case 0 < c && c < len(data[r])-1:
-        rmcm = data[r-1][c-1]
-        rmco = data[r-1][c]
-        rmcp = data[r-1][c+1]
-        rocm = data[r][c-1]
-        rocp = data[r][c+1]
-        rpcm = data[r+1][c-1]
-        rpco = data[r+1][c]
-        rpcp = data[r+1][c+1]
+    if 0 < r && r < len(data)-1 {
+        if c == 0 {
+            rmco = data[r-1][c]
+            rmcp = data[r-1][c+1]
+            rocp = data[r][c+1]
+            rpco = data[r+1][c]
+            rpcp = data[r+1][c+1]
+        } else if c == len(data[r])-1 {
+            rmcm = data[r-1][c-1]
+            rmco = data[r-1][c]
+            rocm = data[r][c-1]
+            rpcm = data[r+1][c-1]
+            rpco = data[r+1][c]
+        } else {
+            rmcm = data[r-1][c-1]
+            rmco = data[r-1][c]
+            rmcp = data[r-1][c+1]
+            rocm = data[r][c-1]
+            rocp = data[r][c+1]
+            rpcm = data[r+1][c-1]
+            rpco = data[r+1][c]
+            rpcp = data[r+1][c+1]
+        }
     }
-
     return rmcm+rmco+rmcp+rocm+rocp+rpcm+rpco+rpcp
 }
 
 func main() {
-    fmt.Println(countNeighbours([][]int{{1,2,3},{1,2,3},{1,2,3}},0,1))
-    // countNeighbours([][]int{{1, 0, 0, 1, 0},
-    //                         {0, 1, 0, 0, 0},
-    //                         {0, 0, 1, 0, 1},
-    //                         {1, 0, 0, 0, 0},
-    //                         {0, 0, 1, 0, 0}}, 1, 2) //3, "1st example"
-    // countNeighbours([][]int{{1, 0, 0, 1, 0},
-    //                         {0, 1, 0, 0, 0},
-    //                         {0, 0, 1, 0, 1},
-    //                         {1, 0, 0, 0, 0},
-    //                         {0, 0, 1, 0, 0}}, 0, 0) //1, "2nd example"
-    // countNeighbours([][]int{{1, 1, 1},
-    //                         {1, 1, 1},
-    //                         {1, 1, 1}}, 0, 2)   //3, "Dense corner"
-    // countNeighbours([][]int{{0, 0, 0},
-    //                         {0, 1, 0},
-    //                         {0, 0, 0}}, 1, 1)    // 0, "Single"
+    fmt.Println(countNeighbours([][]int{{1, 0, 0, 1, 0},
+                                        {0, 1, 0, 0, 0},
+                                        {0, 0, 1, 0, 1},
+                                        {1, 0, 0, 0, 0},
+                                        {0, 0, 1, 0, 0}}, 1, 2)) //3, "1st example"
+    fmt.Println(countNeighbours([][]int{{1, 0, 0, 1, 0},
+                                        {0, 1, 0, 0, 0},
+                                        {0, 0, 1, 0, 1},
+                                        {1, 0, 0, 0, 0},
+                                        {0, 0, 1, 0, 0}}, 0, 0)) //1, "2nd example"
+    fmt.Println(countNeighbours([][]int{{1, 1, 1},
+                                        {1, 1, 1},
+                                        {1, 1, 1}}, 0, 2))   //3, "Dense corner"
+    fmt.Println(countNeighbours([][]int{{0, 0, 0},
+                                        {0, 1, 0},
+                                        {0, 0, 0}}, 1, 1))    // 0, "Single"
 }
-
 
 /*
 function countNeighbours(data, row, col) {

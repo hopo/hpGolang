@@ -11,12 +11,12 @@ func main() {
         {1,2,3},
         {1,2,3},
     }
-    r, c := 0, 2
+    r, c := 1, 1
 
     switch r == 0{
+    case c == 0:
+        fmt.Println(data[-1][0])
     case c == 1:
-        fmt.Println("c == 1")
-    case c == 2:
         fmt.Println("c == 2")
     }
     fmt.Println(data)
