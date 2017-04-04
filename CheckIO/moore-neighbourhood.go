@@ -1,26 +1,42 @@
 package main
 
-func countNeighbours(data [][]int, row int, col int) {
-      var topl, topc, topr, bdyl, bdyr, botl, botc, botr int
-      if row == 0 {
-        topl = 0, topc = 0, topr = 0
-      } else {
-        topl = data[row-1][col-1] == undefined ? 0 : data[row-1][col-1];
-        topc = data[row-1][col] == undefined ? 0 : data[row-1][col];
-        topr = data[row-1][col+1] == undefined ? 0 : data[row-1][col+1];
-      }
-      bdyl = data[row][col-1] == undefined ? 0 : data[row][col-1];
-      bdyr = data[row][col+1] == undefined ? 0 : data[row][col+1];
+func countNeighbours(data [][]int, r int, c int) int {
+        var rmcm, rmco, rmcp int
+        var rocm, rocp int
+        var tpcm, rpco, rpcp int
+        
+        if r == 0 && c == 0 {3}
+        if r == 0 && c == len(data[r])-1 {3}
+        if r == 0 && 0 < c < len(data[r])-1 {5}
 
-      if row == len(data)-1 {
-        botl = 0, botc = 0, botr = 0;
-      } else {
-        botl = data[row+1][col-1] == undefined ? 0 : data[row+1][col-1];
-        botc = data[row+1][col] == undefined ? 0 : data[row+1][col];
-        botr = data[row+1][col+1] == undefined ? 0 : data[row+1][col+1];
-      }
+        if r == len(data)-1 && c == 0 {3}
+        if r == len(data)-1 && c == len(data[r])-1 {3}
+        if r == len(data)-1 && 0 < c < len(data[r])-1 {5}
 
-      return topl+topc+topr+bdyl+bdyr+botl+botc+botr
+        if 0 < r < len(data)-1 && c == 0 {5}
+        if 0 < r < len(data)-1 && c == len(data[r])-1 {5}
+        if 0 < r < len(data)-1 && 0 < c < len(data[r])-1 {8}
+
+        return
+        // if row == 0 {
+        //     topl = 0, topc = 0, topr = 0
+        // } else {
+        //     topl = data[row-1][col-1] == undefined ? 0 : data[row-1][col-1];
+        //     topc = data[row-1][col] == undefined ? 0 : data[row-1][col];
+        //     topr = data[row-1][col+1] == undefined ? 0 : data[row-1][col+1];
+        // }
+        //     bdyl = data[row][col-1] == undefined ? 0 : data[row][col-1];
+        //     bdyr = data[row][col+1] == undefined ? 0 : data[row][col+1];
+        //
+        // if row == len(data)-1 {
+        //     botl = 0, botc = 0, botr = 0;
+        // } else {
+        //     botl = data[row+1][col-1] == undefined ? 0 : data[row+1][col-1];
+        //     botc = data[row+1][col] == undefined ? 0 : data[row+1][col];
+        //     botr = data[row+1][col+1] == undefined ? 0 : data[row+1][col+1];
+        // }
+
+        return topl+topc+topr+bdyl+bdyr+botl+botc+botr
 }
 
 func main() {
