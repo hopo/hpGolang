@@ -2,11 +2,18 @@ package main
 
 import (
 	"fmt"
-	// "regexp"
+    // "sort"
+	"strings"
+    "regexp"
 )
 
-func mostWanted(data string) string {
-    return data
+func mostWanted(data string) []string {
+    // sli := strings.Split(data, "")
+
+    str := regexp.MustCompile(`(?i)[^a-z]`).ReplaceAllString(data, "")
+    str = strings.ToLower(str)
+    a := regexp.MustCompile("[o]+").FindAllString(str, -1)
+    return a
 }
 
 func main() {
