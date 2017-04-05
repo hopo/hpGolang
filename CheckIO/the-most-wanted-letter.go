@@ -7,12 +7,15 @@ import (
     "regexp"
 )
 
-func mostWanted(data string) []string {
+// func checker(ss []string) string{}
+
+func mostWanted(data string) ([]string, int) {
     // sli := strings.Split(data, "")
     data = strings.ToLower(data)
     sli := regexp.MustCompile(`(?i)[a-z]`).FindAllString(data, -1)
     sort.Strings(sli)
-    return sli
+    // r := checker(sli)
+    return sli, len(sli)
 }
 
 func main() {

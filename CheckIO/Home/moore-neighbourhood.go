@@ -23,7 +23,6 @@ func countNeighbours(data [][]int, r int, c int) int {
     rpco := checker(data, rp, c)
     rpcp := checker(data, rp, cp)
 
-
     return rmcm+rmco+rmcp+rocm+rocp+rpcm+rpco+rpcp
 }
 
