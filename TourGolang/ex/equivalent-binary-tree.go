@@ -1,6 +1,8 @@
+// https://go-tour-kr.appspot.com/#69
+
 package main
 
-import "golang.org/x/tour/tree"
+import "code.google.com/p/go-tour/tree"
 
 // Walk walks the tree t sending all values
 // from the tree to the channel ch.
@@ -12,6 +14,3 @@ func Same(t1, t2 *tree.Tree) bool
 
 func main() {
 }
-
-
-//https://tour.golang.org/concurrency/7
