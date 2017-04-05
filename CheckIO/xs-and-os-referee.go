@@ -1,31 +1,32 @@
-"use strict";
+package main
 
-function xoReferee(data) {
-    return "D" || "X" || "O";
+import (
+    "fmt"
+)
+
+func xoReferee(data []string) string {
+    return "D" || "X" || "O"
 }
 
-var assert = require('assert');
 
-if (!global.is_checking) {
-    assert.equal(xoReferee([
+func main() {
+    fmt.Println(xoReferee([]string{
         "X.O",
         "XX.",
-        "XOO"]), "X", "Xs wins");
+        "XOO"})) //"X", "Xs wins"
 
-    assert.equal(xoReferee([
+    fmt.Println(xoReferee([]string{
         "OO.",
         "XOX",
-        "XOX"]), "O", "Os wins");
+        "XOX"})) //"O", "Os wins"
 
-    assert.equal(xoReferee([
+    fmt.Println(xoReferee([]string{
         "OOX",
         "XXO",
-        "OXX"]), "D", "Draw");
+        "OXX"}))    //"D", "Draw"
 
-    assert.equal(xoReferee([
+    fmt.Println(xoReferee([]string{
         "O.X",
         "XX.",
-        "XOO"]), "X", "Xs wins again");
-
-    console.log("Coding complete? Click 'Check' to review your tests and earn cool rewards!");
+        "XOO"}))    //"X", "Xs wins again"
 }

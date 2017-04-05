@@ -7,7 +7,7 @@ import (
     // "time"
 )
 
-
+/*
 func chcker(data [][]int, r int, c int) int {
     defer func() {
         err := recover()
@@ -20,6 +20,7 @@ func main() {
     d := chcker([][]int{{1, 0, 0}, {0, 1, 0}, {0, 1, 1}}, 0, 0)
     fmt.Println(d)
 }
+/*
 
 
 /*
