@@ -7,6 +7,13 @@ import (
     "regexp"
 )
 
+func str2sli(str string) []string {
+    str = strings.ToLower(str)
+    r := regexp.MustCompile(`(?i)[a-z]`).FindAllString(str, -1)
+    sort.Strings(r)
+    return r
+}
+
 func checker(sli []string) string {
     var str string
     for _, s := range sli { str += s }
@@ -24,18 +31,8 @@ func checker(sli []string) string {
     return r
 }
 
-func dataSort(data string) []string {
-    data = strings.ToLower(data)
-    sli := regexp.MustCompile(`(?i)[a-z]`).FindAllString(data, -1)
-    sort.Strings(sli)
-
-    return sli
-}
-
 func mostWanted(data string) string {
-    sli := dataSort(data)
-
-    return checker(sli)
+    return checker(str2sli(data))
 }
 
 func main() {
