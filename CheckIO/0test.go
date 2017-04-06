@@ -4,9 +4,19 @@ import (
 	"fmt"
     // "log"
     // "os"
+    "strings"
     // "time"
 )
 
+func main() {
+    str := "abcdddfg"
+
+    // x := string([]rune(str)[0]) //UTF-8
+    x := string(str[3])  //ASCII
+
+    i := strings.Count(str, x)
+    fmt.Println(x, i)
+}
 /*
 func chcker(data [][]int, r int, c int) int {
     defer func() {

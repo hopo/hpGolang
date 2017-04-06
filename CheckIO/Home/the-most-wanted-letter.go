@@ -7,15 +7,35 @@ import (
     "regexp"
 )
 
-// func checker(ss []string) string{}
+func checker(sli []string) string {
+    var str string
+    for _, s := range sli { str += s }
 
-func mostWanted(data string) ([]string, int) {
-    // sli := strings.Split(data, "")
+    r := sli[0]
+    z := 1
+    for _, s := range sli {
+        n := strings.Count(str, s) //version1
+        // n := strings.LastIndex(str, s)-strings.Index(str, s) //verion2
+        if z < n {
+            r = s
+            z = n
+        }
+    }
+    return r
+}
+
+func dataSort(data string) []string {
     data = strings.ToLower(data)
     sli := regexp.MustCompile(`(?i)[a-z]`).FindAllString(data, -1)
     sort.Strings(sli)
-    // r := checker(sli)
-    return sli, len(sli)
+
+    return sli
+}
+
+func mostWanted(data string) string {
+    sli := dataSort(data)
+
+    return checker(sli)
 }
 
 func main() {
