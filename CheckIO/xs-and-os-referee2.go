@@ -19,9 +19,10 @@ func xoReferee(data []string) string {
 
     for i, D := range []string{x, y, z} {
         if D[0] == D[1] && D[1] == D[2] { return string(D[0]) }
+        if x[i] == y[i] && y[i] == z[i] { return string(x[i]) }
+
         if x[0] == y[1] && y[1] == z[2] { return string(x[0]) }
         if x[2] == y[1] && y[1] == z[0] { return string(z[0]) }
-        if x[i] == y[i] && y[i] == z[i] { return string(x[i]) }
     }
 
     return "D"
