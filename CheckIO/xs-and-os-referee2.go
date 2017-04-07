@@ -5,22 +5,26 @@ import (
 )
 
 func xoReferee(data []string) string {
-    var dt []string
-    for i := 0; i < 3; i++ {
-        for j := 0; j <3; j++ {
-            dt = append(dt, string(data[i][j]))
-        }
+    x, y, z := data[0], data[1], data[2]
+
+    // for i := 0; i < 3; i++ {
+    //     if x[i] == y[i] && y[i] == z[i] { return string(x[i]) }
+    //     for _, D := range []string{x, y, z} {
+    //         if D[0] == D[1] && D[1] == D[2] { return string(D[0]) }
+    //     }
+    // }
+    //
+    // if x[0] == y[1] && y[1] == z[2] { return string(x[0]) }
+    // if x[2] == y[1] && y[1] == z[0] { return string(z[0]) }
+
+    for i, D := range []string{x, y, z} {
+        if D[0] == D[1] && D[1] == D[2] { return string(D[0]) }
+        if x[0] == y[1] && y[1] == z[2] { return string(x[0]) }
+        if x[2] == y[1] && y[1] == z[0] { return string(z[0]) }
+        if x[i] == y[i] && y[i] == z[i] { return string(x[i]) }
     }
-    var os, xs, dot int
-    for _, d := range dt {
-        if "O" == d { os++ }
-        if "X" == d { xs++ }
-        if "." == d { dot++ }
-    }
-    if dot == 0 { return "D" }
-    if os > xs { return "O" }
-    if os < xs { return "X" }
-    return dt[4]
+
+    return "D"
 }
 
 func main() {
@@ -36,4 +40,7 @@ func main() {
     fmt.Println(xoReferee([]string{"O.X",
                                    "XX.",
                                    "XOO"})) //"X", "Xs wins again"
+    fmt.Println(xoReferee([]string{"O.O ",
+                                   "OO.",
+                                   "XXX"})) //"X", "hp check"
 }
