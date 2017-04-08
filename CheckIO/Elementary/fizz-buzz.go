@@ -5,17 +5,17 @@ import (
 	"strconv"
 )
 
-func fizzBuzz(inpt int) string {
-	if inpt%(3*5) == 0 {
+func fizzBuzz(num int) string {
+	if num%(3*5) == 0 {
 		return "Fizz Buzz"
 	}
-	if inpt%3 == 0 {
+	if num%3 == 0 {
 		return "Fizz"
 	}
-	if inpt%5 == 0 {
+	if num%5 == 0 {
 		return "Buzz"
 	}
-	return strconv.Itoa(inpt)
+	return strconv.Itoa(num)
 }
 
 func main() {

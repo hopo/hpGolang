@@ -1,17 +1,14 @@
 package main
 
 import (
-	"fmt"
-    // "math"
-	// "reflect"
-	// "regexp"
-    // "sort"
-	// "strconv"
-	// "strings"
+// "fmt"
+// "math"
+// "reflect"
+// "regexp"
+// "sort"
+// "strconv"
+// "strings"
 )
-
-func main() {
-}
 
 /*
 type ByAbs []float64

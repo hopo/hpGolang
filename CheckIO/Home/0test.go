@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"
-    // "log"
-    // "os"
-    "strings"
-    // "time"
+//"fmt"
+// "log"
+// "os"
+//"strings"
+// "time"
 )
 
 /*
@@ -60,9 +60,9 @@ func main(){
 
 // func countNeighbours(d Data, r int, c int) {
 //     fmt.Println(d.data[0], r, c)
-    // for i := 0; i < len(checker); i++ {
-        // rslt += checker[i]
-    // }
+// for i := 0; i < len(checker); i++ {
+// rslt += checker[i]
+// }
 // }
 
 /*
