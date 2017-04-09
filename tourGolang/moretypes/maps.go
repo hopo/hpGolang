@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// Vertex struct
 type Vertex struct {
 	Lat, Long float64
 }
