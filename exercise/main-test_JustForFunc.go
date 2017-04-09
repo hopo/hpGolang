@@ -23,7 +23,7 @@ func TestHandler(t *testing.T) {
     if rec.Code != http.StatusOK {
         t.Errof("expected status 200; got %d", rec.Code)
     }
-    if !strings.Contains(rec.Body.String(), "gopher ricevoy") {
+    if !strings.Contains(rec.Body.String(), "gopher riceboy") {
         t.Errorf("unexpected body in response: %q", rec.Body.String())
     }
 }

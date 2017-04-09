@@ -8,13 +8,22 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/", index)
+	http.HandleFunc("/", root)
+	http.HandleFunc("/index", index)
 	http.HandleFunc("/topic", topic)
-	http.ListenAndServe("127.0.0.1:4000", nil)
+	http.ListenAndServe(":4000", nil)
+}
+
+func root(res http.ResponseWriter, rq *http.Request) {
+	io.WriteString(res, `<a href="/index">Enter</a>`)
 }
 
 func index(res http.ResponseWriter, rq *http.Request) {
-	io.WriteString(res, `<a href="/topic">Welcome</a>`)
+	tpl, err := template.ParseFiles("temp/index.gohtml")
+	if err != nil {
+		log.Fatalln(err)
+	}
+	tpl.Execute(res, nil)
 }
 
 func topic(res http.ResponseWriter, rq *http.Request) {
