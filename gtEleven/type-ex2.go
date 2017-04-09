@@ -5,45 +5,48 @@ package main
 
 import "fmt"
 
+//Person struct
 type Person struct {
-    fname string
-    lname string
+	fname string
+	lname string
 }
 
+//SecretAgent struct
 type SecretAgent struct {
-    Person
-    licenseToKill bool
+	Person
+	licenseToKill bool
 }
 
+//Human struct
 type Human interface {
-    speak()
+	speak()
 }
 
 func (p Person) speak() {
-    fmt.Println(p.fname, p.lname, `says, "bla bla bla"`)
+	fmt.Println(p.fname, p.lname, `says, "bla bla bla"`)
 }
 
 func (sa SecretAgent) speak() {
-    fmt.Println(sa.fname, sa.lname, `says, "I am hungry."`)
+	fmt.Println(sa.fname, sa.lname, `says, "I am hungry."`)
 }
 
 func saySomething(h Human) {
-    h.speak()
+	h.speak()
 }
 
 func main() {
-    p1 := Person{
-        "Mr",
-        "Anywords",
-    }
-    saySomething(p1)
+	p1 := Person{
+		"Mr",
+		"Anywords",
+	}
+	saySomething(p1)
 
-    sa1 := SecretAgent{
-        Person{
-            "So",
-            "Cratess",
-        },
-        true,
-    }
-    saySomething(sa1)
+	sa1 := SecretAgent{
+		Person{
+			"So",
+			"Cratess",
+		},
+		true,
+	}
+	saySomething(sa1)
 }

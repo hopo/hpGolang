@@ -4,23 +4,24 @@ package main
 
 import "fmt"
 
+//Person struct
 type Person struct {
-    fname string
-    lname string
+	fname string
+	lname string
 }
 
 func main() {
-    x := []int{7, 14, 12, 42}
-    fmt.Println(x)
+	x := []int{7, 14, 12, 42}
+	fmt.Println(x)
 
-    y := map[string]int{"Harpa": 30, "Amber": 25}
-    fmt.Println(y)
-    fmt.Println(y["Harpa"])
+	y := map[string]int{"Harpa": 30, "Amber": 25}
+	fmt.Println(y)
+	fmt.Println(y["Harpa"])
 
-    z := Person {
-        fname: "Harpa",
-        lname: "Reyk",
-    }
-    fmt.Println(z)
-    fmt.Println(z.fname)
+	z := Person{
+		fname: "Harpa",
+		lname: "Reyk",
+	}
+	fmt.Println(z)
+	fmt.Println(z.fname)
 }

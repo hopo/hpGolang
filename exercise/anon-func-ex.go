@@ -1,3 +1,5 @@
+package anonfunc
+
 //example 1
 func bar() int {
 	var f func(int, int) int
