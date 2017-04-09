@@ -1,18 +1,30 @@
+// https://go-tour-kr.appspot.com/#58
+
 package main
 
-import "fmt"
-
-//Nums struct
-type Nums struct {
-	a, b int
-}
-
-func (n Nums) sum() int {
-	return n.a + n.b
-}
+import (
+	"html/template"
+	"io"
+	"log"
+	"net/http"
+)
 
 func main() {
-	nums := Nums{1, 2}
-	sum := nums.sum()
-	fmt.Println(sum)
+	http.HandleFunc("/", index)
+	http.HandleFunc("/topic", topic)
+	http.ListenAndServe("localhost:4000", nil)
+}
+
+func index(res http.ResponseWriter, rq *http.Request) {
+	io.WriteString(res, `<a href="/topic">Welcome</a>`)
+}
+
+func topic(res http.ResponseWriter, rq *http.Request) {
+	tpl, err := template.ParseFiles("temp/topic.gohtml")
+	if err != nil {
+		log.Fatalln(err)
+	}
+	// tpl.Execute(res, "News")
+	tpl.ExecuteTemplate(res, "topic.gohtml", "News")
+
 }

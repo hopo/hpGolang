@@ -3,10 +3,15 @@
 package main
 
 import (
-    "net/http"
+	"io"
+	"net/http"
 )
 
 func main() {
-    // your http.Handle calls here
-    http.ListenAndServe("localhost:4000", nil)
+	http.HandleFunc("/", root)
+	http.ListenAndServe("localhost:4000", nil)
+}
+
+func root(res http.ResponseWriter, rq *http.Request) {
+	io.WriteString(res, "Welcome")
 }
