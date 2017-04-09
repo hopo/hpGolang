@@ -10,7 +10,7 @@ import (
 func main() {
 	http.HandleFunc("/", index)
 	http.HandleFunc("/topic", topic)
-	http.ListenAndServe("localhost:4000", nil)
+	http.ListenAndServe("127.0.0.1:4000", nil)
 }
 
 func index(res http.ResponseWriter, rq *http.Request) {
