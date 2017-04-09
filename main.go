@@ -1,5 +1,3 @@
-// https://go-tour-kr.appspot.com/#58
-
 package main
 
 import (
