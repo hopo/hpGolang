@@ -5,9 +5,11 @@
         <title>topic gohtml</title>
     </head>
     <body>
-        <h1>TOPIC : {{.}}</h1>
+        <h1>TOPIC : City</h1>
 		<ul>
-				<li></li>
+				{{range .}}
+				<li>{{.name}} :: {{.desc}}</li>
+				{{end}}
 		</ul>
     </body>
 </html>

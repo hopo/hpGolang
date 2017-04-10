@@ -16,7 +16,7 @@ func main() {
 }
 
 func rootHandler(res http.ResponseWriter, rq *http.Request) {
-	log.Println("*** Request - localhost:4000")
+	log.Println("*** Request - webApplication to port 4000")
 	io.WriteString(res, `<a href="/index">Enter</a>`)
 }
 
@@ -28,12 +28,24 @@ func indexHandler(res http.ResponseWriter, rq *http.Request) {
 	tpl.Execute(res, nil)
 }
 
+type City struct {
+	name string
+	desc string
+}
+
 func topicHandler(res http.ResponseWriter, rq *http.Request) {
 	tpl, err := template.ParseFiles("doc/topic.gohtml")
 	if err != nil {
 		log.Fatalln(err)
 	}
-	// tpl.Execute(res, "News")
-	tpl.ExecuteTemplate(res, "topic.gohtml", "(from main.go)")
 
+	seoul := City{"Seoul", "Kyeongki"}
+	busan := City{"Busan", "KyeonNam"}
+	daejeon := City{"Daejeon", "ChungNam"}
+	osaka := City{"Osaka", "Japan-Asia"}
+	vancouver := City{"Vancouver", "Canada-NA"}
+
+	cities := []City{seoul, busan, daejeon, osaka, vancouver}
+
+	tpl.ExecuteTemplate(res, "topic.gohtml", cities)
 }
