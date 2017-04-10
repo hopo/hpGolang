@@ -65,5 +65,5 @@ func main() {
     router.HandleFunc("/people/{id}"), CreatePersonEndpoint.Methods("POST")
     router.HandleFunc("/people/{id}"), DeletePersonEndpoint.Methods("DELETE")
 
-    log.Fatal(http.ListenAndServe(":8080", router))
+    log.Fatal(http.ListenAndServe(":4000", router))
 }
