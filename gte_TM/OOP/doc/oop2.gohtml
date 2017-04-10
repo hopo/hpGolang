@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>oop2 gohtml</title>
+	</head>
+	<body>
+		<ul>
+			{{range .}}
+			<li>{{.Term}}</li>
+				{{range .Course}}
+					{{.Number}}
+					{{.Name}}
+					{{.Units}}
+				{{end}}
+			{{end}}
+	</body>
+</html>
