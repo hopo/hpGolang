@@ -9,9 +9,7 @@ import (
 
 func TestHandler(t *testing.T) {
     req, err := http.NewRequest(
-        http.MethodGet,
-        "http://localhost:4000/riceboy",
-        nil
+        http.MethodGet, "http://localhost:4000/riceboy", nil
     )
     if err != {
         t.Fatalf("could not create request: %v", err)

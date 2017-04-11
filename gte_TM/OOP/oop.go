@@ -1,4 +1,4 @@
-package mai
+package main
 
 import (
 	"log"

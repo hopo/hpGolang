@@ -22,14 +22,14 @@ type year struct {
 var tpl *template.Template
 
 func init() {
-	tpl = template.Must(template.ParseFiles("oop2.gohtml"))
+	tpl = template.Must(template.ParseFiles("doc/oop2.gohtml"))
 }
 
 func main() {
 	y := year{
 		Fall: semester{
 			Term: "Fall",
-			Course: []course{
+			Courses: []course{
 				course{"CSCI-40", "Introduction 40", "f"},
 				course{"CSCI-130", "Introduction 30", "fa"},
 				course{"CSCI-40", "Introduction 140", "d"},
@@ -37,7 +37,7 @@ func main() {
 		},
 		Spring: semester{
 			Term: "Spring",
-			Course: []course{
+			Courses: []course{
 				course{"CSCI-50", "Introduction 50", "f"},
 				course{"CSCI-190", "Introduction 190", "f"},
 				course{"CSCI-191", "Introduction 191", "f"},
@@ -45,7 +45,7 @@ func main() {
 		},
 		Summer: semester{
 			Term: "Summer",
-			Course: []course{
+			Courses: []course{
 				course{"Baseball", "Grand Slam!", "a"},
 				course{"Soccer", "go Messi!", "s"},
 			},
@@ -56,5 +56,4 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-
 }

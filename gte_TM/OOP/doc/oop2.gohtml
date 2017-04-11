@@ -5,14 +5,11 @@
 		<title>oop2 gohtml</title>
 	</head>
 	<body>
+        <h1>{{.Fall.Term}}</h1>
 		<ul>
-			{{range .}}
-			<li>{{.Term}}</li>
-				{{range .Course}}
-					{{.Number}}
-					{{.Name}}
-					{{.Units}}
-				{{end}}
-			{{end}}
+            {{range .Fall.Courses}}
+                <li>{{.Number}} {{.Name}} {{.Units}}</li>
+            {{end}}
+		</ul>
 	</body>
 </html>
