@@ -1,17 +1,18 @@
-"use strict";
+package main
 
-function brackets(expression){
-    return true || false;
+import (
+	"fmt"
+)
+
+func brackets(expression string) interface{} {
+	return true || false
 }
 
-var assert = require('assert');
-
-if (!global.is_checking) {
-    assert.equal(brackets("((5+3)*2+1)"), true, "Simple");
-    assert.equal(brackets("{[(3+1)+2]+}"), true, "Different types");
-    assert.equal(brackets("(3+{1-1)}"), false, ") is alone inside {}");
-    assert.equal(brackets("[1+1]+(2*2)-{3/3}"), true, "Different operators");
-    assert.equal(brackets("(({[(((1)-2)+3)-3]/3}-3)"), false, "One is redundant");
-    assert.equal(brackets("2+3"), true, "No brackets, no problem");
-    console.log("Coding complete? Click 'Check' to review your tests and earn cool rewards!");
+func main() {
+	fmt.Println(brackets("((5+3)*2+1)"))              //true, "Simple"
+	fmt.Println(brackets("{[(3+1)+2]+}"))             //true, "Different types"
+	fmt.Println(brackets("(3+{1-1)}"))                //false, ") is alone inside {}"
+	fmt.Println(brackets("[1+1]+(2*2)-{3/3}"))        //true, "Different operators"
+	fmt.Println(brackets("(({[(((1)-2)+3)-3]/3}-3)")) //false, "One is redundant"
+	fmt.Println(brackets("2+3"))                      //true, "No brackets, no problem"
 }
