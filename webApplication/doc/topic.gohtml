@@ -7,9 +7,9 @@
     <body>
         <h1>TOPIC : City</h1>
 		<ul>
-				{{range .}}
-				<li>{{.Name}}</li>
-				{{end}}
+            {{range .}}
+                <li><a href="/topic/{{.Num}}">{{.Title}}</a></li>
+            {{end}}
 		</ul>
     </body>
 </html>
