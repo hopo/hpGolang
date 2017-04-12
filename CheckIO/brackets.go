@@ -2,10 +2,14 @@ package main
 
 import (
 	"fmt"
+	"regexp"
 )
 
 func brackets(expression string) interface{} {
-	return true || false
+	re := regexp.MustCompile(`[^0-9]`)
+	found := re.FindAllString(expression, -1)
+
+	return found
 }
 
 func main() {
