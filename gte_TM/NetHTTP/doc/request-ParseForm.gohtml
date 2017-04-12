@@ -8,18 +8,12 @@
 
         <header>
             {{if .Submissions}}
-                <p>
-                    <strong>variable names</strong> (identifiers) and <em>values</em>:
-                </p>
+                <p><strong>variable names</strong> (identifiers) and <em>values</em>:</p>
                 {{range $key, $value := .Submissions}}
-                    <p>
-                        <strong>{{$key}}</strong>
-                    </p>
+                    <p><strong>{{$key}}</strong></p>
                     <ul>
                         {{range $value}}
-                            <li>
-                                <em>{{.}}</em>
-                            </li>
+                            <li><em>{{.}}</em></li>
                         {{end}}
                     </ul>
                 {{end}}

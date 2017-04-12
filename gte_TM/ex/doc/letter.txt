@@ -1,8 +1,0 @@
-{{range .}}
-***********************************
-Hey, {{.}}!
-one little
-two little
-three little
-indian~
-{{end}}
