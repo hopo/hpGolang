@@ -8,10 +8,10 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/", root)
-	http.ListenAndServe("localhost:4000", nil)
+	http.HandleFunc("/", rootHandler)
+	http.ListenAndServe(":4000", nil)
 }
 
-func root(res http.ResponseWriter, rq *http.Request) {
+func rootHandler(res http.ResponseWriter, rq *http.Request) {
 	io.WriteString(res, "Welcome")
 }
