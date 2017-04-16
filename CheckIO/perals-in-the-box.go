@@ -1,16 +1,18 @@
-"use strict";
-function boxProbability(marbles, step) {
-    return 0.5
+package main
+
+import (
+	"fmt"
+)
+
+func boxProbability(marbles string, step float64) float64 {
+	return 0.5
 }
 
-var assert = require('assert');
-
-if (!global.is_checking) {
-    assert.equal(boxProbability('bbw', 3), 0.48, "First");
-    assert.equal(boxProbability('wwb', 3), 0.52, "Second");
-    assert.equal(boxProbability('www', 3), 0.56, "Third");
-    assert.equal(boxProbability('bbbb', 1), 0, "Fifth");
-    assert.equal(boxProbability('wwbb', 4), 0.5, "Sixth");
-    assert.equal(boxProbability('bwbwbwb', 5), 0.48, "Seventh");
-    console.log("Coding complete? Click 'Check' to review your tests and earn cool rewards!");
+func main() {
+	fmt.Println(boxProbability("bbw", 3))     //0.48, "First"
+	fmt.Println(boxProbability("wwb", 3))     //0.52, "Second"
+	fmt.Println(boxProbability("www", 3))     //0.56, "Third"
+	fmt.Println(boxProbability("bbbb", 1))    //0, "Fifth"
+	fmt.Println(boxProbability("wwbb", 4))    //0.5, "Sixth"
+	fmt.Println(boxProbability("bwbwbwb", 5)) //0.48, "Seventh"
 }
