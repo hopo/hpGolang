@@ -1,6 +1,6 @@
 // https://www.youtube.com/watch?v=iIztjjNTSjs
 
-package main
+package main02
 
 import (
 	"io"
