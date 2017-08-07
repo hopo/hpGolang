@@ -8,7 +8,7 @@ import (
 type person struct {
 	First string
 	Last  string
-	Age   int
+	Age   int `json:"wisdom score"`
 }
 
 func main() {
@@ -17,7 +17,7 @@ func main() {
 	fmt.Println(p1.Last)
 	fmt.Println(p1.Age)
 
-	bs := []byte(`{"First":"James", "Last":"Bond", "Age":20}`)
+	bs := []byte(`{"First":"James", "Last":"Bond", "wisdom score":20}`)
 	json.Unmarshal(bs, &p1)
 
 	fmt.Println("--------------")
