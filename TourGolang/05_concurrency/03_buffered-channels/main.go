@@ -9,4 +9,3 @@ func main() {
 	fmt.Println(<-ch)
 	fmt.Println(<-ch)
 }
-
