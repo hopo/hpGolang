@@ -17,4 +17,3 @@ func main() {
 	f = i.(float64) // panic
 	fmt.Println(f)
 }
-

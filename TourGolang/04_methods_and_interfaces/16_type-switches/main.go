@@ -18,4 +18,3 @@ func main() {
 	do("hello")
 	do(true)
 }
-
