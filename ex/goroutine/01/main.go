@@ -1,3 +1,5 @@
+// http://codingnuri.com/golang-book/10.html
+
 package main
 
 import "fmt"
