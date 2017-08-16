@@ -10,12 +10,8 @@ func digitsMultip(data int) int {
 	s := strconv.Itoa(data)
 	cs := regexp.MustCompile("[0]").ReplaceAllString(s, "")
 	res := 1
-	var ss []string
-	for i := 0; i < len(cs); i++ {
-		ss = append(ss, string(cs[i]))
-	}
-	for _, v := range ss {
-		val, _ := strconv.Atoi(v)
+	for _, v := range cs {
+		val, _ := strconv.Atoi(string(v))
 		res *= val
 	}
 	return res
