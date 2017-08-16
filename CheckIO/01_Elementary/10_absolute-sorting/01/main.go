@@ -19,11 +19,9 @@ func absoluteSorting(nums []float64) []float64 {
 }
 
 func main() {
-	fmt.Println(
-		absoluteSorting([]float64{-20, -5, 10, 15}), //[-5, 10, 15, -20]
-		absoluteSorting([]float64{1, 2, 3, 0}),      //[0, 1, 2, 3]
-		absoluteSorting([]float64{-1, -2, -3, 0}),   //[0, -1, -2, -3]
-	)
+	fmt.Println(absoluteSorting([]float64{-20, -5, 10, 15})) //[-5, 10, 15, -20]
+	fmt.Println(absoluteSorting([]float64{1, 2, 3, 0}))      //[0, 1, 2, 3]
+	fmt.Println(absoluteSorting([]float64{-1, -2, -3, 0}))   //[0, -1, -2, -3]
 }
 
 /*
