@@ -1,20 +1,24 @@
+// to edit
+
 package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func fizzBuzz(n int) string {
+	var res []string
 	switch {
-	case n%15 == 0:
-		return fmt.Sprint("Fizz Buzz")
 	case n%3 == 0:
-		return fmt.Sprint("Fizz")
+		res = append(res, "Fizz")
 	case n%5 == 0:
-		return fmt.Sprint("Buzz")
+		res = append(res, "Buzz")
 	default:
-		return fmt.Sprint(n)
+		s := strconv.Itoa(n)
+		res = append(res, s)
 	}
+	return fmt.Sprint(res)
 }
 
 func main() {

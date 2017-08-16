@@ -1,8 +1,8 @@
 package main
 
 import (
-    "fmt"
-    "regexp"
+	"fmt"
+	"regexp"
 )
 
 func threeWords(data string) bool {
@@ -11,10 +11,10 @@ func threeWords(data string) bool {
 
 func main() {
 	fmt.Println(threeWords("Hello World hello")) //true
-	fmt.Println(threeWords("He is 123 man")) //false
-	fmt.Println(threeWords("1 2 3 4")) //false
-    fmt.Println(threeWords("bla bla bla bla")) //true
-	fmt.Println(threeWords("Hi")) //false
+	fmt.Println(threeWords("He is 123 man"))     //false
+	fmt.Println(threeWords("1 2 3 4"))           //false
+	fmt.Println(threeWords("bla bla bla bla"))   //true
+	fmt.Println(threeWords("Hi"))                //false
 }
 
 /*

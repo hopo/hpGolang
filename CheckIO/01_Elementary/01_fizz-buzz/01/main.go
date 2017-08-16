@@ -2,10 +2,9 @@ package main
 
 import (
 	"fmt"
-	//	"strconv"
+	"strconv"
 )
 
-/*
 func fizzBuzz(num int) string {
 	if num%(3*5) == 0 {
 		return "Fizz Buzz"
@@ -17,20 +16,6 @@ func fizzBuzz(num int) string {
 		return "Buzz"
 	}
 	return strconv.Itoa(num)
-}
-*/
-
-func fizzBuzz(n int) string {
-	switch {
-	case n%15 == 0:
-		return fmt.Sprintln("Fizz Buzz")
-	case n%3 == 0:
-		return fmt.Sprintln("Fizz")
-	case n%5 == 0:
-		return fmt.Sprintln("Buzz")
-	default:
-		return fmt.Sprintln(n)
-	}
 }
 
 func main() {

@@ -1,7 +1,7 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -21,9 +21,9 @@ func digitsMultip(data int) int {
 
 func main() {
 	fmt.Println(digitsMultip(123405)) //120
-	fmt.Println(digitsMultip(999)) //729
-	fmt.Println(digitsMultip(1000)) //1
-	fmt.Println(digitsMultip(1111)) //1
+	fmt.Println(digitsMultip(999))    //729
+	fmt.Println(digitsMultip(1000))   //1
+	fmt.Println(digitsMultip(1111))   //1
 }
 
 /*
