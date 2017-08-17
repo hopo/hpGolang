@@ -1,3 +1,5 @@
+// go new solution
+
 package main
 
 import (
@@ -7,7 +9,6 @@ import (
 	"strings"
 )
 
-// Data struct
 type Data struct {
 	rslt string
 	str  string
@@ -31,8 +32,7 @@ func (d *Data) checker() {
 	r := d.sli[0]
 	z := 1
 	for _, s := range d.sli {
-		n := strings.Count(d.str, s) //version1
-		// n := strings.LastIndex(d.str, s)-strings.Index(d.str, s) //verion2
+		n := strings.LastIndex(d.str, s) - strings.Index(d.str, s)
 		if z < n {
 			r = s
 			z = n
