@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>oop2 gohtml</title>
+	</head>
+	<body>
+        <h1>{{.Fall.Term}}</h1>
+		<ul>
+            {{range .Fall.Courses}}
+                <li>{{.Number}} {{.Name}} {{.Units}}</li>
+            {{end}}
+		</ul>
+	</body>
+</html>
