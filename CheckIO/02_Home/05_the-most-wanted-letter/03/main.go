@@ -1,5 +1,3 @@
-// go new solution
-
 package main
 
 import (
@@ -9,49 +7,48 @@ import (
 	"strings"
 )
 
-type Data struct {
-	rslt string
-	str  string
-	sli  []string
-}
+func sorter(s string) string {
+	low := strings.ToLower(s)
+	ss := regexp.MustCompile(`[a-z]`).FindAllString(low, -1)
+	sort.Strings(ss)
 
-func (d *Data) sorter() {
-	str := strings.ToLower(d.str)
-	sl := regexp.MustCompile(`[a-z]`).FindAllString(str, -1)
-	sort.Strings(sl)
-	d.sli = sl
-
-	var st string
-	for _, s := range sl {
-		st += s
+	var rslt string
+	for _, v := range ss {
+		rslt += string(v)
 	}
-	d.str = st
+	return rslt
 }
 
-func (d *Data) checker() {
-	r := d.sli[0]
-	z := 1
-	for _, s := range d.sli {
-		n := strings.LastIndex(d.str, s) - strings.Index(d.str, s)
-		if z < n {
-			r = s
-			z = n
+func checker(s string) string {
+	r := string(s[0])
+	n := 1
+	for _, v := range s {
+		ea := strings.LastIndex(s, string(v)) - strings.Index(s, string(v))
+		if ea > n {
+			r = string(v)
+			n = ea
 		}
 	}
-	d.rslt = r
+	return r
 }
 
-func mostWanted(data string) string {
-	dt := Data{str: data}
-	dt.sorter()
-	dt.checker()
-	return dt.rslt
+func mostWanted(s string) string {
+	str := sorter(s)
+	rslt := checker(str)
+	return rslt
 }
 
 func main() {
-	fmt.Println(mostWanted("Hello World!"))   //"l", "1st example"
-	fmt.Println(mostWanted("How do you do?")) //"o", "2nd example"
-	fmt.Println(mostWanted("One"))            //"e", "3rd example"
-	fmt.Println(mostWanted("Oops!"))          //"o", "4th example"
-	fmt.Println(mostWanted("AAaooo!!!!"))     //"a", "Letters"
+	var m1, m2, m3, m4, m5 string
+	m1 = "Hello World!"
+	m2 = "How do you do?"
+	m3 = "One"
+	m4 = "Oops!"
+	m5 = "AAaooo!!!!"
+
+	fmt.Println(mostWanted(m1)) //"l", "1st example"
+	fmt.Println(mostWanted(m2)) //"o", "2nd example"
+	fmt.Println(mostWanted(m3)) //"e", "3rd example"
+	fmt.Println(mostWanted(m4)) //"o", "4th example"
+	fmt.Println(mostWanted(m5)) //"a", "Letters"
 }
