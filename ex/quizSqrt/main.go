@@ -12,11 +12,10 @@ import (
 )
 
 func main() {
-	nsrc := rand.NewSource(time.Now().UnixNano())
-	rdm := rand.New(nsrc)
+	rand.Seed(time.Now().Unix())
 
 	for {
-		num := rdm.Intn(100)
+		num := rand.Intn(100)
 		fmt.Println()
 		fmt.Print(num*num, " ???  ")
 
