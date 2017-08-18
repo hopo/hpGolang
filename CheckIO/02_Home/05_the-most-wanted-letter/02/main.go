@@ -15,7 +15,7 @@ type Data struct {
 
 func (d *Data) sorter() {
 	str := strings.ToLower(d.str)
-	sl := regexp.MustCompile(`(?i)[a-z]`).FindAllString(str, -1)
+	sl := regexp.MustCompile(`[a-z]`).FindAllString(str, -1) // `(?i) - ignore L or U
 	sort.Strings(sl)
 	d.sli = sl
 

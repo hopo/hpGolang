@@ -9,7 +9,7 @@ import (
 
 func str2sli(str string) []string {
 	str = strings.ToLower(str)
-	r := regexp.MustCompile(`(?i)[a-z]`).FindAllString(str, -1)
+	r := regexp.MustCompile(`[a-z]`).FindAllString(str, -1) // *) (?i) - ignore L or U
 	sort.Strings(r)
 	return r
 }
