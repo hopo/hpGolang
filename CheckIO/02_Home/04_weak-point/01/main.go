@@ -4,6 +4,17 @@ import "fmt"
 
 type Matrix [][]int
 
+func (m Matrix) weakPoint() []int {
+	rs := m.rowSum()
+	cs := m.columnSum()
+
+	lvir := lowerValueIndex(rs)
+	lvic := lowerValueIndex(cs)
+
+	rslt := []int{lvir, lvic}
+
+	return rslt
+}
 func (m Matrix) rowSum() []int {
 	var rslt []int
 	for _, v := range m {
@@ -37,18 +48,6 @@ func lowerValueIndex(is []int) int {
 			rslt = i
 		}
 	}
-	return rslt
-}
-
-func (m Matrix) weakPoint() []int {
-	rs := m.rowSum()
-	cs := m.columnSum()
-
-	lvi1 := lowerValueIndex(rs)
-	lvi2 := lowerValueIndex(cs)
-
-	rslt := []int{lvi1, lvi2}
-
 	return rslt
 }
 
