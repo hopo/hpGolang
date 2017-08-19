@@ -18,15 +18,18 @@ func main() {
 	for {
 		c, err := l.Accept()
 		if err != nil {
-			log.Fatalln(err)
+			fmt.Println(err)
 		}
 
 		s := bufio.NewScanner(c)
 		for s.Scan() {
-			fmt.Println(s.Text())
-			break
+			ln := s.Text()
+			if ln == "" {
+				break
+			}
+			io.WriteString(c, ln+"\n")
 		}
-		io.WriteString(c, "wassup\n")
+
 		c.Close()
 	}
 }
