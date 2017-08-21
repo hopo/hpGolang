@@ -1,4 +1,4 @@
-# go-lab
-and workspace
+# workspace
+before go-lab
 
 24 Mar, 2017 ~
