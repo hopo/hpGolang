@@ -5,7 +5,7 @@ import (
 	"regexp"
 )
 
-func brackets(expression string) interface{} {
+func brackets(expression string) []string {
 	re := regexp.MustCompile(`[^0-9]`)
 	found := re.FindAllString(expression, -1)
 
