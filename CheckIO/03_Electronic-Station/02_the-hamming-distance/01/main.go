@@ -16,8 +16,6 @@ func hammingDistance(n, m int) int {
 	x := itotypebConverter(n)
 	y := itotypebConverter(m)
 
-	z := x - y
-
 	fmt.Println("x, y, z:", x, y, z)
 
 	ss := strconv.Itoa(z)
