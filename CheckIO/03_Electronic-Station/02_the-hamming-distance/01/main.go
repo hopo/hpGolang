@@ -2,51 +2,29 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
 func main() {
-	//fmt.Println(hammingDistance(117, 17)) //3, "First example"
-	//fmt.Println(hammingDistance(1, 2))    //2, "Second example"
-	//fmt.Println(hammingDistance(16, 15))  //5, "Third example"
-	fmt.Println(hammingDistance(16, 15)) // "hp ex""
+	fmt.Println(hammingDistance(117, 17)) //3, "First example"
+	fmt.Println(hammingDistance(1, 2))    //2, "Second example"
+	fmt.Println(hammingDistance(16, 15))  //5, "Third example"
+	fmt.Println(hammingDistance(256, 8))  //2, "hp ex""
 }
 
-func hammingDistance(n, m int) int {
-	x := itotypebConverter(n)
-	y := itotypebConverter(m)
+func hammingDistance(n, m int) (ret int) {
+	x := bConverter(n)
+	y := bConverter(m)
 
-	fmt.Println("x, y, z:", x, y, z)
-
-	ss := strconv.Itoa(z)
-	var ii int
-	for _, v := range ss {
-		c, _ := strconv.Atoi(string(v))
-		ii += c
+	for i := 0; i < len(x); i++ {
+		if x[i] != y[i] {
+			ret++
+		}
 	}
 
-	var ret int = ii
-	return ret
+	return
 }
 
-func itotypebConverter(n int) int {
-	//s := fmt.Sprintf("%08b", n)
-	s := strconv.FormatInt(int64(n), 2)
-	fmt.Println("n:", s)
-
-	i, _ := strconv.Atoi(s)
-	return i
+func bConverter(n int) string {
+	s := fmt.Sprintf("%09b", n)
+	return s
 }
-
-/*
-func typebtoiConverter(n int) int {
-	s := strconv.Itoa(n)
-
-	var ii int
-	for i := len(s) - 1; i > -1; i-- {
-		ii += int(math.Pow(2, float64(i)))
-	}
-	var ret int = ii
-	return ret
-}
-*/
