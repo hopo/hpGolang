@@ -6,24 +6,36 @@ import (
 )
 
 func main() {
-	fmt.Println(hammingDistance(117, 17)) //3, "First example"
-	fmt.Println(hammingDistance(1, 2))    //2, "Second example"
-	fmt.Println(hammingDistance(16, 15))  //5, "Third example"
-	fmt.Println(hammingDistance(256, 8))  //2, "hp ex""
+	fmt.Println(hammingDistance(117, 17))      //3, "First example"
+	fmt.Println(hammingDistance(1, 2))         //2, "Second example"
+	fmt.Println(hammingDistance(16, 15))       //5, "Third example"
+	fmt.Println(hammingDistance("abc", "ccc")) //2, "hp ex""
 }
 
-func hammingDistance(n, m int) (ret int) {
-	if n == m {
+func hammingDistance(a, b interface{}) (ret int) {
+	if a == b {
 		return 0
 	}
 
-	x := bConverter(n)
-	y := bConverter(m)
+	var x, y string
+
+	switch a.(type) {
+	case int:
+		x = bConverter(a.(int))
+		y = bConverter(b.(int))
+	case string:
+		x = a.(string)
+		y = b.(string)
+	}
 
 	lx := len(x)
 	ly := len(y)
 
 	var l int
+
+	if lx == ly {
+		l = lx
+	}
 
 	if lx != ly {
 		switch {

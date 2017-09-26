@@ -2,11 +2,31 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"strconv"
 )
 
 func main() {
-	zeroMulti()
+	prnti("s")
+}
+
+func prnti2(i interface{}) interface{} {
+	switch i.(type) {
+	case int:
+		fmt.Println("int!")
+	case string:
+		fmt.Println("string!")
+	}
+	return 0
+}
+
+func prnti(i interface{}) interface{} {
+	//t := fmt.Sprintf("%T", i)
+	t := reflect.TypeOf(i).Kind()
+
+	fmt.Printf("i: %T ~ %v\n", i, i)
+	fmt.Printf("t: %T ~ %v\n", t, t)
+	return 0
 }
 
 func zeroMulti() {
