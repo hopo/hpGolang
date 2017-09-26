@@ -9,7 +9,7 @@ func main() {
 	//fmt.Println(hammingDistance(117, 17)) //3, "First example"
 	//fmt.Println(hammingDistance(1, 2))    //2, "Second example"
 	//fmt.Println(hammingDistance(16, 15))  //5, "Third example"
-	fmt.Println(hammingDistance(1, 2)) // "hp ex""
+	fmt.Println(hammingDistance(16, 15)) // "hp ex""
 }
 
 func hammingDistance(n, m int) int {
