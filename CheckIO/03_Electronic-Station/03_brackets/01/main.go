@@ -5,11 +5,19 @@ import (
 	"regexp"
 )
 
-func brackets(expression string) []string {
-	re := regexp.MustCompile(`[^0-9]`)
+func brackets(expression string) bool {
+	re := regexp.MustCompile(`[^0-9\+\-\*\/]`)
 	found := re.FindAllString(expression, -1)
 
-	return found
+	var ss []string
+
+	for _, v := range found {
+		ss = append(ss, v)
+	}
+
+	fmt.Print(ss, " ~ ")
+
+	return true
 }
 
 func main() {

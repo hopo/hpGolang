@@ -7,10 +7,10 @@ import (
 )
 
 func main() {
-	//fmt.Println(hammingDistance(117, 17))      //3, "First example"
-	//fmt.Println(hammingDistance(1, 2)) //2, "Second example"
-	fmt.Println(hammingDistance(16, 15))        //5, "Third example"
-	fmt.Println(hammingDistance("abc", "abc.")) //2, "hp ex""
+	fmt.Println(hammingDistance(117, 17))      //3, "First example"
+	fmt.Println(hammingDistance(1, 2))         //2, "Second example"
+	fmt.Println(hammingDistance(16, 15))       //5, "Third example"
+	fmt.Println(hammingDistance("abc", "aaa")) //2, "hp ex""
 }
 
 func hammingDistance(a, b interface{}) (ret int) {
