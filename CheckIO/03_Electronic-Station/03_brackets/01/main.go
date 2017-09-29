@@ -6,7 +6,7 @@ import (
 )
 
 func brackets(expression string) bool {
-	re := regexp.MustCompile(`[^0-9\+\-\*\/]`)
+	re := regexp.MustCompile(`[^0-9\+\-\*\/]`) // `/D` : not digit
 	found := re.FindAllString(expression, -1)
 
 	var ss []string
