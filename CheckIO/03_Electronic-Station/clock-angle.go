@@ -4,8 +4,8 @@ import (
 	"fmt"
 )
 
-func clockAngle(time string) int {
-	return 0
+func clockAngle(time string) (ret int) {
+	return
 }
 
 func main() {

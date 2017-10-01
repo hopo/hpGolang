@@ -4,8 +4,8 @@ import (
 	"fmt"
 )
 
-func boxProbability(marbles string, step float64) float64 {
-	return 0.5
+func boxProbability(marbles string, step float64) (ret float64) {
+	return
 }
 
 func main() {

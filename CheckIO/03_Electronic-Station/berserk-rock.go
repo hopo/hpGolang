@@ -4,9 +4,8 @@ import (
 	"fmt"
 )
 
-func berserkRook(marbles string, step []string) interface{} {
-	x := append(step, marbles)
-	return x
+func berserkRook(marbles string, step []string) (ret int) {
+	return
 }
 
 func main() {

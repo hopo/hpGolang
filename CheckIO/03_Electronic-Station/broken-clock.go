@@ -1,8 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func brokenClock(startingTime, wrongTime, errorDescription string) interface{} {
+func brokenClock(startingTime, wrongTime, errorDescription string) (ret string) {
 	return "00:59:59"
 }
 

@@ -1,4 +1,4 @@
-//anothet solution?
+//another solution?
 package main
 
 import (

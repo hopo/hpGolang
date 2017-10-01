@@ -4,9 +4,8 @@ import (
 	"fmt"
 )
 
-func findDistance(first, second int) int {
-	fmt.Println(first, second)
-	return 0
+func findDistance(first, second int) (ret int) {
+	return
 }
 
 func main() {
