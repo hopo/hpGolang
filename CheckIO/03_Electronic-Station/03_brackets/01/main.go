@@ -15,6 +15,29 @@ func brackets(expression string) bool {
 		ss = append(ss, v)
 	}
 
+	if len(ss)%2 != 0 {
+		return false
+	}
+
+	for _, v := range ss {
+		for i := len(ss) - 1; i > -1; i-- {
+			switch v {
+			case "(":
+				if ss[i] != ")" {
+					return false
+				}
+			case "[":
+				if ss[i] != "]" {
+					return false
+				}
+			case "{":
+				if ss[i] != "}" {
+					return false
+				}
+			}
+		}
+	}
+
 	fmt.Print(ss, " ~ ")
 
 	return true
