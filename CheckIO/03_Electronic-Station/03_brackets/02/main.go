@@ -1,4 +1,4 @@
-//another solution?
+//~ing
 package main
 
 import (
@@ -6,11 +6,30 @@ import (
 	"regexp"
 )
 
+func main() {
+	fmt.Println(brackets("((4-1)-2)+3{3/3}+(8-3)")) //false, "hp ex"
+	//fmt.Println(brackets("((5+3)*2+1)"))              //true, "Simple"
+	//fmt.Println(brackets("{[(3+1)+2]+}"))             //true, "Different types"
+	//fmt.Println(brackets("(3+{1-1)}"))                //false, ") is alone inside {}"
+	//fmt.Println(brackets("[1+1]+(2*2)-{3/3}"))        //true, "Different operators"
+	//fmt.Println(brackets("(({[(((1)-2)+3)-3]/3}-3)")) //false, "One is redundant"
+	//fmt.Println(brackets("2+3"))                      //true, "No brackets, no problem"
+}
+
 func brackets(expression string) (ret bool) {
 	re := regexp.MustCompile(`[^0-9\+\-\*\/]`) // `/D` : not digit
 	ss := re.FindAllString(expression, -1)
 
-	fmt.Print("ss: ", ss, " @")
+	fmt.Print("ss: ", ss, " #")
+
+	chk := map[string]string{
+		"(": "o1", "[": "o2", "{": "o3",
+		")": "c1", "]": "c2", "}": "c3",
+	}
+	for _, v := range ss {
+		fmt.Print(chk[v], " ")
+	}
+	fmt.Print(" @")
 
 	l := len(ss)
 	if l == 0 {
@@ -49,14 +68,4 @@ func brackets(expression string) (ret bool) {
 
 	ret = true
 	return
-}
-
-func main() {
-	fmt.Println(brackets("(2+3)-{3*2{"))              //false, "hp ex"
-	fmt.Println(brackets("((5+3)*2+1)"))              //true, "Simple"
-	fmt.Println(brackets("{[(3+1)+2]+}"))             //true, "Different types"
-	fmt.Println(brackets("(3+{1-1)}"))                //false, ") is alone inside {}"
-	fmt.Println(brackets("[1+1]+(2*2)-{3/3}"))        //true, "Different operators"
-	fmt.Println(brackets("(({[(((1)-2)+3)-3]/3}-3)")) //false, "One is redundant"
-	fmt.Println(brackets("2+3"))                      //true, "No brackets, no problem"
 }
