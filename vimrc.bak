@@ -4,6 +4,10 @@ execute pathogen#infect()
 filetype plugin on
 
 
+" ***Clang use in ycm
+let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py"
+
+
 " ***User set
 if has("syntax")
 	syntax on
@@ -33,16 +37,17 @@ noremap <C-j> :wincmd j<CR>
 noremap <C-n> :cnext<CR>
 noremap <C-m> :cprevious<CR>
 "nnoremap <leader>a :cclose<CR>
-noremap z' :TagbarToggle<CR>
 noremap z\ :NERDTreeToggle<CR>
+noremap z' :TagbarToggle<CR>
 noremap zu :up<CR>
 
-noremap <leader>e :tabedit 
-noremap <leader>n :tabnext<CR>
+noremap te :tabedit 
+noremap tn :tabnext<CR>
 
 
 " ***User map - for golang
 noremap gr :GoRun 
+noremap gt :GoTest 
 noremap gi :GoInfo<CR>
 
 inoremap ]\ <right>
