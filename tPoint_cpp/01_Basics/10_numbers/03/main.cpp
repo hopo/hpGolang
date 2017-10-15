@@ -11,7 +11,7 @@ int main () {
     srand( (unsigned)time( NULL ) );
 
     /* generate 10 random numbers. */
-    for( i = 0; i < 10; i++) {
+    for(i = 0; i < 10; i++) {
         // generate actual random number
         j =  rand();
         cout <<" Random Number : " << j << endl;
