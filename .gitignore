@@ -4,3 +4,5 @@ src/
 
 .DS_Store
 *.swp
+
+c_test.out
