@@ -1,16 +1,19 @@
 def checkio(numbers_array):
-    i, j = 0, 1
-    while (j < l):
-        if abs(arr[i]) < abs(arr[j]):
-            arr[i], arr[j] = arr[j], arr[i]
-        i += 1
-        j += 1
-    print(numbers_array)
-    return 0
+    arr = []
+    for v in numbers_array:
+        arr.append(v)
 
-def len(): return len(arr)
-def swap(a, b): a, b = b, a
-def less(a, b): return abs(a) < abs(b)
+    l = len(arr)
+    i = 1
+    while (i < l):
+        j = 0
+        while (j < l):
+            if abs(arr[i]) < abs(arr[j]):
+                arr[i], arr[j] = arr[j], arr[i]
+            j += 1
+        i += 1
+    return arr
 
 if __name__ == '__main__' :
-    checkio((-3, 2, 0))
+   a = checkio((1,2,3,0))
+   print(a)
