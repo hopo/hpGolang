@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"spila"
+	"github.com/hopo/hpkg"
 )
 
 func main() {
@@ -14,5 +14,5 @@ func main() {
 }
 
 func alpha_string46(str string) bool {
-	return spila.Isdigit(str)
+	return hpkg.Isdigit(str)
 }

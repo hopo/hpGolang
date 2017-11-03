@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"spila"
+	"github.com/hopo/hpkg"
 )
 
 func main() {
@@ -11,7 +11,7 @@ func main() {
 }
 
 func average(fs []float64) float64 {
-	a := spila.Sum(fs)
+	a := hpkg.Sum(fs)
 	rslt := a / float64(len(fs))
 	return rslt
 }
