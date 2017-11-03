@@ -1,21 +1,25 @@
+" ************************
+" 	hp vimrc			 
+" ************************
 
-" ***Pathogen
+
+" *** Pathogen
 execute pathogen#infect()
 filetype plugin on
 
 
-" ***Clang use in ycm
+" *** Clang use in ycm
 let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py"
 
 
-" ***User set
+" *** VIM Set
 if has("syntax")
 	syntax on
 endif
 
+"set bs=indent,eol,start		"Use backspace
 set autoindent
 set background=light	"Background color dark or light
-"set bs=indent,eol,start		"Use backspace
 set encoding=utf-8	"Encoding Type utf-8
 set hlsearch		"Highlight search
 set ignorecase		"Search case
@@ -27,28 +31,22 @@ set title
 set ts=4	"Tab 4
 
 
-" ***User nmap
+" *** Key mapping
 let mapleader = ","
 
+noremap <leader>n :cnext<CR>
+noremap <leader>m :cprevious<CR>
+noremap <leader>c :cclose<CR>
 noremap <C-k> :wincmd k<CR>
 noremap <C-l> :wincmd l<CR>
 noremap <C-h> :wincmd h<CR>
 noremap <C-j> :wincmd j<CR>
-noremap <C-n> :cnext<CR>
-noremap <C-m> :cprevious<CR>
-"nnoremap <leader>a :cclose<CR>
 noremap z\ :NERDTreeToggle<CR>
-noremap z' :TagbarToggle<CR>
+noremap z] :TagbarToggle<CR>
 noremap zu :up<CR>
 
 noremap te :tabedit 
 noremap tn :tabnext<CR>
-
-
-" ***User map - for golang
-noremap gr :GoRun 
-noremap gt :GoTest 
-noremap gi :GoInfo<CR>
 
 inoremap ]\ <right>
 inoremap ]\\ <right><right>
@@ -65,6 +63,9 @@ inoremap { {}<left>
 inoremap (<CR> (<CR>)<ESC>O<tab>
 inoremap {<CR> {<CR>}<ESC>O<tab>
 inoremap `<CR> `<CR>`<ESC>O
-inoremap /*<CR> /*<CR>*/<ESC>O
-inoremap !p<tab> package main<CR><CR>import (<CR>)<ESC>O<tab>""<left>
 
+
+" *** python keymapping
+"noremap <tab> :!python3 %
+"inoremap """ """
+"inoremap """<CR> """<CR>"""<ESC>O
