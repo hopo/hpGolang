@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/hopo/hpkg"
 )
 
 func main() {
@@ -9,8 +10,10 @@ func main() {
 	fmt.Println(ex1)
 }
 
-func printTriangle(num int) string {
-	n := "\n"
-	rslt := fmt.Sprint("*", n, "**", n, "***")
-	return rslt
+func printTriangle(num int) (rslt string) {
+	for i := 1; i < num; i++ {
+		rslt += hpkg.Smulti("*", i) + "\n"
+	}
+	rslt += hpkg.Smulti("*", num)
+	return
 }
