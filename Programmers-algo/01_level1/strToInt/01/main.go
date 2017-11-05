@@ -14,7 +14,8 @@ func strToInt(s string) (ret int) {
 	ret, err := strconv.Atoi(s)
 	if err != nil {
 		fmt.Println(err)
-		return 0
+		ret = 0
+		return
 	}
 	return
 }
