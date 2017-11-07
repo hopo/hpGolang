@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -9,15 +10,26 @@ import (
 )
 
 func main() {
-	ex_newreader()
+	ex_multiwriter()
+	// ex_newreader()
 	// ex_iopipe()
 	// ex_reader()
 }
 
+func ex_multiwriter() {
+	buf := new(bytes.Buffer)
+	mw := io.MultiWriter(os.Stdout, os.Stderr, buf)
+
+	fmt.Fprintln(mw, "hello")
+	fmt.Println("from buffer: ", buf)
+}
+
 func ex_newreader() {
+	// https://www.youtube.com/watch?v=LHZ2CAZE6Gs
 	header := strings.NewReader("<msg>")
 	body := strings.NewReader("hello")
 	footer := strings.NewReader("</msg>")
+	// io.MultiReader(header, body, footer)
 
 	for _, r := range []io.Reader{header, body, footer} {
 		_, err := io.Copy(os.Stdout, r)
