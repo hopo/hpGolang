@@ -1,3 +1,5 @@
+# https://programmers.co.kr/learn/challenge_codes/11
+
 def gcdlcm(a, b):
     answer = []
 
