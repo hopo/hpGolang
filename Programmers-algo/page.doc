@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta charset="utf-8" />
+<title>프로그래머스</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://programmers.co.kr/assets/icons/favicon-62fbe79ee434be97a7b1791d7f5eae06e53e6806a8ad9254f51ace33e119845c.ico" />
+<link rel="apple-touch-icon" type="image/png" href="https://programmers.co.kr/assets/icons/apple-icon-ba015f4be3de92dd8274a0720169a9ac34e44c56e994511501fe7b5dfc32c9eb.png" />
+<meta name="theme-color" content="#5C6BC0">
+<link rel="stylesheet" media="all" href="/assets/application-978ac015f3106e21f3b414e367ba4180d728eb8b4e6a7f51c1fc9c4f4c0f1b4b.css" />
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="O7AI6NHWAGmk79fPRRslA5+HMZbTA90So5fpJ1KMbAcmGuSoWPGPZlBVmsE2eTJ2JRT+ScdkNkU6//6G8sZ9ow==" />
+<meta name="action-cable-url" content="wss://programmers.co.kr:8080/cable" />
+<script>
+//<![CDATA[
+window.addEventListener('load', function() {});
+//]]>
+</script>
+
+
+
+    <script>
+      (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          i[r] = i[r] || function () {
+              (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+          a = s.createElement(o),
+              m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-72680702-5', 'auto', {userId: 'Guest-824800'});
+      ga('send', 'pageview');
+  </script>
+
+</head>
+<body class="errors">
+<div class="main">
+  <div class="not-found">
+  <div class="home-logo">
+    <a href="/"><img class="home-icon" src="/assets/ic_hall_24_FF9800-5d05d8e3a069a39ebfe8e94120665b1835ee8ddaf2517a22cd4fd5ba3d661887.png" alt="Ic hall 24 ff9800" /></a>
+  </div>
+  <div class="horizontal-center">
+    <img class="img-title" src="/assets/ic_explore_96-f5e64cef73fb629c316b1fe9dff05d89c5599201cd0012b58affe373230d155c.png" alt="Ic explore 96" />
+  </div>
+  <h1 class="m-b-0 m-t-22px">여긴 당신이 찾는 웹페이지가 아니에요</h1>
+  <h4 class="m-b-0 m-t-10px">404 page error</h4>
+  <a class="btn btn-white btn-lg FF9800 m-t-60px" href="javascript:history.go(-1);">이전 페이지 가기</a>
+</div>
+</div>
+</body>
+</html><!DOCTYPE html>
+<html lang="ko" xml:lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+<title>문자열 내 마음대로 정렬하기 | 프로그래머스</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://programmers.co.kr/assets/icons/favicon-62fbe79ee434be97a7b1791d7f5eae06e53e6806a8ad9254f51ace33e119845c.ico" />
+<link rel="apple-touch-icon" type="image/png" href="https://programmers.co.kr/assets/icons/apple-icon-ba015f4be3de92dd8274a0720169a9ac34e44c56e994511501fe7b5dfc32c9eb.png" />
+<meta name="description" content="strange_sort함수는 strings와 n이라는 매개변수를 받아들입니다. strings는 문자열로 구성된 리스트인데, 각 문자열을 인덱스 n인 글자를 기준으로 정렬하면 됩니다. 예를들어 strings가 [&quot;sun&quot;, &quot;bed&quot;, &quot;car&quot;]이고 n이 1이면 각 단어의 인덱스 1인" />
+<meta name="keywords" content="코딩 교육, 코딩, 프로그래밍, 실습, 생활코딩, 알고리즘, python3" />
+<meta property="fb:app_id" content="339079816467879" />
+<meta name="twitter:title" property="og:title" itemprop="title name" content="문자열 내 마음대로 정렬하기 | 프로그래머스" />
+<meta name="twitter:description" property="og:description" itemprop="description" content="strange_sort함수는 strings와 n이라는 매개변수를 받아들입니다. strings는 문자열로 구성된 리스트인데, 각 문자열을 인덱스 n인 글자를 기준으로 정렬하면 됩니다. 예를들어 strings가 [&quot;sun&quot;, &quot;bed&quot;, &quot;car&quot;]이고 n이 1이면 각 단어의 인덱스 1인" />
+<meta name="twitter:image" property="og:image" itemprop="image primaryImageOfPage" content="https://programmers.co.kr/assets/learn/course/img_course_python3@2x-8996e19f25ee4e6bd68aaea24e4121d76aa346ec1c89abf585a34df96214bb89.png" />
+<meta name="twitter:url" property="og:url" content="https://programmers.co.kr/learn/challenge_codes/95" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="프로그래머스" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="twitter:card" content="summary" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="HandheldFriendly" content="true" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="theme-color" content="#333333">
+<link rel="stylesheet" media="all" href="/assets/application-978ac015f3106e21f3b414e367ba4180d728eb8b4e6a7f51c1fc9c4f4c0f1b4b.css" data-turbolinks-track="false" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="qcvocbGdC5cRghV82/L79XUHyzrznJ73lh4kXfNLoch2DfMigsyRA/oN7x4vkT0xinLWVVwXKPmMkrGkupM6TQ==" />
+<meta name="action-cable-url" content="wss://programmers.co.kr:8080/cable" />
+    <script>
+      (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          i[r] = i[r] || function () {
+              (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+          a = s.createElement(o),
+              m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-72680702-5', 'auto', {userId: 'Guest-824801'});
+      ga('send', 'pageview');
+  </script>
+
+</head>
+<body class="challenge-codes challenge-codes-show"
+      data-controller="challenge_codes"
+      data-action="show"
+      data-defaultLocale="ko"
+      data-locale="ko">
+
+<div class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+      <a class="navbar-brand" href="/">
+        <img alt="logo" width="24" src="/assets/bi-symbol-light-b450bdcb3181634a6f92a6249b72e0af3ec3895d6fbd7c9e5d36a23a1fa789d0.png" />
+</a>      <ol class="breadcrumb"><li><a href="https://programmers.co.kr/learn/challenges">알고리즘 연습</a></li><li class="active">문자열 내 마음대로 정렬하기</li></ol>
+  </div>
+
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right navbar-nav-login">
+          <li><a href="https://programmers.co.kr/users/signup">계정 만들기</a></li>
+    <li><a href="https://programmers.co.kr/users/login">로그인</a></li>
+    <li><a href="https://business.programmers.co.kr/">기업회원</a></li>
+
+    </ul>
+      <div class="lesson-control-btn btn-group">
+      </div>
+  </div>
+
+  <div class="breadcrumb-overflow-shadow"></div>
+</div>
+
+
+
+<div class="main">
+  
+
+<div class="challenge-content language level-group"
+     data-challenge-code-id="95"
+     data-language="python3"
+     data-level-group="first">
+  <form class="challenge-form">
+    <div class="challenge">
+      <div class="main-section">
+        <div class="content-block">
+          <div id="tour1" class="guide-section">
+            <div class="title learn-challenge-title">
+              <h5>문자열 내 마음대로 정렬하기 <span class="label label-info">Level 1</span></h5>
+            </div>
+            <div class="markdown"><p>strange_sort함수는 strings와 n이라는 매개변수를 받아들입니다.<br>
+strings는 문자열로 구성된 리스트인데, 각 문자열을 인덱스 n인 글자를 기준으로 정렬하면 됩니다.</p>
+
+<p>예를들어 strings가 [&quot;sun&quot;, &quot;bed&quot;, &quot;car&quot;]이고 n이 1이면 각 단어의 인덱스 1인 문자 u, e ,a를 기준으로 정렬해야 하므로 결과는 [&quot;car&quot;, &quot;bed&quot;, &quot;sun&quot;]이 됩니다.<br>
+strange_sort함수를 완성해 보세요.</p>
+</div>
+            <div class="button-block">
+                  <a class="btn-report" data-toggle="popover" data-trigger="click" data-placement="top" data-html="true" data-content="
+                              &lt;div class=&#39;popover-account-content&#39;&gt;
+                                &lt;div class=&#39;content top&#39;&gt;&lt;/div&gt;
+                                &lt;div class=&#39;content middle&#39;&gt;&lt;/div&gt;
+                                &lt;div class=&#39;content bottom&#39;&gt;
+                                  &lt;h5 class=&#39;title&#39;&gt;로그인이 필요합니다&lt;/h5&gt;
+                                  &lt;a class=&#39;btn btn-primary btn-sm&#39; href=/users/signup&gt;계정 만들기&lt;/a&gt;
+                                  &lt;a class=&#39;btn btn-primary btn-sm&#39; href=/users/login&gt;로그인&lt;/a&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            " data-remote="true" href="javascript:void(0)">
+                      <span class="hw-icons-bug">bug</span>오류 신고하기
+</a>              <ul class="challenge-share list-inline">
+                <li class="list-inline-item">
+                  <a onclick="return Kairos.share.facebook(&#39;https://programmers.co.kr/learn/challenge_codes/95&#39;);" href="#">                    <span class="hw-icons-facebook">facebook</span>
+</a>                </li>
+                <li class="list-inline-item">
+                  <a onclick="return Kairos.share.twitter(&#39;문자열 내 마음대로 정렬하기 | 프로그래머스\\nstrange_sort함수는 strings와 n이라는 매개변수를 받아들입니다.strings는 문자열로 구성된 리스트인데, 각 문자열을 인덱스 n인 글자를 기준으로 정렬하면 됩니다.예를들어 strings가 [\&quot;sun\&quot;, \&quot;bed\&quot;, \&quot;car\&quot;]이고 n이 1이면 각 단어의 인덱스 1인 문자 u, e ,a를 기준으로 정렬해야 하므로 결과는 [\&quot;car\&quot;, \&quot;bed\&quot;, \&quot;sun\&quot;]이 됩니다.strange_sort함수를 완성해 보세요.&#39;, &#39;https://programmers.co.kr/learn/challenge_codes/95&#39;);" href="#">                    <span class="hw-icons-twitter">twitter</span>
+</a>                </li>
+                <li class="list-inline-item">
+                  <a onclick="return Kairos.share.google(&#39;https://programmers.co.kr/learn/challenge_codes/95&#39;);" href="#">                    <span class="hw-icons-google">google</span>
+</a>                </li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="run-section">
+            <div id="tour2" class="code-section" onkeyup="Kairos.exercises.resizeEditor(this);">
+              <div class="tab-header">
+                <ul class="nav nav-pills">
+                  <li class="nav-item">
+                    <a href="#" class="btn-tab nav-link active"
+                       data-filename="strange_sort">에디터
+                    </a>
+                  </li>
+                </ul>
+<!--// ################################################ //-->
+                <div class="languages learn-challenge-languages">
+                      <a class="active" href="https://programmers.co.kr/learn/challenge_codes/95">
+                          <span class="hw-icons-python3 ">python3</span>
+</a>                </div>
+<!--// ################################################ //-->
+              </div>
+              <div class="editor">
+                <textarea hidden id="code" name="code">def strange_sort(strings, n):
+    &#39;&#39;&#39;strings의 문자열들을 n번째 글자를 기준으로 정렬해서 return하세요&#39;&#39;&#39;
+
+    return []
+
+
+
+# 아래는 테스트로 출력해 보기 위한 코드입니다.
+print( strange_sort([&quot;sun&quot;, &quot;bed&quot;, &quot;car&quot;], 1) )</textarea>
+              </div>
+            </div>
+
+            <div id="tour3" class="output-section">
+              <div class="tab-header">
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a href="#output" class="nav-link active" data-toggle="tab">실행결과</a></li>
+                </ul>
+                <div class="resizer-wrap"><span class="hw-icons-resizer ">resizer</span></div>
+              </div>
+              <div class="console tab-content">
+                <div id="output" class="console-output tab-pane fade in active">실행 결과가 여기에
+                  표시됩니다.
+                </div>
+              </div>
+            </div>
+            <div id="tour4" class="button-block">
+              <div class="left">
+                <a class="btn other-solutions opacity-30" onclick="swal({ title: &quot;문제를 먼저 풀어야 다른 사람의 풀이를 볼 수 있습니다.&quot;, type: &quot;info&quot;, confirmButtonClass: &quot;btn-danger&quot;, confirmButtonText: &quot;확인&quot; }); return false;" href="#">
+                  <span class="hw-icons-check"></span>다른 사람의 풀이
+</a>              </div>
+              <div class="right">
+                <button type="reset" class="btn">초기화</button>
+                <button type="button" class="btn run-code">실행</button>
+                <button type="button" class="btn submit-code">제출</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</div>
+
+</div>
+
+
+<div class="modal fade" id="modal-dialog" tabindex="-1" role="dialog" aria-labelledby="mLabel" aria-hidden="true"></div>
+<script src="/assets/application-f01b05794a8f2a8fffc2d81209d1827c9d2029ff77d0760def5106d8f55655cc.js"></script>
+
+  <script src="//widget.cloudinary.com/global/all.js" type="text/javascript">
+      cloudinary.setCloudName('eightcruz');
+  </script>
+
+  <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+      Rollbar.configure({
+          payload: {
+              
+          }
+      });
+  </script>
+
+      <script type="text/javascript">
+      $(function () {
+        try {
+          Kakao.init('2f4ef849994a57e95a91e4468702a486');
+        } catch (e) {
+          Rollbar.error(e);
+        }
+      });
+
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: '339079816467879',
+          cookie: true,
+          xfbml: true,
+          version: 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+          return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+
+<noscript>
+  이 사이트의 기능을 모두 활용하기 위해서는 자바스크립트를 활성화할 필요가 있습니다.
+  <a href="http://www.enable-javascript.com/ko/" target="_blank">
+    브라우저에서 자바스크립트를 활성화하는 방법</a>을 참고하세요.
+</noscript>
+</body>
+</html>
+
+
+
+
