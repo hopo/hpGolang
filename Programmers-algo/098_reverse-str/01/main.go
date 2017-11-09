@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	ex := reverseStr("Zbcdefg")
+	ex := reverseStr("Zbcdefg") // "gfedcbZ"
 	fmt.Println(ex)
 }
 
