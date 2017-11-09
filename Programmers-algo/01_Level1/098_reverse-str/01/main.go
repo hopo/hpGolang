@@ -5,11 +5,22 @@ import (
 )
 
 func main() {
-	ex := reverseStr("Zbcdefg") // "gfedcbZ"
-	fmt.Println(ex)
+	ex1 := reverseStr("Zbcdefg")     // "gfedcbZ"
+	ex2 := reverseStr("deSadFklJfg") // "lkgfeddaSJF"
+	fmt.Println(ex1)
+	fmt.Println(ex2)
 }
 
-func reverseStr(s string) (ret string)
+func reverseStr(s string) (ret string) {
+	for i := 0; i < 200; i++ {
+		for _, v := range s {
+			if i == int(v) {
+				ret = string(v) + ret
+			}
+		}
+	}
+	return
+}
 
 /*
 // https://programmers.co.kr/learn/challenge_codes/98
