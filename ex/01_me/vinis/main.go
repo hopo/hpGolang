@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"spila"
+	"github.com/hopo/hpkg"
 )
 
 func main() {
 	is := []int{2, 2, 2, 6, 4}
-	ex := spila.Vinis(0, is)
+	ex := hpkg.Vinis(6, is)
 	if ex != nil {
 		for _, v := range ex {
 			fmt.Println(is[v])
