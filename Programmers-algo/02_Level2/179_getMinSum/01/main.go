@@ -6,30 +6,28 @@ import (
 
 func main() {
 	ex1 := getMinMax([]int{1, 2}, []int{3, 4}) // 10
+	ex2 := getMinMax([]int{4, 2}, []int{3, 9}) // 30
+	ex3 := getMinMax([]int{2, 3}, []int{5, 7}) // 29
 	fmt.Println(ex1)
+	fmt.Println(ex2)
+	fmt.Println(ex3)
 
 }
 
-func getMinMax(a, b []int) int
+func getMinMax(a, b []int) int {
+	var data []int
+	for _, v := range a {
+		for _, w := range b {
+			data = append(data, v*w)
+		}
+	}
 
-/*
-// https://programmers.co.kr/learn/challenge_codes/179
-
-#include<iostream>
-#include<vector>
-using namespace std;
-
-int getMinSum(vector<int> A, vector<int> B)
-{
-	int answer = 0;
-
-	return answer;
+	l := len(data)
+	min := data[0] + data[l-1]
+	for i := 0; i < l/2; i++ {
+		if min > data[i]+data[l-1-i] {
+			min = data[i] + data[l-1-i]
+		}
+	}
+	return min
 }
-int main()
-{
-	vector<int> tA{1,2}, tB{3,4};
-
-	//아래는 테스트 출력을 위한 코드입니다.
-	cout<<getMinSum(tA,tB);
-}
-*/
