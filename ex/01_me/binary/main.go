@@ -4,44 +4,36 @@ import (
 	"fmt"
 )
 
+type Data struct {
+	char    string
+	natural int
+	binary  string
+}
+
 func main() {
-	binary(60, 120)
+	dt := makeData(32, 128)
+	dtPrnt(dt)
 }
 
 // differ between for and for
-func binary(a, b int) {
-	var ssl []string
-	for i := a; i < b; i++ {
-		s := fmt.Sprintf("%08b", i)
-		ssl = append(ssl, s)
+func makeData(a, b int) []Data {
+	l := b - a
+	dt := make([]Data, l)
+	for i := 0; i < l; i++ {
+		dt[i] = Data{
+			char:    string(i + a),
+			natural: i + a,
+			binary:  fmt.Sprintf("%08b", i+a),
+		}
 	}
-	for i, v := range ssl {
-		if i%16 == 0 {
+	return dt
+}
+
+func dtPrnt(dt []Data) {
+	for i, _ := range dt {
+		if dt[i].natural%8 == 0 {
 			fmt.Println("")
 		}
-		r := bPrnt(v)
-		fmt.Println(r, ":", i, " : ", btosConv(i))
+		fmt.Printf("<%v>\t%v,\t%v\n", dt[i].char, dt[i].natural, dt[i].binary)
 	}
-
-}
-
-func bPrnt(s string) string {
-	if len(s) != 8 {
-		return "*** error : input string  is not 8 length"
-	}
-	bss := []byte(s)
-	var a, b string
-	for i, v := range bss {
-		switch {
-		case i < 4:
-			a += string(v)
-		case i > 3:
-			b += string(v)
-		}
-	}
-	return a + " " + b
-}
-
-func btosConv(n int) string {
-	return string(n)
 }
