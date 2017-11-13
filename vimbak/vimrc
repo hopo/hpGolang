@@ -1,6 +1,6 @@
-" ************************
+" ************
 " 	hp vimrc			 
-" ************************
+" ************
 
 
 " *** Pathogen
@@ -34,13 +34,15 @@ set ts=4	"Tab 4
 " *** Key mapping
 let mapleader = ","
 
+noremap ` <ESC>
+noremap \` `
 noremap <leader>n :cnext<CR>
 noremap <leader>m :cprevious<CR>
 noremap <leader>c :cclose<CR>
-noremap <C-k> :wincmd k<CR>
-noremap <C-l> :wincmd l<CR>
-noremap <C-h> :wincmd h<CR>
-noremap <C-j> :wincmd j<CR>
+noremap zk :wincmd k<CR>
+noremap zl :wincmd l<CR>
+noremap zh :wincmd h<CR>
+noremap zj :wincmd j<CR>
 noremap z\ :NERDTreeToggle<CR>
 noremap z] :TagbarToggle<CR>
 noremap zu :up<CR>
@@ -48,21 +50,26 @@ noremap zu :up<CR>
 noremap te :tabedit 
 noremap tn :tabnext<CR>
 
-inoremap ]\ <right>
-inoremap ]\\ <right><right>
-inoremap () ()
-inoremap [] []
-inoremap {} {}
+inoremap ` <ESC>
+inoremap \` `
+"inoremap ]\ <right>
+"inoremap ]\\ <right><right>
+"inoremap () ()
+"inoremap [] []
+"inoremap {} {}
 inoremap <. <><left>
 inoremap </ </><left>
-inoremap ` ``<left>
-inoremap " ""<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
+"inoremap ` ``<left>
+"inoremap " ""<left>
+"inoremap ( ()<left>
+"inoremap [ []<left>
+"inoremap { {}<left>
 inoremap (<CR> (<CR>)<ESC>O<tab>
 inoremap {<CR> {<CR>}<ESC>O<tab>
-inoremap `<CR> `<CR>`<ESC>O
+inoremap \`<CR> `<CR>`<ESC>O
+
+cnoremap ` <ESC>
+cnoremap \` `
 
 
 " *** python keymapping

@@ -4,6 +4,7 @@ src/
 
 .DS_Store
 *.swp
+*.swo
 *.pyc
 
 c_test.out
