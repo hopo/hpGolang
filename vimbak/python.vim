@@ -1,5 +1,3 @@
-noremap <leader>p :!python3 %
-
 " Vim syntax file
 " Language:     Python
 " Maintainer:   Dmitry Vasiliev <dima at hlabs dot org>
