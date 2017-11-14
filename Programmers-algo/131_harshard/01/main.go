@@ -5,11 +5,53 @@ import (
 )
 
 func main() {
-	ex1 := harshad(18) // true, 1+8=9, 18%9 == 0
-	ex2 := harshad(13) // false, 1+3=4, 13%4 == 1
+	ex1 := harshad(18)  // true, 1+8=9, 18%9 == 0
+	ex2 := harshad(13)  // false, 1+3=4, 13%4 == 1
+	ex3 := harshad(342) // true, , 3+4+2=9 342%9 == 0
+	fmt.Println(ex1)
+	fmt.Println(ex2)
+	fmt.Println(ex3)
 }
 
-func harshad(n int) bool
+func harshad(n int) bool {
+	sample := split_int(n)
+	sum := sum(sample)
+	if n%sum == 0 {
+		return true
+	}
+	return false
+}
+
+func split_int(num int) []int {
+	numlen := 10
+	for {
+		if num-numlen < 0 {
+			numlen /= 10
+			break
+		}
+		numlen *= 10
+	}
+	var ea int
+	var ret []int
+	for {
+		ea = num / numlen
+		ret = append(ret, ea)
+		num %= numlen
+		numlen /= 10
+		if numlen < 1 {
+			break
+		}
+	}
+	return ret
+}
+
+func sum(isl []int) int {
+	var ret int
+	for _, v := range isl {
+		ret += v
+	}
+	return ret
+}
 
 /*
 # https://programmers.co.kr/learn/challenge_codes/131
