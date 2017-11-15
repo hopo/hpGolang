@@ -7,10 +7,23 @@ import (
 func main() {
 	ex := toWeirdCase("try hello world") // "TrY HeLlO WoRlD"
 	fmt.Println(ex)
-
 }
 
 func toWeirdCase(s string) string {
+	smpl := []byte(s)
+	var ind []int
+	for i, _ := range smpl {
+		if smpl[i] == 32 {
+			ind = append(ind, i)
+		}
+	}
+	var x, y, z []byte
+	fmt.Println(smpl)
+	fmt.Println(ind)
+	x = smpl[:3]
+	y = smpl[3:9]
+	z = smpl[9:]
+	fmt.Println(x, y, z)
 	return ""
 }
 
