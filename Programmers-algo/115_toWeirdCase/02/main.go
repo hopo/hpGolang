@@ -5,10 +5,10 @@ import (
 )
 
 func main() {
-	ex1 := toWeirdCase("try hello world")               // "TrY HeLlO WoRlD"
-	ex2 := toWeirdCase("coding is thinking not typing") // "CoDiNg Is ThInKiNg NoT TyPiNg"
+	ex1 := toWeirdCase("try hello world") // "TrY HeLlO WoRlD"
+	//ex2 := toWeirdCase("coding is thinking not typing") // "CoDiNg Is ThInKiNg NoT TyPiNg"
 	fmt.Println(ex1)
-	fmt.Println(ex2)
+	//fmt.Println(ex2)
 }
 
 func toWeirdCase(s string) string {
@@ -32,28 +32,19 @@ func toWeirdCase(s string) string {
 }
 
 func split_by_blank(s string) [][]byte {
-	smpl := []byte(s)
-	var ind []int
-	for i, _ := range smpl {
-		if smpl[i] == 32 {
-			ind = append(ind, i)
-		}
-	}
-
+	sample := []byte(s)
 	var ret [][]byte
 	var box []byte
-	a, b := 0, ind[0]
-	box = smpl[:b]
-	ret = append(ret, box)
-	for i := 0; i < len(ind); i++ {
-		if i == len(ind)-1 {
-			box = smpl[b+1:]
+	for i, v := range sample {
+		if v == 32 {
 			ret = append(ret, box)
-			break
+			box = []byte{}
+		} else {
+			box = append(box, v)
 		}
-		a, b = ind[i], ind[i+1]
-		box = smpl[a+1 : b]
-		ret = append(ret, box)
+		if i == len(sample)-1 {
+			ret = append(ret, box)
+		}
 	}
 	return ret
 }
