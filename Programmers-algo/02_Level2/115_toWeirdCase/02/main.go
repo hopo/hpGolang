@@ -16,7 +16,7 @@ func toWeirdCase(s string) string {
 	for _, v := range slsl {
 		for i, _ := range v {
 			if i%2 == 0 {
-				v[i] = minus_32(v[i])
+				v[i] = minus_32(v[i]) // lower -> upper convert
 			}
 		}
 	}
