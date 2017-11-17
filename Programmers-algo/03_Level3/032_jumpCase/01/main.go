@@ -5,12 +5,51 @@ import (
 )
 
 func main() {
-	ex1 := jumpCase(4) // 5
-	fmt.Println(ex1)
+	//ex1 := jumpCase(4) // 5
+	ex2 := jumpCase(2)
+	//fmt.Println(ex1)
+	fmt.Println(ex2)
 }
 
 func jumpCase(n int) int {
-	return 5
+	fmt.Println("n:", n)
+	dduim(n)
+	fmt.Println("fibo:", fibo(n))
+	return -1
+}
+
+func dduim(n int) {
+	var isl []int
+	var x int
+	m := n
+	for {
+		isl = append(isl, 1)
+		x = m - 1
+		m = x
+		if x == 0 {
+			break
+		}
+	}
+	fmt.Println("isl(1):", isl)
+	isl = []int{}
+	m, x = n, 0
+	for {
+		isl = append(isl, 2)
+		x = n - 2
+		n = x
+		if x == 0 {
+			break
+		}
+	}
+	fmt.Println("isl(2):", isl)
+}
+
+func fibo(n int) int {
+	a, b := 0, 1
+	for i := 0; i < n; i++ {
+		a, b = b, a+b
+	}
+	return b
 }
 
 /*
