@@ -6,7 +6,7 @@ import (
 
 func main() {
 	//ex1 := jumpCase(4) // 5
-	ex2 := jumpCase(7)
+	ex2 := jumpCase(5)
 	//fmt.Println(ex1)
 	fmt.Println(ex2)
 }
@@ -14,26 +14,23 @@ func main() {
 func jumpCase(n int) int {
 	fmt.Println("n:", n)
 	fmt.Println("fibo:", fibo(n))
-	dduim1(n)
-	dduim2(n)
+
+	dd := dduim(n)
+	fmt.Println(dd)
+
+	var slsl [][]int
+	for _, v := range dd {
+		if v == 2 {
+			dd = br2(dd)
+			slsl = append(slsl, dd)
+		}
+	}
+
+	fmt.Println(slsl)
 	return -1
 }
 
-func dduim1(n int) {
-	var isl []int
-	var x int
-	for {
-		isl = append(isl, 1)
-		x = n - 1
-		n = x
-		if x == 0 {
-			break
-		}
-	}
-	fmt.Println("dduim1:", isl)
-}
-
-func dduim2(n int) {
+func dduim(n int) []int {
 	var isl []int
 	var x int
 	for {
@@ -48,7 +45,21 @@ func dduim2(n int) {
 			break
 		}
 	}
-	fmt.Println("dduim2:", isl)
+	return isl
+}
+
+func br2(isl []int) []int {
+	var ret []int
+	for i, _ := range isl {
+		j := len(isl) - 1 - i
+		if isl[j] == 2 {
+			ret = append(ret, isl[:j]...)
+			ret = append(ret, []int{1, 1}...)
+			ret = append(ret, isl[j+1:]...)
+			break
+		}
+	}
+	return ret
 }
 
 func fibo(n int) int {
