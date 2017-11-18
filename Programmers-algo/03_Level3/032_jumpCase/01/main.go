@@ -6,33 +6,36 @@ import (
 
 func main() {
 	//ex1 := jumpCase(4) // 5
-	ex2 := jumpCase(2)
+	ex2 := jumpCase(7)
 	//fmt.Println(ex1)
 	fmt.Println(ex2)
 }
 
 func jumpCase(n int) int {
 	fmt.Println("n:", n)
-	dduim(n)
 	fmt.Println("fibo:", fibo(n))
+	dduim1(n)
+	dduim2(n)
 	return -1
 }
 
-func dduim(n int) {
+func dduim1(n int) {
 	var isl []int
 	var x int
-	m := n
 	for {
 		isl = append(isl, 1)
-		x = m - 1
-		m = x
+		x = n - 1
+		n = x
 		if x == 0 {
 			break
 		}
 	}
-	fmt.Println("isl(1):", isl)
-	isl = []int{}
-	m, x = n, 0
+	fmt.Println("dduim1:", isl)
+}
+
+func dduim2(n int) {
+	var isl []int
+	var x int
 	for {
 		isl = append(isl, 2)
 		x = n - 2
@@ -40,8 +43,12 @@ func dduim(n int) {
 		if x == 0 {
 			break
 		}
+		if x == 1 {
+			isl = append(isl, 1)
+			break
+		}
 	}
-	fmt.Println("isl(2):", isl)
+	fmt.Println("dduim2:", isl)
 }
 
 func fibo(n int) int {
