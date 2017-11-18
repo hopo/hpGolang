@@ -1,5 +1,3 @@
-// *** api lab
-
 package main
 
 import (
@@ -7,10 +5,36 @@ import (
 )
 
 func main() {
-	fmt.Println(binary_convert(78)) // 1001110
+	ex1 := nextBigNumber(78) // 83
+	ex2 := nextBigNumber(47) // 55
+	fmt.Println(ex1)
+	fmt.Println(ex2)
 }
 
-// input int n, convert (type string)binary
+func nextBigNumber(n int) int {
+	ns := binary_convert(n)
+	one := ea_one(ns)
+	for i := n + 1; ; i++ {
+		s := binary_convert(i)
+		o := ea_one(s)
+		if one == o {
+			return i
+		}
+	}
+	return -1
+}
+
+func ea_one(s string) int {
+	var ret int
+	bsl := []byte(s)
+	for _, v := range bsl {
+		if v == 49 {
+			ret++
+		}
+	}
+	return ret
+}
+
 func binary_convert(n int) string {
 	//fmt.Println("n int:", n) // checker
 	//fmt.Printf("%b\n", n) // checker
