@@ -5,11 +5,13 @@ import (
 )
 
 func main() {
-	ex1 := noOvertime()
+	ex1 := noOvertime(4, []int{4, 3, 3}) // 12
 	fmt.Println(ex1)
 }
 
-func noOvertime()
+func noOvertime(n int, works []int) int {
+	return -1
+}
 
 /*
 # https://programmers.co.kr/learn/challenge_codes/26
