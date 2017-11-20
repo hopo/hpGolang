@@ -8,7 +8,29 @@ import (
 
 func main() {
 	//fmt.Println(binary_convert(78)) // 1001110
-	make_vari([]int{0, 1, 2})
+	make_vari([]string{"a", "b"})
+}
+
+// variety
+func make_vari(ssl []string) {
+	vari2 := variety2(ssl)
+	fmt.Println(vari2)
+}
+
+func variety2(ssl []string) []string {
+	var s string
+	var ret []string
+	for _, v := range ssl {
+		s += v
+	}
+	ret = append(ret, s)
+	s = ""
+	ssl[0], ssl[1] = ssl[1], ssl[0]
+	for _, v := range ssl {
+		s += v
+	}
+	ret = append(ret, s)
+	return ret
 }
 
 // input int n, convert (type string)binary
@@ -40,12 +62,4 @@ func binary_convert(n int) string {
 		r += string(v + 48) // int make string
 	}
 	return r
-}
-
-// variety
-func make_vari(isl []int) {
-	fmt.Println("isl:", isl)
-	for i, _ := range isl {
-		fmt.Println(isl[i])
-	}
 }
