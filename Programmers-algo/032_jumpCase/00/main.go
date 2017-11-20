@@ -18,9 +18,13 @@ func jumpCase(n int) int {
 		ssl = append(ssl, string(v+48))
 	}
 	vri := make_vari_sli(ssl)
-	fmt.Println(vri)
+	fmt.Println("vri:", vri)
 
-	return -1
+	rmvd := remove_samething(vri)
+	var ret []string
+	ret = append(ret, rmvd...)
+
+	return len(ret)
 }
 
 func big_dduim(n int) []int {
@@ -69,6 +73,14 @@ func make_vari_sli(ssl []string) []string {
 
 		box = append(box, fix) // init: fix, box
 	}
+
+	return ret
+}
+
+func remove_samething(ssl []string) []string {
+	var ret []string
+
+	fmt.Println("rmvd ret:", ret)
 
 	return ret
 }
