@@ -8,13 +8,47 @@ import (
 
 func main() {
 	//fmt.Println(binary_convert(78)) // 1001110
-	make_vari([]string{"a", "b"})
+	make_vari([]string{"0", "1", "2"})
 }
 
 // variety
 func make_vari(ssl []string) {
-	vari2 := variety2(ssl)
-	fmt.Println(vari2)
+	vari3 := variety3(ssl)
+	fmt.Println(vari3)
+}
+
+func variety3(ssl []string) []string {
+	var fix string
+	var ret, box []string
+	box = append(box, ssl...)
+	lnth := len(box)
+	for i := 0; i < lnth; i++ {
+		fix = box[i]
+		box[i] = ""
+		var send []string
+		for _, v := range box {
+			if v != "" {
+				send = append(send, v)
+			}
+		}
+
+		vr2 := variety2(send)
+		var s string
+		var rcv []string
+		for _, v := range vr2 {
+			s += v
+			rcv = append(rcv, s)
+			s = ""
+		}
+
+		for _, v := range rcv {
+			s = fix + v
+			ret = append(ret, s)
+			s = ""
+		}
+		box[i] = fix
+	}
+	return ret
 }
 
 func variety2(ssl []string) []string {
