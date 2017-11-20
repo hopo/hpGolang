@@ -8,13 +8,17 @@ import (
 
 func main() {
 	//fmt.Println(binary_convert(78)) // 1001110
-	make_vari([]string{"a", "b", "c"})
+	make_vari([]string{"a", "b", "c", "d"})
 }
 
 // variety
 func make_vari(ssl []string) {
-	vari3 := variety3(ssl)
-	fmt.Println(vari3)
+	vr4 := variety4(ssl)
+	fmt.Println(vr4)
+}
+
+func variety4(ssl []string) []string {
+	return nil
 }
 
 func variety3(ssl []string) []string {
