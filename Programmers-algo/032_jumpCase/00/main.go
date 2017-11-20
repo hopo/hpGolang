@@ -13,7 +13,12 @@ func jumpCase(n int) int {
 	fmt.Println("n:", n)
 
 	isl := big_dduim(n)
-	fmt.Println("isl:", isl)
+	var ssl []string
+	for _, v := range isl {
+		ssl = append(ssl, string(v+48))
+	}
+	vri := make_vari_sli(ssl)
+	fmt.Println(vri)
 
 	return -1
 }
@@ -35,4 +40,35 @@ func big_dduim(n int) []int {
 		}
 	}
 	return isl
+}
+
+// slice variable variety maker
+func make_vari_sli(ssl []string) []string {
+	var fix string
+	var ret, box []string
+	box = ssl
+	lnth := len(ssl)
+	if lnth == 1 {
+		return ssl
+	}
+
+	for i := 0; i < lnth; i++ {
+		fix, box = box[0], box[1:] // set fix, box
+
+		var send []string
+		send = make([]string, len(box))
+		copy(send, box)
+		vri := make_vari_sli(send)
+
+		var rcv string
+		for _, v := range vri {
+			rcv = fix + v
+			ret = append(ret, rcv)
+			rcv = ""
+		}
+
+		box = append(box, fix) // init: fix, box
+	}
+
+	return ret
 }
