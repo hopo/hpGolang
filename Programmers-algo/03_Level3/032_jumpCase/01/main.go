@@ -12,11 +12,9 @@ func main() {
 }
 
 func jumpCase(n int) int {
-
-	dd := dduim(n)             // dduim make *ex: [2 2 1]
-	sdd := [][]int{dd}         // data for two_breaker()
-	vrdd_i := two_breaker(sdd) // dd two breaker variety dduim slice
-
+	dd := dduim(n)                 // dduim make *ex: [2 2 1]
+	sdd := [][]int{dd}             // data for two_breaker()
+	vrdd_i := two_breaker(sdd)     // dd two breaker variety dduim slice
 	vrdd_s := isl_conv_ssl(vrdd_i) // data conv for make_vari_sli()
 
 	var ret int
