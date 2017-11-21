@@ -5,29 +5,32 @@ import (
 )
 
 func main() {
-	ex1 := jumpCase(5) // 5
+	ex1 := jumpCase(4) // 5
+	ex2 := jumpCase(7) // 21
 	fmt.Println(ex1)
+	fmt.Println(ex2)
 }
 
 func jumpCase(n int) int {
-	fmt.Println("n:", n)
+	//	fmt.Println("n:", n)
 
 	dd := dduim(n) // dduim make, [2 2 1]
-	fmt.Println("dd:", dd)
+	//	fmt.Println("dd:", dd)
 	sdd := [][]int{dd}         // data for two_breaker()
 	vrdd_i := two_breaker(sdd) // dd two breaker variety dduim slice
-	fmt.Println("vrdd_i", vrdd_i)
+	//	fmt.Println("vrdd_i", vrdd_i)
 
 	vrdd_s := isl_conv_ssl(vrdd_i) // data conv for make_vari_sli()
-	fmt.Printf("vrdd_s: %T, %v\n", vrdd_s, vrdd_s)
 
-	vri := make_vari_sli(vrdd_s[0])
-	fmt.Println("vri:", vri)
-
-	rmvd := remove_samevalue(vri)
-	fmt.Println("rmvd:", rmvd)
-
-	return -1
+	var ret int
+	for i, _ := range vrdd_s {
+		x := make_vari_sli(vrdd_s[i])
+		if i != len(vrdd_s) {
+			x = remove_samevalue(x)
+		}
+		ret += len(x)
+	}
+	return ret
 }
 
 func dduim(n int) []int {
