@@ -38,55 +38,28 @@ func make_vari_sli(ssl []string) []string {
 
 		box = append(box, fix) // init: fix, box
 	}
-
 	return ret
 }
 
-/*
-func variety2(ssl []string) []string {
-	var s string
-	var ret []string
-	for _, v := range ssl {
-		s += v
-	}
-	ret = append(ret, s)
-	s = ""
-	ssl[0], ssl[1] = ssl[1], ssl[0]
-	for _, v := range ssl {
-		s += v
-	}
-	ret = append(ret, s)
-	return ret
-}
-*/
-
-/*
-func variety3(ssl []string) []string {
-	var fix string
-	var ret, box []string
-	lnth := len(ssl)
-	//	box = make([]string, lnth)
-	//	copy(box, ssl)
+// remove same value in ssl
+func remove_samevalue(ssl []string) []string {
+	var box, ret []string
 	box = ssl
-
+	lnth := len(box)
+	var tag string
 	for i := 0; i < lnth; i++ {
-		fix, box = box[0], box[1:] // set: fix, box
-
-		var send []string
-		send = make([]string, len(box))
-		copy(send, box)
-		vr2 := variety2(send)
-
-		var rcv string
-		for _, v := range vr2 {
-			rcv = fix + v
-			ret = append(ret, rcv)
-			rcv = ""
+		tag = box[i] // set
+		for j := i; j < lnth; j++ {
+			if i != j && tag == box[j] {
+				box[i] = ""
+				break
+			}
 		}
-
-		box = append(box, fix) // init: fix, box
 	}
-
+	for _, v := range box {
+		if v != "" {
+			ret = append(ret, v)
+		}
+	}
 	return ret
 }
-*/
