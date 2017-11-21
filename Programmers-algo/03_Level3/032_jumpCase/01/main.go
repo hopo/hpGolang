@@ -12,13 +12,10 @@ func main() {
 }
 
 func jumpCase(n int) int {
-	//	fmt.Println("n:", n)
 
-	dd := dduim(n) // dduim make, [2 2 1]
-	//	fmt.Println("dd:", dd)
+	dd := dduim(n)             // dduim make *ex: [2 2 1]
 	sdd := [][]int{dd}         // data for two_breaker()
 	vrdd_i := two_breaker(sdd) // dd two breaker variety dduim slice
-	//	fmt.Println("vrdd_i", vrdd_i)
 
 	vrdd_s := isl_conv_ssl(vrdd_i) // data conv for make_vari_sli()
 
@@ -83,7 +80,6 @@ func isl_conv_ssl(islsl [][]int) [][]string {
 	return ret
 }
 
-// slice variable variety maker
 func make_vari_sli(ssl []string) []string {
 	var fix string
 	var ret, box []string
@@ -114,7 +110,6 @@ func make_vari_sli(ssl []string) []string {
 	return ret
 }
 
-// remove same value in ssl
 func remove_samevalue(ssl []string) []string {
 	var box, ret []string
 	box = ssl

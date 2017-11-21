@@ -7,8 +7,11 @@ import (
 )
 
 func main() {
-	ex := make_vari_sli([]string{"x", "y", "z"})
+	ex := make_vari_sli([]string{"x", "y", "x"})
 	fmt.Println(ex)
+
+	ex2 := remove_samevalue(ex)
+	fmt.Print(ex2)
 }
 
 // slice variable variety maker
