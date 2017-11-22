@@ -5,8 +5,18 @@ import (
 )
 
 func main() {
-	ex1 := bestSet(3, 13) // [4 4 5]
-	fmt.Println(ex1)
+	//	ex1 := bestSet(3, 13) // [4 4 5]
+	ex2 := bestSet(2, 11)
+	//	fmt.Println(ex1)
+	fmt.Println("Answer:", ex2)
+}
+
+func proof(n, s int) {
+	box := make([]int, n)
+	hs := (s + 1) / 2 // s is int odd
+
+	box[0], box[1] = s-hs, hs
+	fmt.Println(box)
 }
 
 func bestSet(n, s int) []int {
@@ -26,8 +36,4 @@ func bestSet(n, s int) []int {
 	}
 
 	return ret
-}
-
-func proof(n, s int) {
-
 }
