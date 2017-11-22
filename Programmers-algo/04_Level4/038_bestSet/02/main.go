@@ -6,16 +6,24 @@ import (
 
 func main() {
 	//	ex1 := bestSet(3, 13) // [4 4 5]
-	ex2 := bestSet(2, 11)
+	ex2 := bestSet(3, 11)
 	//	fmt.Println(ex1)
 	fmt.Println("Answer:", ex2)
 }
 
 func proof(n, s int) {
 	box := make([]int, n)
-	hs := (s + 1) / 2 // s is int odd
+	// hs := (s + 1) / 2 // s is int odd
 
-	box[0], box[1] = s-hs, hs
+	var x int
+	x = 6
+	var xx []int
+	for i, _ := range box {
+		xx = []int{s - (x * i), x / 2, x / 2}
+		box[i] = xx[i]
+		fmt.Println(box)
+	}
+
 	fmt.Println(box)
 }
 
