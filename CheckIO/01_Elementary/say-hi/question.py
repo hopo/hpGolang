@@ -1,4 +1,4 @@
-# https://py.checkio.org/mission/say-history/solve/
+# https://py.checkio.org/mission/say-history/
 
 """
 In this mission you should write a function that introduce a person with a given parameters in attributes.
