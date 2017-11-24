@@ -10,7 +10,42 @@ func main() {
 }
 
 func expressions(num int) interface{} {
-	return num
+	var j, chkj int
+	var box []int
+	var ret [][]int
+	for i := 0; i < num; i++ {
+		j = num - i
+		chkj += j
+		box = append(box, j)
+		if chkj == num {
+			ret = append(ret, box)
+			box = []int{}
+			chkj = 0
+		}
+		if chkj > num {
+			box = []int{}
+			chkj = 0
+		}
+	}
+
+	var ret2 [][]int
+	var box2 []int
+	var chki int
+	for i := 1; i < num+1; i++ {
+		chki += i
+		box2 = append(box2, i)
+		if chki == num {
+			ret2 = append(ret2, box2)
+			box2 = []int{}
+			chki = 0
+		}
+		if chki > num {
+			box2 = []int{}
+			chki = 0
+		}
+	}
+	fmt.Println(ret, ret2)
+	return false
 }
 
 /*
