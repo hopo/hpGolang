@@ -16,5 +16,7 @@ def checkio(str_number, radix):
     return sum(il)
 
 if __name__ == '__main__':
-    ex = checkio("AF", 16)
-    print(ex)
+    ex1 = checkio("AF", 16) # 175
+    print(ex1)
+    ex2 = checkio("101", 5) # 26
+    print(ex2)

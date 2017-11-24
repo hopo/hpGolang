@@ -1,4 +1,10 @@
-// https://py.checkio.org/mission/easy-unpack/
+# https://py.checkio.org/mission/easy-unpack/
+
+"""
+Your mission here is to create a function that gets an tuple and returns a tuple with 3 elements - first, third and second to the last for the given tuple
+Input: A tuple, at least 3 elements long.
+Output: A tuple.
+"""
 
 def easy_unpack(elements):
     """

@@ -15,8 +15,9 @@ def find_message(text):
     return ret
 
 if __name__ == '__main__':
-    #These "asserts" using only for self-checking and not necessary for auto-testing
-    r = find_message("How are you? Eh, ok. Low or Lower? Ohhh.")
-    print(r)
-    #assert find_message("hello world!") == "", "Nothing"
-    #assert find_message("HELLO WORLD!!!") == "HELLOWORLD", "Capitals"
+    ex1 = find_message("How are you? Eh, ok. Low or Lower? Ohhh.")
+    print(ex1)
+    ex2 = find_message("hello world!") # "", "Nothing"
+    print(ex2)
+    ex3 = find_message("HELLO WORLD!!!") # "HELLOWORLD", "Capitals"
+    print(ex3)

@@ -15,5 +15,7 @@ def checkio(numbers_array):
     return arr
 
 if __name__ == '__main__' :
-   a = checkio((1,2,3,0))
-   print(a)
+   ex1 = checkio((1,2,3,0)) # [0, 1, 2, 3]
+   print(ex1)
+   ex2 = checkio((-20, -5, 10, 15)) # [-5, 10, 15, -20]
+   print(ex2)

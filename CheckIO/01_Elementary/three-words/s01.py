@@ -11,6 +11,6 @@ def checkio(words):
     return False
 
 if __name__ == '__main__':
-    a = checkio("Hello 1  World hello")
-    print(a)
+    ex1 = checkio("Hello 1  World hello")
+    print(ex1)
     
