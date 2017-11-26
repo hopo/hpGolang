@@ -18,8 +18,9 @@ func jumpCase(n int) int {
 	vrdd_s := isl_conv_ssl(vrdd_i) // data conv for make_vari_sli()
 
 	var ret int
+	var x []string
 	for i, _ := range vrdd_s {
-		x := make_vari_sli(vrdd_s[i])
+		x = make_vari_sli(vrdd_s[i])
 		if i != len(vrdd_s) {
 			x = remove_samevalue(x)
 		}
