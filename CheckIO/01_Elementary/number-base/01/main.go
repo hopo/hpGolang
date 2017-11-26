@@ -12,7 +12,35 @@ func main() {
 }
 
 func number_base(s string, n int) int {
-	return -1
+	bsl := []byte(s)
+	var isl []int
+	for _, v := range bsl {
+		if 64 < v && v < 91 {
+			isl = append(isl, int(v-55))
+		}
+		if 47 < v && v < 59 {
+			isl = append(isl, int(v-48))
+		}
+	}
+
+	pow := func(n int, p int) int {
+		ret := 1
+		if p == 0 {
+			return ret
+		}
+		for i := 0; i < p; i++ {
+			ret *= n
+		}
+		return ret
+	}
+
+	var j int
+	var ret int
+	for i, _ := range isl {
+		j = len(isl) - 1 - i
+		ret += isl[j] * pow(n, i)
+	}
+	return ret
 }
 
 /*
