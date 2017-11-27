@@ -16,34 +16,30 @@ func main() {
 	fmt.Println(ex2)
 }
 
-func most_frequent(data []string) string {
-	sort.Strings(data)
-	return data[0]
+type Max struct {
+	value string
+	count int
 }
 
-/*
-# https://py.checkio.org/mission/the-most-frequent/
+func most_frequent(data []string) string {
+	sort.Strings(data)
+	var count int
+	chkstr := data[0]
+	m := Max{chkstr, 1}
 
-"""
-You have a sequence of strings, and you’d like to determine the most frequently occurring string in the sequence.
-Input: a list of strings.
-Output: a string.
-"""
+	for _, v := range data {
+		if chkstr == v {
+			count++
+		}
+		if chkstr != v {
+			if m.count < count {
+				m.count = count
+				m.value = chkstr
+			}
+			chkstr = v
+			count = 1
+		}
+	}
 
-def most_frequent(data):
-    """
-        determines the most frequently occurring string in the sequence.
-    """
-    # your code here
-    return None
-
-if __name__ == '__main__':
-    ex1 = most_frequent([
-        'a', 'b', 'c',
-        'a', 'b',
-        'a'
-    ]) # 'a'
-    print(ex1)
-    ex2 = most_frequent(['a', 'a', 'bi', 'bi', 'bi']) # 'bi'
-    print(ex2)
-*/
+	return m.value
+}
