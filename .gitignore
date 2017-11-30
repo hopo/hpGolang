@@ -8,3 +8,4 @@ src/
 *.pyc
 
 c_test.out
+cTest.out
