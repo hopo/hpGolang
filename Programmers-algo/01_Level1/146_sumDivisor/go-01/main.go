@@ -13,7 +13,7 @@ func main() {
 }
 
 func sumDivisor(i int) (ret int) {
-	d := hpkg.Denom(i)
-	ret = hpkg.SumIsl(d)
+	d := hpkg.Denominator(i)
+	ret = hpkg.Sum_isl(d)
 	return
 }
