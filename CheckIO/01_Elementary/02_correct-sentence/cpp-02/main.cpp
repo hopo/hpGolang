@@ -1,29 +1,17 @@
 #include <iostream>
 #include <string>
+#include <cstring>
 
 using namespace std;
 
 string correct_sentence(char* text) {
+	string s = text; // convert c-string to string
+	size_t l = strlen(text); 
+
 	// text[0] change upper case.
-	char t = text[0];
-	if (t > 96 && t < 123) { /* islower(t) */
-		text[0] = char(t-32);
-	}
-	if (t > 64 && t < 91) { /* isupper(t) */
-	}
-
-	// end char[] is '.'?
-	int l;
-	for (l = 0; ;l++) {
-		if (text[l] == 0 ) {
-			break;
-		}
-	} /* cstring::strlen */
-
-	string s = text;
-	if (s[l-1] != '.') {
-		s.insert(s.end(), '.');
-	}
+	if (islower(s[0])) { s[0] = char(s[0]-32); }
+	// text end "."? 
+	if (s[l-1] != '.') { s.insert(s.end(), '.'); }
 
 	return s;
 }
