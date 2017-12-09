@@ -1,13 +1,13 @@
 // https://programmers.co.kr/learn/challenge_codes/148
 
+//...ing
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
 vector<vector<int>> sumMatrix(vector<vector<int>>A, vector<vector<int>>B) {
-	vector<vector<int>> answer;
-	answer = A;
+	vector<vector<int>> answer = {{0, 0}, {0, 0}};
 	size_t st = A.size();
 
 	for (int i = 0; i < st; i++) {

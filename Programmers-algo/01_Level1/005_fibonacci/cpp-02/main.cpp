@@ -14,7 +14,6 @@ vector<int> fibonacci(int n) {
 	for (int i = 0; i < n-1 ; i++) {
 		a = b;
 		b = c;
-		if (b > n) { break; }
 		ctnr.push_back(b);
 		c = a + b;
 	}
@@ -23,8 +22,9 @@ vector<int> fibonacci(int n) {
 }
 
 int main() {
-	int testCase = 47; // 8
-	cout << fibonacci(testCase).size() << endl;
+	int testCase = 10; // 55
+	vector<int> r = fibonacci(testCase);
+	cout << r[testCase-2] << endl;
 
 	return 0;
 }

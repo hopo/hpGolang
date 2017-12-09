@@ -5,21 +5,20 @@
 using namespace std;
 
 long long fibonacci(int n) {
-	int a, b, c, i;
+	long long a, b, c, i;
 	a = 0;
 	b = 1;
 	c = a + b;
-	for (i = 0; ; i++) {
+	for (i = 0;i < n-1; i++) {
 		a = b;
 		b = c;
-		if (b > n) { break; }
 		c = a + b;
 	}
-	return i;
+	return b;
 }
 
 int main() {
-	int testCase = 47; // 8
+	int testCase = 10; // 55
 	cout <<  fibonacci(testCase) <<  endl;
 
 	return 0;
