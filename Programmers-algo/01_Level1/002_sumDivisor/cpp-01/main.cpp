@@ -1,6 +1,5 @@
 // https://programmers.co.kr/learn/challenge_codes/146
 
-#include <vector>
 #include <iostream>
 
 using namespace std;
@@ -17,10 +16,9 @@ int sumDivisor(int n) {
 
 int main() {
 	int num1 = 10; // 18, [1, 2, 5, 10] 
+	cout << sumDivisor(num1) << endl; 
+
 	int num2 = 12; // 28, [1, 2, 3, 4, 6, 12] 
-	int ex1 = sumDivisor(num1);
-	int ex2 = sumDivisor(num2);
-	cout << ex1 << endl;
-	cout << ex2;
+	cout << sumDivisor(num2) << endl;
 	return 0;
 }

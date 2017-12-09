@@ -1,26 +1,30 @@
 // https://programmers.co.kr/learn/challenge_codes/147
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-long long fibonacci(int n) {
-	int a, b, c, i;
+vector<int> fibonacci(int n) {
+	long long a, b, c;
 	a = 0;
 	b = 1;
 	c = a + b;
-	for (i = 0; ; i++) {
+	vector<int> ctnr;
+	for (int i = 0; i < n-1 ; i++) {
 		a = b;
 		b = c;
 		if (b > n) { break; }
+		ctnr.push_back(b);
 		c = a + b;
 	}
-	return i;
+
+	return ctnr;
 }
 
 int main() {
 	int testCase = 47; // 8
-	cout <<  fibonacci(testCase) <<  endl;
+	cout << fibonacci(testCase).size() << endl;
 
 	return 0;
 }
