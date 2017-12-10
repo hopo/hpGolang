@@ -1,6 +1,5 @@
 // https://programmers.co.kr/learn/challenge_codes/148
 
-//...ing
 #include <iostream>
 #include <vector>
 
