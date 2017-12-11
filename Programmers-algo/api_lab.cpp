@@ -1,35 +1,45 @@
-// *********************
-// *** For cpp api by hp
-// *********************
+// *************************
+// *** For cpp api by hp ***
+// *************************
 
 
 // reference
 #include <iostream>
 #include <vector>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
 
 // method list in here
-void vctrprt();
-vector<int> denom();
-vector<int> fibonacci();
+template <class T> string boxprt(T);
+
+int gcd(int, int);
+int lcm(int, int);
+vector<int> denom(int);
+vector<int> gcdlcm(int, int);
+
+vector<int> fibonacci(int);
 
 
 // *** vctrprt()
-// p : int
-// r : void
+// p : <class T>
+// r : string
 // vector int print like array type
-void vctrprt(vector<int> vctr) {
-	cout << "{";
-	for (int i = 0; i < vctr.size(); i++) { // vector::size()
-		if (i == vctr.size()-1) {
-			cout << vctr[i];
+template <class T>
+string boxprt(T box) {
+	stringstream ss; // sstring::stringstream
+	ss << "[";
+	for (int i = 0; i < box.size(); i++) { 
+		if (i == box.size()-1) {
+			ss << box[i];
 			break;
 		}
-		cout << vctr[i] << ", ";
+		ss << box[i] << " ";
 	}
-	cout << "}" << endl;
+	ss << "]";
+	return ss.str(); // sstring::stringstream::str()
 }
 
 
@@ -46,6 +56,48 @@ vector<int> denom(int d) {
 	}
 	return box;
 }
+
+
+// *** gcd()
+// p : int, int
+// r : int
+// Great Common Denominator a and b
+int gcd(int a, int b) {
+	auto ad = denom(a);	
+	auto bd = denom(b);	
+
+	int max;
+	for (int i = 0; i < ad.size(); i++) {
+		for (int j = 0; j < bd.size(); j++) {
+			if (ad[i] == bd[j]) { max = ad[i]; }
+		}
+	}
+	return max;
+}
+
+
+// lcm()
+// p : int, int
+// r : int
+// Lower Common Multiple a and b
+int lcm(int a, int b) {
+	return a * b / gcd(a, b); // maybe nee edit
+}
+
+
+// gcdlcm()
+// p : int, int
+// r : vector<int>
+// gcdlcm a and b
+vector<int> gcdlcm(int a, int b) {
+	int g = gcd(a, b);
+	int l = lcm(a, b);
+	vector<int> answer = {g, l};
+
+	return answer;
+}
+
+
 
 // *** fibonacci()
 // p : int 
@@ -71,11 +123,7 @@ vector<int> fibonacci(int n) {
 // !
 // main method for check
 int main() {
-	auto d = denom(12);
-	vctrprt(d);
-
-	auto fib = fibonacci(10);
-	vctrprt(fib);
+	cout << boxprt(gcdlcm(3, 12));
 
 	return 0;
 }

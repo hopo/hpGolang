@@ -1,4 +1,3 @@
-//...ing
 //https://programmers.co.kr/learn/challenge_codes/149
 
 #include<vector>
@@ -31,21 +30,39 @@ vector<int> denom(int d) {
 	return box;
 }
 
+// Great Common Denominator a and b
+int gcd(int a, int b) {
+	auto ad = denom(a);	
+	auto bd = denom(b);	
 
-/*
+	int max;
+	for (int i = 0; i < ad.size(); i++) {
+		for (int j = 0; j < bd.size(); j++) {
+			if (ad[i] == bd[j]) { max = ad[i]; }
+		}
+	}
+	return max;
+}
+
+
+// Lower Common Multiple a and b
+int lcm(int a, int b) {
+	return a * b / gcd(a, b); // maybe nee edit
+}
+
+// gcdlcm a and b
 vector<int> gcdlcm(int a, int b) {
-	vector<int> answer;
+	int g = gcd(a, b);
+	int l = lcm(a, b);
+	vector<int> answer = {g, l};
 
 	return answer;
 }
-*/
 
 int main() {
-	int a=3, b=12; // [3, 12]
-	// vector<int> testAnswer = gcdlcm(a, b);
-	// cout << testAnswer[0] << " " << testAnswer[1];
+	int a = 3, b = 12; // {3, 12}
+	vector<int> testAnswer = gcdlcm(a, b);
+	cout << testAnswer[0] << " " << testAnswer[1];
 	
-	// test
-	auto dv = denom(12);
-	vctrprt(dv); // checker
+	return 0;
 }
