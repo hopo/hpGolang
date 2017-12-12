@@ -2,6 +2,7 @@
 // *** For cpp api by hp ***
 // *************************
 
+#ifndef API_LAB_H
 
 // reference
 #include <iostream>
@@ -120,10 +121,4 @@ vector<int> fibonacci(int n) {
 }
 
 
-// !
-// main method for check
-int main() {
-	cout << boxprt(gcdlcm(3, 12));
-
-	return 0;
-}
+#endif
