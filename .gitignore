@@ -7,5 +7,5 @@ src/
 *.swo
 *.pyc
 
-c_test.out
 cTest.out
+cTest.outr
