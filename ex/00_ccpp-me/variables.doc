@@ -1,0 +1,9 @@
+*** variables
+
+_var_	|_byte_
+char	|	1byte
+bool	|	1byte
+short	|	2bytes
+int		|	4bytes
+float	|	4bytes
+double	|	8bytes
