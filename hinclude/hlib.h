@@ -2,18 +2,18 @@
 // *** For cpp api by hp ***
 // *************************
 
+
 #ifndef HLIB_H
 
 // reference
-#include <iostream>
-#include <vector>
 #include <string>
 #include <sstream>
+#include <vector>
 
 using namespace std;
 
 
-// method list in here
+// method list this header
 template <class T> string boxprt(T);
 
 int gcd(int, int);
@@ -24,13 +24,14 @@ vector<int> gcdlcm(int, int);
 vector<int> fibonacci(int);
 
 
-// *** vctrprt()
+// boxprt()
 // p : <class T>
 // r : string
 // vector int print like array type
 template <class T>
 string boxprt(T box) {
 	stringstream ss; // sstring::stringstream
+
 	ss << "[";
 	for (int i = 0; i < box.size(); i++) { 
 		if (i == box.size()-1) {
@@ -40,21 +41,22 @@ string boxprt(T box) {
 		ss << box[i] << " ";
 	}
 	ss << "]";
+
 	return ss.str(); // sstring::stringstream::str()
 }
 
 
-// *** denom()
+// denom()
 // p : int
 // r : vector<int> 
 // denominator 1 ~ n
 vector<int> denom(int d) {
 	vector<int> box;
+
 	for (int i = 1; i < d+1; i++) {
-		if (d % i == 0) {
-			box.push_back(i); // vector::push_back()
-		}
+		if (d % i == 0) { box.push_back(i); } // vector::push_back()
 	}
+
 	return box;
 }
 
@@ -63,7 +65,6 @@ vector<int> denom(int d) {
 // p : int, int
 // r : int
 // Great Common Denominator a and b
-// ref) pmiz_cpp_exam - GCD
 int gcd(int a, int b) {
 	auto ad = denom(a);	
 	auto bd = denom(b);	
@@ -74,6 +75,7 @@ int gcd(int a, int b) {
 			if (ad[i] == bd[j]) { max = ad[i]; }
 		}
 	}
+
 	return max;
 }
 
@@ -100,8 +102,7 @@ vector<int> gcdlcm(int a, int b) {
 }
 
 
-
-// *** fibonacci()
+// fibonacci()
 // p : int 
 // r : vector<int>
 // size = n, fibonacci vector int
@@ -112,12 +113,14 @@ vector<int> fibonacci(int n) {
 	b = 1;
 	c = a + b;
 	vector<int> box;
+
 	for (int i = 0; i < n ; i++) {
 		a = b;
 		b = c;
 		box.push_back(b);
 		c = a + b;
 	}
+
 	return box;
 }
 

@@ -1,7 +1,9 @@
-#include "./hlib.h"
+#include <iostream>
+
 #include "./pmiz.h"
+#include "./hlib.h"
 
 // tester
 int main() {
-	cout << reverse_number(1332);
+	cout << boxprt(factor(134));
 }
