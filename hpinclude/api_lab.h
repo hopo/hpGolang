@@ -63,6 +63,7 @@ vector<int> denom(int d) {
 // p : int, int
 // r : int
 // Great Common Denominator a and b
+// ref) pmiz_cpp_exam - GCD
 int gcd(int a, int b) {
 	auto ad = denom(a);	
 	auto bd = denom(b);	
@@ -82,7 +83,7 @@ int gcd(int a, int b) {
 // r : int
 // Lower Common Multiple a and b
 int lcm(int a, int b) {
-	return a * b / gcd(a, b); // maybe nee edit
+	return a * b / gcd(a, b); // maybe need edit
 }
 
 
