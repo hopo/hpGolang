@@ -1,0 +1,8 @@
+INSERT INTO `user` (host, user, authentication_string, ssl_cipher, x509_issuer, x509_subject)
+VALUES ('192.168.%', 'root', password('12344321'), '', '', '');
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.%';
+FLUSH PRIVILEGES;
+
+//
+DELETE FROM mysql.user WHERE Host='192.168.%' AND User='root';
+FLUSH PRIVILEGES;

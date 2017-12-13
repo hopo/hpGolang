@@ -1,0 +1,42 @@
+colorscheme evening
+syntax on
+
+set autoindent	"(ai)자동으로 들여쓰기
+set autowrite      "Automatically save before commands like :next and :make
+set background=light	"(bg) lihgt or dark
+set backup	"백업 파일을 생성 '*.*~'
+set bs=indent,eol,start     "Use backspace
+set cindent	"(cin)C 프로그래밍을 할때 자동으로 들여쓰기를 한다
+set cursorline
+set encoding=utf-8  "Encoding Type utf-8
+set expandtab	"탭을 입력하면 공백문자로 변환
+set fencs=ucs-bom,utf-8,euc-kr.latin1	"한글 파일은 euc-kr로 읽어들이며, 유니코드는 유니코드로 읽어들이도록 설정
+set fileencoding=utf-8,euc-kr	" 실제로 파일을 저장할때 사용되는 인코딩은 euc-kr
+set gfn=Menlo\ Rugular:h20	"폰트
+set hidden     "Hide buffers when they are abandoned
+set history=1000
+set hlsearch	"(hls)검색어를 구문강조
+set ignorecase	"검색할 때 대소문자 무시
+set incsearch      "(ic)Incremental search
+
+set nocompatible	"Window size
+set nowrapscan	"검색할 때 문서의 끝에서 다시 처음으로 돌아가지 않는다
+set number	"(nu)행번호를 사용
+set mouse=a        "Enable mouse usage (all modes)
+set ruler	"화면 우측 하단에 현재 커서의 위치(줄,칸)를 보여준다
+set shiftwidth=2	">> or << 사용시 들여쓰기 간격을 지정
+set showcmd     "Show partial command in status line
+set showmatch      "(sm)Show matching brackets
+set smartcase      "Do smart case matching
+set smartindent	"(si)좀더 똑똑한 들여쓰기를 위한 옵션
+set softtabstop=2	"탭 간격을 공백문자로 변환하며 삭제할 때 탭 간격만큼 삭제하지 않고, 마치 탭 문자를 삭제하는 것처럼 설정하며, 두 칸 단위로 삭제한다
+
+set tabstop=4	"(ts)Tab을 눌렀을 때 8칸 대신 4칸 이동하도록 한다
+set textwidth=79	"만약 79번째 글자를 넘어가면 \
+set title
+
+set visualbell	"키를 잘못눌렀을 때 삑 소리를 내는 대신 번쩍이게 한다
+set wmnu       "Tab auto word
+set wrap	"자동으로 다음 줄로 넘어간다
+
+/////

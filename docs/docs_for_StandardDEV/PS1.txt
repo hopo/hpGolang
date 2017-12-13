@@ -1,0 +1,28 @@
+# Special Characters:
+
+\h	the hostname up to the firs
+\n	newline
+\s	the name of the shell
+\t	the current time in 24-hour format
+\u	the username of the current user
+\w	the current working directory
+\W	the basename of the current working directory
+
+# tput
+BLACK=$(tput setaf 0)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+MAGENTA=$(tput setaf 5)
+CYAN=$(tput setaf 6)
+WHITE=$(tput setaf 7)
+POWDER_BLUE=$(tput setaf 153)
+ORANGE=$(tput setaf 166)
+LIME_YELLOW=$(tput setaf 190)
+
+blink=$(tput blink)
+reverse=$(tput smso)
+underline=$(tput smul)
+bold = $(tput bold)
+reset = $(tput sgr0)

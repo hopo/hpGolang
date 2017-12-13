@@ -1,0 +1,5 @@
+the blank identifier
+_
+
+
+https://gosudaweb.gitbooks.io/effective-go-in-korean/content/the_blank_identifier.html

@@ -1,0 +1,6 @@
+<cstring>
+
+// length string
+strlen()
+
+strlen(string)
