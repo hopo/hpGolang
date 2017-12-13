@@ -2,7 +2,7 @@
 // *** For cpp api by hp ***
 // *************************
 
-#ifndef API_LAB_H
+#ifndef HLIB_H
 
 // reference
 #include <iostream>
