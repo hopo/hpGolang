@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <cstdio>
 #include <iostream>
 
 using namespace std;
@@ -13,7 +13,7 @@ void foo() {
 
 	char b[] = "xyz";
 	cout << "03: " <<  b[1];
-	b[1] = 99; // 99 or 'c'
+	b[1] = 99;	// 99 or 'c'
 	cout << "03': " <<  b[1];
 }
 
