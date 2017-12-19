@@ -15,13 +15,13 @@ int main() {
 }
 
 string reverseStr(string s) {
-	int lnth = strlen(s.c_str());
+	int lnth = s.size();
 
 	int j;
 	string ret;
 	for(int i = 0; i < lnth; ++i) {
 		j = lnth-1-i;
-		ret.push_back(s[j]);
+		ret += s[j];
 	}
 
 	return ret;

@@ -1,0 +1,4 @@
+string st;
+int lnth = strlen(st.c_str());
+
+int lnth2 = st.size();
