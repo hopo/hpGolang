@@ -1,4 +1,3 @@
-// ing
 #include <iostream>
 #include <vector>
 
@@ -17,13 +16,9 @@ int main() {
 }
 
 int findKim(vector<string> fnames) {
-	int ret = -1;
-	/*
-	for i, v := range fnames {
-		if v == "Kim" {
-			ret = i
-		}
+	int lnth = fnames.size();
+	for(int i = 0; i < lnth; ++i) {
+		if(fnames[i] == "Kim") { return i; }
 	}
-	*/
-	return ret;
+	return -1;
 }
