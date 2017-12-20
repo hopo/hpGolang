@@ -16,7 +16,7 @@ int reverse_number(int);
 int pmiz_gcd(int, int);
 int pmiz_lcm(int, int);
 bool prime(int); 
-vector<int> factor(int n);
+vector<int> pmiz_factor(int n);
 
 
 // reverse_number()
@@ -89,11 +89,11 @@ bool prime(int n) {
 }
 
 
-// factor()
+// pmiz_factor()
 // p : int
 // r : vector<int>
-// denominator? factor?
-vector<int> factor(int n) {
+// n factors
+vector<int> pmiz_factor(int n) {
 	int i;
 	vector<int> ret;
 

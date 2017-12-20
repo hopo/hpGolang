@@ -18,7 +18,7 @@ template <class T> string boxprt(T);
 
 int gcd(int, int);
 int lcm(int, int);
-vector<int> denom(int);
+vector<int> factor(int);
 vector<int> gcdlcm(int, int);
 
 vector<int> fibonacci(int);
@@ -46,11 +46,11 @@ string boxprt(T box) {
 }
 
 
-// denom()
+// factor()
 // p : int
 // r : vector<int> 
 // denominator 1 ~ n
-vector<int> denom(int d) {
+vector<int> factor(int d) {
 	vector<int> box;
 
 	for (int i = 1; i < d+1; i++) {
@@ -66,8 +66,8 @@ vector<int> denom(int d) {
 // r : int
 // Great Common Denominator a and b
 int gcd(int a, int b) {
-	auto ad = denom(a);	
-	auto bd = denom(b);	
+	auto ad = factor(a);	
+	auto bd = factor(b);	
 
 	int max;
 	for (int i = 0; i < ad.size(); i++) {
