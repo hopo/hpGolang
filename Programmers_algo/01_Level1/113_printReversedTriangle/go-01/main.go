@@ -13,7 +13,7 @@ func main() {
 func printReversedTriangle(n int) (ret string) {
 	for i := 0; i < n; i++ {
 		q := n - i
-		r := hpkg.Smulti("*", q)
+		r := hpkg.Str_multi("*", q)
 		switch q {
 		default:
 			ret += fmt.Sprintln(r)
