@@ -13,18 +13,14 @@ int main() {
 
 string printReversedTriangle(int n) {
 	string ret;
-	int i, j;
-	/*
-	for i := 0; i < n; i++ {
-		q := n - i
-		r := hpkg.Smulti("*", q)
-		switch q {
-		default:
-			ret += fmt.Sprintln(r)
-		case 1:
-			ret += fmt.Sprint(r)
-		}
+	int i, j, k;
+
+	for(i = 0; i < n; ++i) {
+		k = n - i;	
+		for(j = 0; j < k; ++j) ret += "*";
+		if(k == 1) break;
+		ret += '\n';
 	}
-	*/
-	return "-1";
+
+	return ret;
 }
