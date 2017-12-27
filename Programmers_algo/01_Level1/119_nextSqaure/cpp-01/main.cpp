@@ -18,7 +18,11 @@ int main() {
 }
 
 int nextSqaure(int n) {
+	int* ptr;
+	ptr = &n;
 	cout << "n: " << n << endl;
+	cout << "ptr: " << ptr << endl;
+
 	/*
 	x := math.Sqrt(float64(n))
 	f := math.Pow(x, 2)
