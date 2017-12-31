@@ -2,6 +2,11 @@
 #include "/Users/HPMBA/workspace/hinclude/chstd.h"
 
 int iarrlen(int *iarr) {
+	printf("!!! %p\n", iarr);
+	printf("!!! %p\n", iarr+1);
+	printf("!!! %p\n", iarr+2);
+	printf("!!! %p\n", iarr+3);
+
 	int length = 0;
 	while(1) {
 		printf("%d, ", iarr[length]);
@@ -14,7 +19,7 @@ int iarrlen(int *iarr) {
 }
 
 int main() {
-	int iarr[] = {2};
+	int iarr[] = {2, 4, 6, 8};
 
 	printf("\n%d", iarrlen(&iarr));
 	
