@@ -2,12 +2,12 @@
 
 #include <stdio.h>
 
-int gcd(int, int);
-int lcm(int, int);
-int* gcdlcm(int, int);
+int gcd(int n1, int n2);
+int lcm(int n1, int n2);
+int* gcdlcm(int n1, int n2);
 
 int main() {
-	int *ex1 = gcdlcm(3, 12);	// 3, 12
+	int* ex1 = gcdlcm(3, 12);	// 3, 12
 	printf("%d, %d", *ex1, *(ex1+1));
 
 	printf("\n");
@@ -17,7 +17,6 @@ int main() {
 	
 	return 0;
 }
-
 
 int gcd(int n1, int n2) {
 	// bigger - smaller ?
@@ -53,5 +52,8 @@ int* gcdlcm(int n1, int n2) {
 
 	int ret[] = {r1, r2};
 
-	return &ret;
+	int* dt = &ret;
+
+	return dt;
 }
+

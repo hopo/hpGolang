@@ -1,12 +1,19 @@
 #include <stdio.h>
 
+
+void prnt(char* carr);
+
 int main() {
 	char carr[2];
 
-	carr[0] = 'g';
-	carr[1] = 'o';
+	carr[0] = 'h';
+	carr[1] = 'i';
 
-	printf("%c%c", carr[0], carr[1]);
+	prnt(&carr);
 
 	return 0;
+}
+
+void prnt(char* carr) {
+	printf("%c%c", carr[0], carr[1]);
 }
