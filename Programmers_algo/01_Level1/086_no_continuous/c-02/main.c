@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
-int* no_continous(char*);
+int* no_continous(char* data);
 
-int main() {
+int main() { // int argc, char* argv[]
 	char data1[] = "133303";	// 1 3 0 3
 	int* ex1 = no_continous(data1);
 	printf("%d %d %d %d", *ex1, *(ex1+1), *(ex1+2), *(ex1+3));
@@ -28,30 +28,17 @@ int* no_continous(char* data) {
 		if(data[i-1] != data[i]) {
 			box[j] = data[i];
 			j++;
-		};
+		}
 	}
 
 	int ret[j];	
+	int e;
 	for(i = 0; i < j; i++) {
-		ret[i] = box[i]-'0';
+		e = box[i]-'0';
+		ret[i] = e;
 	}
+	
+	int* dt = ret;
 
-	return &ret;
+	return dt;
 }
-
-/*
-func no_continous(s string) (ret []int) {
-	for i, v := range s {
-		n, e := strconv.Atoi(string(v))
-		if e != nil {
-			panic(e)
-		}
-		if i != 0 && s[i-1] == s[i] {
-			continue
-		} else {
-			ret = append(ret, n)
-		}
-	}
-	return
-}
-*/

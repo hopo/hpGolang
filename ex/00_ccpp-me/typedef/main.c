@@ -3,11 +3,9 @@
 
 typedef struct Namecard
 {
-	char name[20];
+	char name[10];
 	int number;
 } Ncard;
-
-Ncard sort_dictionary(Ncard);
 
 int main() {
 	Ncard n1, n2, n3;
@@ -17,6 +15,13 @@ int main() {
 	
 	Ncard cards[] = {n1, n2, n3};
 
+	int x = sizeof(cards);
+	int y = sizeof(n1);
+	int lnth = x/y;
+
+	printf("sizeof each: %d, %d\n", x, y);
+	printf("length: %d\n", lnth);
+
 	for(int i = 0; i < 3; i++) {
 		printf("%s, ", cards[i].name);
 		printf("%d\n", cards[i].number);
@@ -24,18 +29,3 @@ int main() {
 
 	return 0;
 }
-
-
-/*
-func sort_dictionary(nc map[string]int) (ret []Ncard) {
-	var slis []string
-	for k, _ := range nc {
-		slis = append(slis, k)
-	}
-	sort.Strings(slis)
-	for _, k := range slis {
-		ret = append(ret, Ncard{k, nc[k]})
-	}
-	return
-}
-*/

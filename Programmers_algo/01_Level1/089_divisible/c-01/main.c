@@ -5,7 +5,7 @@ int* divisible(int*, int);
 int main() {
 	int data[] = {5, 9, 7, 10};
 	int n = 5;
-	int* ex = divisible(&data, n); // 5 10
+	int* ex = divisible(data, n); // 5 10
 	printf("%d %d", *ex, *(ex+1));
 
 	return 0;
@@ -27,6 +27,8 @@ int* divisible(int* data, int n) {
 			j++;
 		}
 	}
+	
+	int* dt = ret;
 
-	return &ret;
+	return dt;
 }

@@ -52,6 +52,9 @@ int* gcdlcm(int n1, int n2) {
 	r2 = lcm(n1, n2);
 
 	int ret[] = {r1, r2};
+	
+	int* dt;
+	dt = ret;
 
-	return &ret;
+	return dt;
 }

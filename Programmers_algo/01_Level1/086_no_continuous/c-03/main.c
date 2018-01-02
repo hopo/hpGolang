@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-#include "/Users/HPMBA/workspace/hinclude/chstd.h"
+//#include "/Users/HPMBA/workspace/hinclude/chstd.h"
+#include "/home/hp/workspace/hinclude/chstd.h"
 
 int* no_continous(char*);
 
@@ -22,8 +23,6 @@ int* no_continous(char* data) {
 	int len, i, j = 1;
 	len = carrlen(data);
 
-	printf("!! %d\n", len);
-
 	char box[len];
 	box[0] = data[0];
 	
@@ -39,7 +38,9 @@ int* no_continous(char* data) {
 		ret[i] = box[i]-'0';
 	}
 
-	return &ret;
+	int* dt = ret;
+
+	return dt;
 }
 
 /*

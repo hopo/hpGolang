@@ -33,5 +33,7 @@ int* no_continous(char* data) {
 	int ret[j];	
 	for(i = 0; i < j; i++) { ret[i] = box[i]-'0'; }
 
-	return &ret;
+	int* dt = ret;
+
+	return dt;
 }
