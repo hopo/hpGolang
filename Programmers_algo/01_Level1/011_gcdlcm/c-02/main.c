@@ -1,5 +1,3 @@
-//https://programmers.co.kr/learn/challenge_codes/149
-
 #include <stdio.h>
 
 int gcd(int n1, int n2);
