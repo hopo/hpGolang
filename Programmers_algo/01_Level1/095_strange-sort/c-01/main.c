@@ -5,34 +5,31 @@
 
 #define ALP "abcdefghijklmnopqrstuvwxyz"
 
-typedef struct String
-{
-	char word[10];	
-} str;
+char* strange_sort(char* words[], int n) {
+	int i, r = 0, j = 0;
+	char* box;
+	char* ret[3];
+	while(ALP[j] != '\0') {
+		for(i = 0; i < 3; i++) {
+			box = *(words+i);
+			if(ALP[j] == box[n]) { ret[r] = box; r++; };
+		}
+		j++;
+	}
+	
+	printf("func() %s %s %s\n", ret[0], ret[1], ret[2]);
+	
+	char* dt = ret[3];
+
+	return dt;
+}
 
 int main() {
-	str a, b, c;
-	strcpy(a.word, "sun");
-	strcpy(b.word, "bed");
-	strcpy(c.word, "car");
+	char* words[] = {"sun", "bed", "car"}; // car, bed, sun
+	char* ex = strange_sort(words, 1);
 
-	printf("a.word: %s", a.word);
-	printf("\nALP[6]: %c", ALP[6]);
-
-	//ex := strange_sort(words, 1) // [car bed sun]
+	printf("main() %s\n", &(ex));
 
 	return 0;
 }
 
-/*
-func strange_sort(ssl []string, n int) (ret []string) {
-	for _, r := range ALP {
-		for _, v := range ssl {
-			if byte(r) == v[n] {
-				ret = append(ret, v)
-			}
-		}
-	}
-	return
-}
-*/
