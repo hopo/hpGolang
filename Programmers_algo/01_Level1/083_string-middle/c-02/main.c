@@ -2,7 +2,7 @@
 
 char* string_middle(char* t);
 
-int main() {
+int main(int argc, char* argv[]) {
 	char text1[] = "power";	// w
 	char* ex1 = string_middle(&text1);
 	printf("%c", *ex1);
@@ -16,20 +16,20 @@ int main() {
 	return 0;
 }
 
-
 char* string_middle(char *t) {
 	int i, len = 0;
-	for(i = 0; t[i] != 0; i++) len++;
+	for(i = 0; t[i] != 0; i++) { len++; }
 	
-	char ret[2];
-	if(len&1) { ret[0] = t[len/2]; }
-	else {
-		ret[0] = t[len/2-1];
-		ret[1] = t[len/2];
+	char* ret;
+	switch(len%2) {
+		case(1):
+			*ret = t[len/2];
+			break;
+		case(0):
+			*ret = t[len/2-1];
+			*(ret+1) = t[len/2];
+			break;
 	}
 
-	char* dt;
-	dt = &ret;
-
-	return dt;
+	return ret;
 }
