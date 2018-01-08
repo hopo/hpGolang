@@ -1,14 +1,17 @@
-// ing
-// char array append
-// receive pointer make char array
-
 #include <stdio.h>
 
 char* reverseStr(char*);
 
 int main() {
 	char* ex1 = reverseStr("Zbcdefg");     // "gfedcbZ"
-	printf("%c", ex1[2]);
+	int i = 0;
+	char prt[100];
+	while(ex1[i] != '\0') {
+		prt[i] = ex1[i];		
+		i++;
+	}
+	prt[i] = '\0';
+	printf("%s", prt);
 
 	return 0;
 }
@@ -30,25 +33,3 @@ char* reverseStr(char* str) {
 
 	return dt;
 }
-
-
-
-
-/*
-
-func main() {
-	ex1 := reverseStr("Zbcdefg")     // "gfedcbZ"
-	ex2 := reverseStr("deSadFklJfg") // "lkgfeddaSJF"
-}
-
-func reverseStr(s string) (ret string) {
-	for i := 0; i < 200; i++ {
-		for _, v := range s {
-			if i == int(v) {
-				ret = string(v) + ret
-			}
-		}
-	}
-	return
-}
-*/
