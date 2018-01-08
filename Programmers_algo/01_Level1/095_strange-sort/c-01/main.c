@@ -1,14 +1,14 @@
-// ..ing
-
 #include <stdio.h>
 #include <string.h>
 
 #define ALP "abcdefghijklmnopqrstuvwxyz"
 
-char* strange_sort(char* words[], int n) {
+typedef char* String;
+
+String* strange_sort(String* words, int n) {
 	int i, r = 0, j = 0;
-	char* box;
-	char* ret[3];
+	String box;
+	String ret[3];
 	while(ALP[j] != '\0') {
 		for(i = 0; i < 3; i++) {
 			box = *(words+i);
@@ -16,19 +16,16 @@ char* strange_sort(char* words[], int n) {
 		}
 		j++;
 	}
-	
-	printf("func() %s %s %s\n", ret[0], ret[1], ret[2]);
-	
-	char* dt = ret[3];
+
+	String* dt = ret;
 
 	return dt;
 }
 
 int main() {
-	char* words[] = {"sun", "bed", "car"}; // car, bed, sun
-	char* ex = strange_sort(words, 1);
-
-	printf("main() %s\n", &(ex));
+	String words[] = {"sun", "bed", "car"}; // car, bed, sun
+	String* ex1 = strange_sort(words, 1);
+	printf("%s, %s, %s", *ex1, *(ex1+1), *(ex1+2));
 
 	return 0;
 }
