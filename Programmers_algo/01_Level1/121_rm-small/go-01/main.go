@@ -7,7 +7,7 @@ import (
 
 func main() {
 	ex1 := rm_small([]int{4, 3, 2, 1}) // [4 3 2]
-	ex2 := rm_small([]int{10, 8, 22})  // [10 8 22]
+	ex2 := rm_small([]int{10, 8, 22})  // [10 22]
 	fmt.Println(ex1)
 	fmt.Println(ex2)
 }
@@ -19,6 +19,6 @@ func rm_small(isl []int) (ret []int) {
 			sm = i
 		}
 	}
-	ret = hpkg.DelIsl(isl, sm)
+	ret = hpkg.Del_value_isl(isl, sm)
 	return
 }
