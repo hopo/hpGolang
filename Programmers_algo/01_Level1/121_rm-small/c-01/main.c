@@ -2,25 +2,43 @@
 
 #include <stdio.h>
 
-void rm_small(int*);
+int* rm_small(int*);
 
 int main() {
+	/*
 	int nums1[] = {4, 3, 2, 1};
-	rm_small(nums1); // [4 3 2]
+	int* ex1 = rm_small(nums1); // [4 3 2]
+	printf("%d %d %d", ex1[0], ex1[1], ex1[2]);
+	*/
 
-	//int nums2[] = {10, 8, 22};
-	//rm_small(nums2)  // [10 22]
+	int nums2[] = {10, 8, 22};
+	int* ex2 = rm_small(nums2);  // [10 22]
+	printf("\n%d %d", ex2[0], ex2[1]);
 
 	return 0;
 }
 
-void rm_small(int* nums) {
+int* rm_small(int* nums) {
 	int i, lnth, min;
 	min = nums[0];
 
-	for(i = 1; nums[i] < 2<<24; i++) {
+	for(i = 1; nums[i] < 2<<24; i++) { // we need find int length!
+		if(nums[i] < 0) { break; }
 		if(min > nums[i]) { min = nums[i]; }	
 	}
 	lnth = i;
 
+	int ret[lnth-1], r = 0;
+	for(i = 0; i < lnth; i++) {
+		if(nums[i] != min) {
+			ret[r] = nums[i];	
+			r++;
+		}
+	}
+	
+	int* dt;
+	dt = ret;
+
+	return dt;
 }
+
