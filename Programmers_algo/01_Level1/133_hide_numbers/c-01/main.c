@@ -3,8 +3,6 @@
 char *hide_numbers(char pnum[]);
 
 int main() {
-	printf("\b"); // why???
-
 	char *ex1;
 	ex1 = hide_numbers("01033334444"); // "*******4444"
 	printf("%s", ex1);
@@ -17,19 +15,20 @@ int main() {
 }
 
 char *hide_numbers(char pnum[]) {
-	int i, lnth = 0;
+	int i, size = 0;
 	for(i = 0; pnum[i] != '\0'; i++);
-	lnth = i;
+	size = i+1;
 
-	char ret[lnth];
-	for(i = 0; i < lnth; i++) {
-		if(i < lnth-4) { ret[i] = '*'; }
-		else { ret[i] = pnum[i]; }
+	char box[size];
+	for(i = 0; i < size; i++) {
+		if(i < size-5) { box[i] = '*'; }
+		else { box[i] = pnum[i]; }
 	}
-	ret[lnth] = '\0';
 
-	char *dt;
-	dt = ret;
+	char ret[size];
+	for(i = 0; i < size; i++) { ret[i] = box[i]; }	// choorigi
+	ret[size] = '\0';	// machimpyo
+	char *dt = ret;
 
 	return dt;
 }
