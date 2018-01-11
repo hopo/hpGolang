@@ -1,24 +1,33 @@
-package main
+#include <stdio.h>
 
-import (
-	"fmt"
-)
+char *hide_numbers(char pnum[]);
 
-func main() {
-	ex1 := hide_numbers("01033334444") // "*******4444"
-	ex2 := hide_numbers("027778888")   // "*****8888"
-	fmt.Println(ex1)
-	fmt.Println(ex2)
+int main() {
+	printf("\b"); // why???
+
+	char *ex1 = hide_numbers("01033334444"); // "*******4444"
+	printf("%s", ex1);
+
+	char *ex2 = hide_numbers("027778888");   // "*****8888"
+	printf("\n%s", ex2);
+
+	return 0;
 }
 
-func hide_numbers(s string) (ret string) {
-	sl := []byte(s)
-	l := len(sl)
-	for i, _ := range s {
-		if l-i > 4 {
-			sl[i] = '*'
-		}
-		ret += string(sl[i])
+char *hide_numbers(char pnum[]) {
+	int i, lnth = 0;
+	for(i = 0; pnum[i] != '\0'; i++);
+	lnth = i;
+	
+	char ret[lnth+1];
+	for(i = 0; i < lnth; i++) {
+		if(i < lnth-4) { ret[i] = '*'; }
+		else { ret[i] = pnum[i]; }
 	}
-	return
+	ret[lnth] = '\0';
+
+	char *dt;
+	dt = ret;
+
+	return dt;
 }
