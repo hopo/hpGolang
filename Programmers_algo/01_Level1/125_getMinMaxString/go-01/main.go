@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	ex := getMinMaxString("1 2 3 4")
+	ex := getMinMaxString("1 2 3 4") // [1 4]
 	fmt.Println(ex)
 }
 
