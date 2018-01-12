@@ -1,5 +1,3 @@
-// https://programmers.co.kr/learn/challenge_codes/148
-
 #include <stdio.h>
 
 #define ROWS 2

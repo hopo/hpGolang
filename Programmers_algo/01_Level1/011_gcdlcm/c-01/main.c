@@ -1,5 +1,3 @@
-//https://programmers.co.kr/learn/challenge_codes/149
-
 #include <stdio.h>
 
 int gcd(int, int);
@@ -10,10 +8,8 @@ int main() {
 	int *ex1 = gcdlcm(3, 12);	// 3, 12
 	printf("%d, %d", *ex1, *(ex1+1));
 
-	printf("\n");
-
 	int *ex2 = gcdlcm(4, 7);	// 1, 28
-	printf("%d, %d", *ex2, *(ex2+1));
+	printf("\n%d, %d", *ex2, *(ex2+1));
 	
 	return 0;
 }
@@ -33,10 +29,10 @@ int lcm(int n1, int n2) {
 	int max;
 
 	// maximum value between n1 and n2 is stored in max
-	max = (n1 > n2) ? n1 : n2;
+	max = (n1 > n2)? n1 : n2;
 
 	do {
-		if(max % n1 == 0 && max % n2 == 0) {
+		if(max%n1 == 0 && max%n2 == 0) {
 			break;
 		}
 		else { ++max; }
