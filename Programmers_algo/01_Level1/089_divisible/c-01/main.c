@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int* divisible(int*, int);
+int *divisible(int *data, int n);
 
 int main() {
 	int data[] = {5, 9, 7, 10};
@@ -11,7 +11,7 @@ int main() {
 	return 0;
 }
 
-int* divisible(int* data, int n) {
+int *divisible(int *data, int n) {
 	int i, j = 0, len = 0;
 	
 	for(i = 0; ; i++) { // int array find length??

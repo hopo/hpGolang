@@ -7,11 +7,9 @@ int main() {
 	int* ex1 = no_continous(data1);
 	printf("%d %d %d %d", *ex1, *(ex1+1), *(ex1+2), *(ex1+3));
 
-	printf("\n");
-
 	char data2[] = "47330";  // 4 7 3 0
 	int* ex2 = no_continous(data2);
-	printf("%d %d %d %d", *ex2, *(ex2+1), *(ex2+2), *(ex2+3));
+	printf("\n%d %d %d %d", *ex2, *(ex2+1), *(ex2+2), *(ex2+3));
 
 	return 0;
 }
