@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-char* reverseStr(char*);
+char *reverseStr(char str[]);
 
 int main() {
-	char* ex1 = reverseStr("Zbcdefg");     // "gfedcbZ"
+	char str[] = "Zbcdefg";
+	char *ex1 = reverseStr(str);	// "gfedcbZ"
 	int i = 0;
 	char prt[100];
 	while(ex1[i] != '\0') {
@@ -16,7 +17,7 @@ int main() {
 	return 0;
 }
 
-char* reverseStr(char* str) {
+char *reverseStr(char str[]) {
 	int lnth = 0;
 
 	while(*(str+lnth) != '\0') { lnth++; }
@@ -28,7 +29,7 @@ char* reverseStr(char* str) {
 		rev[i] = *(str+j);
 	}
 
-	char* dt;
+	char *dt;
 	dt = rev;
 
 	return dt;

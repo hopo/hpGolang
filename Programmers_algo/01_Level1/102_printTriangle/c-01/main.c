@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-char* printTriangle(int);
+char *printTriangle(int);
 
 int main() {
-	char* ex1 = printTriangle(3); // *\n**\n***
+	char *ex1 = printTriangle(3); // *\n**\n***
 	int i = 0;
 	char prt[100];
 	while(ex1[i] != '\0') {
@@ -16,7 +16,7 @@ int main() {
 	return 0;
 }
 
-char* printTriangle(int num) {
+char *printTriangle(int num) {
 	int i, j, r = 0;
 	char ret[100];
 	for(i = 1; i < num+1; i++) {
@@ -29,7 +29,7 @@ char* printTriangle(int num) {
 	}
 	ret[r] = '\0';
 
-	char* dt = ret;
+	char *dt = ret;
 
 	return dt;
 }
