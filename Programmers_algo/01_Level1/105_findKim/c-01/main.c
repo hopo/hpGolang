@@ -7,7 +7,7 @@ int main() {
 	int ex1 = findKim(names1);
 	printf("%d", ex1);
 
-	char *names2[] = {"Gim", "Obama", "xi"};	// -1
+	char *names2[] = {"Gim", "Obama", "Xi"};	// -1
 	int ex2 = findKim(names2);
 	printf("\n%d", ex2);
 
