@@ -3,9 +3,12 @@
 int sum_digit(int);
 
 int main() {
-	int ex1 = sum_digit(123);       // 6
+	int d1 = 123;
+	int ex1 = sum_digit(d1);	// 6
 	printf("%d", ex1);
-	int ex2 = sum_digit(999999999); // 81
+	
+	int d2 = 999999999;
+	int ex2 = sum_digit(d2);	// 81
 	printf("\n%d", ex2);
 
 	return 0;

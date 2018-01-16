@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int* rm_small(int*);
+int *rm_small(int *nums);
 
 int main() {
 	int nums1[] = {4, 3, 2, 1};
@@ -10,7 +10,7 @@ int main() {
 	return 0;
 }
 
-int* rm_small(int* nums) {
+int *rm_small(int *nums) {
 	int i, lnth, min;
 	min = nums[0];
 

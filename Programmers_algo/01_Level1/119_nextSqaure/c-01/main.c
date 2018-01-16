@@ -4,13 +4,16 @@
 int nextSqaure(int);
 
 int main() {
-	int ex1 = nextSqaure(121); // 144, 12*12
+	int d1 = 121; 
+	int ex1 = nextSqaure(d1);	// 144, 12*12
 	printf("%d", ex1);
 
-	int ex2 = nextSqaure(4);   // 9, 3*3
+	int d2 = 4; 
+	int ex2 = nextSqaure(d2);	// 9, 3*3
 	printf("\n%d", ex2);
 
-	int ex3 = nextSqaure(5);   // 0, "no"
+	int d3 = 5;
+	int ex3 = nextSqaure(d3);	// 0, "no"
 	printf("\n%d", ex3);
 
 	return 0;

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-char* printReversedTriangle(int);
+char *printReversedTriangle(int);
 
 int main() {
 	char* ex1 = printReversedTriangle(3); // ***\n**\n*
@@ -9,7 +9,7 @@ int main() {
 	return 0;
 }
 
-char* printReversedTriangle(int n) {
+char *printReversedTriangle(int n) {
 	char ret[100];
 	int i, j, k, r = 0;
 
