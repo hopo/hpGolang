@@ -20,7 +20,5 @@ void rm_small(int *arr) {
 	printf("\n%d", arr[1]);
 	printf("\n%d", arr[2]);
 	printf("\n%d", arr[3]);
-
-	
 }
 
