@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef char* string;
+typedef char *string;
  
 int strToInt(string);
 int convctoi(char);
@@ -9,6 +9,7 @@ int convctoi(char);
 int main() {
 	int ex1 = strToInt("-1234");	// -1234
 	printf("%d", ex1);
+
 	int ex2 = strToInt("392");	// 392
 	printf("\n%d", ex2);
 
