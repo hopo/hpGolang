@@ -1,0 +1,20 @@
+
+code.o:	file format Mach-O 64-bit x86-64
+
+Disassembly of section __TEXT,__text:
+_sum:
+       0:	55 	pushq	%rbp
+       1:	48 89 e5 	movq	%rsp, %rbp
+       4:	01 f7 	addl	%esi, %edi
+       6:	01 3d 00 00 00 00 	addl	%edi, (%rip)
+       c:	89 f8 	movl	%edi, %eax
+       e:	5d 	popq	%rbp
+       f:	c3 	retq
+
+_main:
+      10:	55 	pushq	%rbp
+      11:	48 89 e5 	movq	%rsp, %rbp
+      14:	bf 02 00 00 00 	movl	$2, %edi
+      19:	be 03 00 00 00 	movl	$3, %esi
+      1e:	5d 	popq	%rbp
+      1f:	e9 00 00 00 00 	jmp	0 <_main+0x14>
