@@ -19,7 +19,7 @@ void fitsBits(int, int);	// 변수x가n비트로표현가능한가?
 void addOK(int, int);	// is it overflow??
 
 int main() {
-	int a = 0x04;
+	int a = 0x06;
 	int b = 0x03;
 
 	// bitxor(a, b);
@@ -35,6 +35,12 @@ void bitxor(int a, int b) {
 }
 
 void allEvenBits(int a) {
-	int x;
-	printf("%#x", x);
+	int flag;
+	flag = (a&(1<<1))? 1 : 0;
+	printf("flag: %d\n", flag);
+
+	printf("%#x\n", 1<<1);
+	printf("%#x\n", 1<<3);
+	printf("%#x\n", 1<<5);
+	printf("%#x\n", 1<<7);
 }
