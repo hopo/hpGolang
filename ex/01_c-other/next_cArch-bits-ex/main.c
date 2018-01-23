@@ -35,6 +35,7 @@ void allEvenBits();	//(2)
 void bitxor();	//(1)
 
 int main() {
+	//getByte();
 	//allEvenBits();
 	//bitxor();
 
@@ -42,15 +43,30 @@ int main() {
 }
 
 
-/* (3)변수x, n번째의 byte? */
-void getByte();	
+/* (3)Var x, n' bit is 1 or 0 */
+void getByte() {
+	int x, n, i = 0;
+	x = 0x39;
+	n = 5;
+
+	bprt(x, 0); printf(" n: %d", n); // for check.
+
+	while(1) {	
+		if(i == n) {
+			printf("\n%d", x%2);
+			break;
+		}
+		x /= 2;
+		i++;
+	}
+}
 
 
 /* (2)All even bits is '1' == TRUE */
 void allEvenBits() {
 	printf("allEvenBits() ;\n");
 	int a, i, flag;
-	a = 42;	// 2 8 32 128 .. (mix) is True
+	a = 0xf8;	// 2 8 32 128 .. (mix) is True
 	bprt(a, 1);	// for check. binary print
 	
 	i = 0;
