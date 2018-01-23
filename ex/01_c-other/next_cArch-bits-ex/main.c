@@ -1,46 +1,80 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /*
-!minus
+*minus
 	x-n = x+(~n+1)
 
-!mask
+*mask
 	x&0 = 0
 	x&~0 = x
 	x|0 = x
 	x|~0 = ~0
 */
 
-void bitxor(int, int);	// xor operator of two int
-void allEvenBits(int);	// 짝수번째비트가'1'인가?
-void getByte(int, int);	//	변수x, n번째의 byte?
-void minusOne(int, int);	// '-1' return.
-void fitsBits(int, int);	// 변수x가n비트로표현가능한가?
-void addOK(int, int);	// is it overflow??
+void bprt(int d, int f) {
+	if(f != 0) { printf("%d ->\t", d); }
+	if(d > 255) { printf("OVERFLOW! "); }
+	char str[] = "00000000"; 
+
+	int i = 7;
+	while(i >= 0) {
+		if(d%2) { str[i] = '1';	}
+		--i;
+		d = d/2;
+	}
+
+	printf("%s", str);
+}
+
+void addOK();	// is it overflow??
+void fitsBits();	// 변수x가n비트로표현가능한가?
+void minusOne();	// '-1' return.
+void getByte();	//(3)	
+void allEvenBits();	//(2)
+void bitxor();	//(1)
 
 int main() {
-	int a = 0x06;
-	int b = 0x03;
-
-	// bitxor(a, b);
-	allEvenBits(a);
+	//allEvenBits();
+	//bitxor();
 
 	return 0;
 }
 
-// xor operator of two int
-void bitxor(int a, int b) {
-	printf("%d", (a|b)+(~(a&b)+1));	// using complement
-	printf(" %d ", a^b);	// ^ operator
+
+/* (3)변수x, n번째의 byte? */
+void getByte();	
+
+
+/* (2)All even bits is '1' == TRUE */
+void allEvenBits() {
+	printf("allEvenBits() ;\n");
+	int a, i, flag;
+	a = 42;	// 2 8 32 128 .. (mix) is True
+	bprt(a, 1);	// for check. binary print
+	
+	i = 0;
+	while(2<<i < a+1) {
+		flag = (2<<i)&a;
+		i += 2;
+		if(flag == 0) {
+			printf("\nFALSE");
+			exit(0);
+		}
+	}
+
+	printf("\nTRUE");
 }
 
-void allEvenBits(int a) {
-	int flag;
-	flag = (a&(1<<1))? 1 : 0;
-	printf("flag: %d\n", flag);
 
-	printf("%#x\n", 1<<1);
-	printf("%#x\n", 1<<3);
-	printf("%#x\n", 1<<5);
-	printf("%#x\n", 1<<7);
+/* (1)Xor operator of two int */
+void bitxor() {
+	printf("bitxor() ;\n");
+
+	int a, b;
+	a = 0x02;
+	b = 0x03;
+
+	printf("%d", (a|b)+(~(a&b)+1));	// using complement
+	printf(" %d ", a^b);	// ^ operator
 }
