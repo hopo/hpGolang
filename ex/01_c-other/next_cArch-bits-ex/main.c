@@ -29,12 +29,13 @@ void bprt(int d, int f) {
 
 void addOK();	// is it overflow??
 void fitsBits();	// 변수x가n비트로표현가능한가?
-void minusOne();	// '-1' return.
+void minusOne();	//(4)
 void getByte();	//(3)	
 void allEvenBits();	//(2)
 void bitxor();	//(1)
 
 int main() {
+	minusOne();
 	//getByte();
 	//allEvenBits();
 	//bitxor();
@@ -42,6 +43,13 @@ int main() {
 	return 0;
 }
 
+/* (4)Return -1 */
+void minusOne() {
+	int x;
+	x = 0xffffffff;
+
+	printf("%d", x);
+}
 
 /* (3)Var x, n' bit is 1 or 0 */
 void getByte() {
