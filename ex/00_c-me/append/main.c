@@ -9,7 +9,7 @@ void append(char* s, char c) {
 
 int main(void) {
 	char str[256] = "hello";
-	char c = 'o';
+	char c = '!';
 	
 	append(str, c);
 	printf("%s\n", str);
