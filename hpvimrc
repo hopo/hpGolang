@@ -1,0 +1,92 @@
+"
+" *** clang_complete find library (HPMBA)
+let g:clang_library_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+
+
+" ************
+" 	hp vimrc			 
+" ************
+
+
+" *** Pathogen
+execute pathogen#infect()
+filetype plugin on
+
+
+" *** YouCompleteMe set 
+"let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf.py'
+"" turn on completion in comments
+"let g:ycm_complete_in_comments=1
+"" load ycm conf by default
+"let g:ycm_confirm_extra_conf=0
+"" turn on tag completion
+"let g:ycm_collect_identifiers_from_tags_files=1
+"" only show completion as a list instead of a sub-window
+"set completeopt-=preview
+"" start completion from the first character
+"let g:ycm_min_num_of_chars_for_completion=1
+"" don't cache completion items
+"let g:ycm_cache_omnifunc=0
+"" complete syntax keywords
+"let g:ycm_seed_identifiers_with_syntax=1
+
+
+" *** VIM Set
+if has("syntax")
+	syntax on
+endif
+
+"set bs=indent,eol,start		"Use backspace
+set autoindent
+set background=light	"Background color dark or light
+set encoding=utf-8	"Encoding Type utf-8
+set hlsearch		"Highlight search
+set ignorecase		"Search case
+set nocompatible		"Window size
+set number
+set ruler
+set showcmd		"Show command in status line.
+set title
+set ts=4	"Tab 4
+
+
+" *** Key mapping
+let mapleader = ","
+
+noremap ` <ESC>
+noremap \` `
+noremap te :tabedit 
+noremap tn :tabnext<CR>
+noremap zk :wincmd k<CR>
+noremap zl :wincmd l<CR>
+noremap zh :wincmd h<CR>
+noremap zj :wincmd j<CR>
+noremap z\ :NERDTreeToggle<CR>
+noremap zu :up<CR>
+noremap <C-\> :TagbarToggle<CR>
+noremap <leader>t :tabedit /usr/include/c++/4.2.1/
+noremap <leader>n :cnext<CR>
+noremap <leader>m :cprevious<CR>
+noremap <leader>c :cclose<CR>
+
+inoremap ` <ESC>
+inoremap \` `
+"inoremap ]\ <right>
+"inoremap ]\\ <right><right>
+"inoremap () ()
+"inoremap [] []
+"inoremap {} {}
+inoremap <. <><left>
+inoremap </ </><left>
+"inoremap ` ``<left>
+"inoremap ' ''<left>
+"inoremap " ""<left>
+"inoremap ( ()<left>
+"inoremap [ []<left>
+"inoremap { {}<left>
+inoremap (<CR> (<CR>)<ESC>O<tab>
+inoremap {<CR> {<CR>}<ESC>O<tab>
+inoremap \`<CR> `<CR>`<ESC>O
+
+cnoremap ` <ESC>
+cnoremap \` `
