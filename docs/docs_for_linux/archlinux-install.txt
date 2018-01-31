@@ -1,0 +1,58 @@
+
+
+	*** [Check computer is connected to the internet]
+
+
+# dhcpcd
+# ping -c 3 google.com
+
+_networks check anyway.
+
+
+
+	*** [Partioning disk]
+
+
+# lsblk
+# cfdisk /dev/sda
+
+_in to program.
+
+[new] - 30G - [primary]
+[new] - 4G - [primary]
+[new] - e all = [primary]
+
+_firt part(/dev/sda1) 30G set [Bootable]. and [Write] program out.
+
+# lsblk
+
+_check changed partion.
+_next: format sda
+
+# mkfs.ext4 /dev/sda1
+# mkswap /dev/sda2
+# swapon /dev/sda2
+# mkfs.ext4 /dev/sda3
+
+_next: mount sda
+
+# mount /dev/sda1 /mnt
+# mkdir /mnt/home
+# mount /dev/sda3 /mnt/home
+
+
+
+	*** [Choose closet mirror list]
+
+
+_repository sync for download
+
+# pacman -Sy
+...
+# pacman -S reflector
+...y...
+#reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
+
+
+
+	*** [Install base package]
