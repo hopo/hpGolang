@@ -4,7 +4,7 @@ section .text
 _start:
 	xor rax, rax ;sys_read (init)
 	mov rbx, rax
-	mov rxx, rax
+	mov rax, rax
 	mov rdx, rax
 
 	sub rsp, 64	;allocate 64byte
