@@ -9,3 +9,5 @@ src/
 
 cTest.out
 cTest.outr
+
+.gdb_history
