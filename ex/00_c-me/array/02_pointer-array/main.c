@@ -1,17 +1,16 @@
 #include <stdio.h>
 
-char string_middle(char* t[]) {
-	printf("%c\n", t[0]);
-	printf("%c\n", t[1]);
-	printf("%c\n", t[2]);
-	
-	return '/';
+void string_middle(char *text) {
+	printf("%c\n", text[0]);
+	printf("%c\n", text[1]);
+	printf("%c\n", text[2]);
 }
 
-int main(int argc, char* argv[]) {
-	char text1[] = "powe5hell6";	// w
-	char ex1 = string_middle(text1);
-	printf("%c", ex1);
+int main(void) {
+	char *t;
+	t = "powe5hell6";
+
+	string_middle(t);
 
 	return 0;
 }

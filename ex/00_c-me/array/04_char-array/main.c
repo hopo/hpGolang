@@ -1,9 +1,6 @@
-// ..ing
-
-
 #include <stdio.h>
 
-void modi(char* words[]) {
+void modi(char *words[]) {
 	int i = 0;
 	printf("before:\n");
 	while(i < 5) {
@@ -11,7 +8,7 @@ void modi(char* words[]) {
 		i++;
 	}
 
-	char* ret[] = {*(words+4), *(words+3), *(words+1)};
+	char *ret[] = {*(words+4), *(words+3), *(words+1)};
 
 	int j = 0;
 	printf("\nafter:\n");
@@ -22,7 +19,7 @@ void modi(char* words[]) {
 }
 
 int main() {
-	char* words[] = {"sun", "bed", "car", "exo", "you"};
+	char *words[] = {"sun", "bed", "car", "exo", "you"};
 	modi(words);
 
 	return 0;

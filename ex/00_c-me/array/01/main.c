@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 void prnt(char* carr);
 
 int main() {
@@ -9,7 +8,7 @@ int main() {
 	carr[0] = 'h';
 	carr[1] = 'i';
 
-	prnt(&carr);
+	prnt(carr);
 
 	return 0;
 }
