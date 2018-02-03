@@ -5,17 +5,17 @@ int is_pair(char *);
 int  main() {
 	char str1[] = "(hello)()";
 	int ex1;
-	ex1 = is_pair(str1);	/* 1, true */
+	ex1 = is_pair(str1);	// 1, true
 	printf("%d\n", ex1);
 
 	char str2[] = ")(";
 	int ex2;
-	ex2 = is_pair(str2);	/* 0, false */
+	ex2 = is_pair(str2);	// 0, false
 	printf("%d\n", ex2);
 
 	char str3[] = "(5+(40*(1+2)/2)+(1+2)*2)";
 	int ex3;
-	ex3 = is_pair(str3);	/* 1, true */
+	ex3 = is_pair(str3);	// 1, true
 	printf("%d", ex3);
 }
 
@@ -29,7 +29,7 @@ int is_pair(char *str) {
 			box[b] = str[i];
 			b++;
 
-			if(b > 31) {	/* if box length over */
+			if(b > 31) {	// if box length over
 				printf("* TOO MANY BRACKETS * ");
 				return -1;
 			}
