@@ -3,17 +3,14 @@
 int collats(int);
 
 int main() {
-	int num1, ex1;
-	num1 = 6;
+	int num1 = 6, ex1;
 	ex1 = collats(num1);	// 8, 6:3-10-5-16-8-4-2-1
 	printf("%d\n", ex1);
 
-	int num2, ex2;
-	num2 = 11;
+	int num2 = 11, ex2;
 	ex2 = collats(num2);	// 14
 	printf("%d", ex2); 
 	
-
 	return 0;
 }
 
