@@ -17,10 +17,10 @@ int main() {
 
 	printf("int / float\n");
 
-	printf("ret_d: %d\n", i/f);
-	printf("ret_p: %p\n", i/f);
+	printf("ret_d: %f\n", i/f);
+	printf("ret_p: %f\n", i/f);
 	printf("ret_f: %f\n", i/f);
-	printf("ret_x: %x\n", i/f);
+	printf("ret_x: %f\n", i/f);
 
 	return 0;
 }
