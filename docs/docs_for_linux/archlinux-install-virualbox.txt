@@ -1,0 +1,89 @@
+
+ [ *** ]
+
+ping -c3 google.com
+
+fdisk -l
+cfdisk /dev/sda
+{partioning}
+fdisk -l
+
+mkfs.ext /dev/sda1	(;boot)
+mkfs.ext /dev/sda3	(;root)
+mkswap /dev/sda2	(;swap)
+swapon /dev/sda2
+
+mount /dev/sda3 /mnt
+mkdir /mnt/boot /mnt/home /mnt/var
+mount /dev/sda1 /mnt/boot
+
+
+ [ *** ]
+
+pacman -Sy
+pacman -S reflector
+reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
+
+
+ [ *** ]
+
+pacstrap /mnt base base-devel
+pacman -Syu
+pacstrap /mnt grub-bios
+
+genfstab -p /mnt >> /mnt/etc/fstab
+arch-chroot /mnt /bin/bash
+
+
+ [ *** ]
+nano /etc/locale.gen
+{un# en_US.UTF-8}
+locale-gen
+echo LANG=en_US.UTF-8 > /etc/locale.conf
+export LANG=en_US.UTF-8
+
+rm -rf /etc/localtime
+ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+hwclock --systohc --utc
+
+
+ [ *** ]
+
+echo arch2017 >> /etc/hostname
+systemctl enable dhcpcd.service
+
+
+ [ *** ]
+
+passwd root
+useradd -m -g users -G wheel -s /bin/bash park
+passwd park
+nano /etc/sudoers
+{park ALL=(ALL) ALL}
+
+
+ [ *** ]
+
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+mkinitcpio -p linux
+
+exit
+umount /mnt/boot
+umount /mnt
+reboot
+
+
+ [ *** ]
+
+pacman -Syu
+pacman -Sy xorg xterm xorg-twm xorg-init xorg-apps
+
+pacman -Syyu
+pacman -Sy xfce4 xfce4-goodies
+pacman -Sy ttf-freefont
+pcaman -Sy lightdm lightdm-gtk-greeter
+systemctl enable lightdm.service
+pacman -Sy firefox qt4 flashplugin
+pacman -Sy archlinux-wallpaper vim
+reboot

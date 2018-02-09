@@ -1,5 +1,0 @@
-http://nyonura.com/blog/2014/Uninstalling-ubuntu-from-a-Mac-Book-Pro/
-
-https://apple.stackexchange.com/questions/225520/remove-ubuntu-and-grow-mac-partition
-
-http://forteleaf.blogspot.kr/2016/04/mac-grub.html
