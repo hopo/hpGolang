@@ -22,7 +22,7 @@ mount /dev/sda1 /mnt/boot
 
 pacman -Sy
 pacman -S reflector
-reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
+reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 
 
  [ *** ]
