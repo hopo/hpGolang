@@ -1,0 +1,36 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+#PS1='[\u@\h \W]\$ '
+PS1='[\[$(tput setaf 2)\]\u@\h\[$(tput sgr0)\] \[$(tput setaf 4)\]\W\[$(tput sgr0)\]]\$ '
+
+
+#
+# *** [USER bashrc] ***
+#
+
+
+# *** Set bash-git-prompt
+GIT_PROMPT_ONLY_IN_REPO=1
+source /home/hp/.bash-git-prompt/gitprompt.sh
+
+
+# *** set golang
+export GOROOT=/usr/lib/go
+export GOPATH=$HOME/.golang
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+
+# *** aliases
+alias cdw='cd /home/hp/workspace/'
+alias cmat='cmatrix -bs'
+alias rm='echo " [ *** WARNING *** ]" && rm -i'
+alias l='ls -F'
+alias la='ls -aF'
+alias ll='ls -lF'
+
