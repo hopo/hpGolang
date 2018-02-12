@@ -71,6 +71,8 @@ nano /etc/sudoers
  [ *** ]
 
 grub-install /dev/sda
+nano /etc/default/grub
+{TIME=5}
 grub-mkconfig -o /boot/grub/grub.cfg
 mkinitcpio -p linux
 
@@ -83,16 +85,23 @@ reboot
  [ *** ]
 
 pacman -Syu
-pacman -Sy xorg xterm xorg-twm xorg-init xorg-apps
+pacman -S xorg xterm xorg-init xorg-apps
+pacman -S xorg-twm xorg-xclock 
 
-pacman -Syyu
-pacman -Sy xfce4 xfce4-goodies (; if you want xfce)
-pcaman -Sy lightdm lightdm-gtk-greeter
+{; i3}
+nano /home/park/.xinitrc
+{exec i3}
+pacman -S i3
+reboot
+
+(; xfce)
+pacman -S xfce4 xfce4-goodies 
+pcaman -S lightdm lightdm-gtk-greeter
 systemctl enable lightdm.service
 
-pacman -Sy ttf-freefont noto-fonts-cjk
-pacman -Sy firefox qt4 flashplugin
-pacman -Sy archlinux-wallpaper vim
+pacman -S ttf-freefont noto-fonts-cjk
+pacman -S vim firefox
+pacman -S qt4 flashplugin archlinux-wallpaper
 reboot
 
 
