@@ -8,13 +8,15 @@ cfdisk /dev/sda
 {partioning}
 fdisk -l
 
-mkfs.ext /dev/sda1	(;boot)
-mkfs.ext /dev/sda3	(;root)
+mkfs.ext /dev/sda1	(;root)
+mkfs.ext /dev/sda3	(;home)
 mkswap /dev/sda2	(;swap)
 swapon /dev/sda2
 
 mount /dev/sda(R) /mnt
-mkdir /mnt/boot /mnt/home /mnt/var
+mkdir /mnt/boot
+mkdir /mnt/home
+mkdir /mnt/var
 mount /dev/sda(H) /mnt/home
 
 
@@ -23,13 +25,12 @@ mount /dev/sda(H) /mnt/home
 pacman -Sy
 pacman -S reflector
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 
 
  [ *** ]
 
 pacstrap /mnt base base-devel
-pacman -Syu
 pacstrap /mnt grub-bios
 
 genfstab -p /mnt >> /mnt/etc/fstab
@@ -53,6 +54,7 @@ hwclock --systohc --utc
 
 echo arch2017 >> /etc/hostname
 systemctl enable dhcpcd.service
+pacman -Syu
 pacman -S wpa_supplicant dialog
 pacman -S networkmanager networtk-manager-applet
 
