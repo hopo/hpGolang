@@ -13,16 +13,16 @@ mkfs.ext /dev/sda3	(;root)
 mkswap /dev/sda2	(;swap)
 swapon /dev/sda2
 
-mount /dev/sda3 /mnt
+mount /dev/sda(R) /mnt
 mkdir /mnt/boot /mnt/home /mnt/var
-mount /dev/sda1 /mnt/boot
+mount /dev/sda(H) /mnt/home
 
 
  [ *** ]
 
 pacman -Sy
 pacman -S reflector
-reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 
 
  [ *** ]
@@ -51,6 +51,8 @@ hwclock --systohc --utc
 
 echo arch2017 >> /etc/hostname
 systemctl enable dhcpcd.service
+pacman -S wpa_supplicant dialog
+pacman -S networkmanager networtk-manager-applet
 
 
  [ *** ]
@@ -69,7 +71,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 mkinitcpio -p linux
 
 exit
-umount /mnt/boot
+umount /mnt/home
 umount /mnt
 reboot
 
@@ -80,10 +82,17 @@ pacman -Syu
 pacman -Sy xorg xterm xorg-twm xorg-init xorg-apps
 
 pacman -Syyu
-pacman -Sy xfce4 xfce4-goodies
-pacman -Sy ttf-freefont
+pacman -Sy xfce4 xfce4-goodies (; if you want xfce)
 pcaman -Sy lightdm lightdm-gtk-greeter
 systemctl enable lightdm.service
+
+pacman -Sy ttf-freefont noto-fonts-cjk
 pacman -Sy firefox qt4 flashplugin
 pacman -Sy archlinux-wallpaper vim
 reboot
+
+
+ [ *** ]
+systemctl disable dhcpcd@ (; for wireless)
+systemctl disable netctl-auto@
+systemctl enable NetworkManager
