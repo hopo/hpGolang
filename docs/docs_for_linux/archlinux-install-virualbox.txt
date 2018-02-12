@@ -22,6 +22,7 @@ mount /dev/sda(H) /mnt/home
 
 pacman -Sy
 pacman -S reflector
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 
 
@@ -36,6 +37,7 @@ arch-chroot /mnt /bin/bash
 
 
  [ *** ]
+ 
 nano /etc/locale.gen
 {un# en_US.UTF-8}
 locale-gen
