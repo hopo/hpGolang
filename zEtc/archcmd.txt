@@ -1,0 +1,12 @@
+
+$ xrandr --output eDP1 --brightness 0.8
+
+$ xflux -l 36.35 -g 127.28 -k 3200
+
+$ setkbmap -option ctrl:swapcaps
+
+$ kbdlight set 20
+
+$ nm-applet
+
+$ wavemon
