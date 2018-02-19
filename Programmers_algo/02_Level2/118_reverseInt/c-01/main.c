@@ -1,25 +1,57 @@
 #include <stdio.h>
 
 
-void reverseInt(int);
+void reverseInt(int *);
 
 int main() {
 	int num = 118372;
-	reverseInt(num);	// 873211
+	reverseInt(&num);	// 873211
+	printf("%d", num);
 }
 
-void reverseInt(int num) {
-	int dv = 10, box[12];
+void reverseInt(int *num) {
+	int dv = 10, d, i = 0, j, n, lnth, tmp, box[16];
+	n = *num;
 
+	/* jaritsu of num*/
 	while(1) {
-		if(dv-num > 0) {
+		if(dv-n > 0) {
 			dv /= 10;
 			break;
 		}
 		dv *= 10;
 	}
+	d = dv;
 
-	printf("%d ", num/dv);
+	/* make array each num */
+	while(1) {
+		if(!dv) { break; }
+		box[i] = n/dv;
+		i++;
+		n %= dv;
+		dv /= 10;
+	}
+	lnth = i;
+
+	/* compare each num and sort */
+	for(i = 0; i < lnth-1; i++) {
+		for(j = i+1; j < lnth; j++) {
+			if(box[i] < box[j]) {
+				tmp = box[i];
+				box[i] = box[j];
+				box[j] = tmp;
+			}
+		}
+	}
+
+	/* make integer by sorted array */
+	for(i = 0; i < lnth; i++) {
+		n += box[i]*d;
+		d /= 10;
+	}
+
+	/* return */
+	*num = n;
 }
 
 
