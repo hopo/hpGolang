@@ -14,6 +14,8 @@ int main() {
 
 void productMatrix(int mata[2][2], int matb[2][2], int ret[2][2]) {
 	int i, j, lnth = 2;
+
+	/* to calculate matrix a and b. and to store ret array */
 	for(i = 0; i < lnth; i++) {
 		for(j = 0; j < lnth; j++) {
 			ret[i][j] = (mata[i][0]*matb[0][j]) + (mata[i][1]*matb[1][j]);

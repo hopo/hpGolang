@@ -18,6 +18,7 @@ void jaden_case(char *str) {
 	int i = 0, flag = 1;
 
 	/* loop check using flag */
+	/* if else statement */
 	while(str[i] != '\0') {
 		if(flag) {
 			if('a' <= str[i] && str[i] <= 'z') {
