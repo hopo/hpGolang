@@ -1,9 +1,11 @@
+
 def correct_sentence(text: str) -> str:
     if text[0].islower:
         u = text[0].upper()
         text = text.replace(text[0], u, 1)
     if text[len(text)-1] != ".":
-        text = text+"." 
+        text = text + "." 
+
     return text
 
 
