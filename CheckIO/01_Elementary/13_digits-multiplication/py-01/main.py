@@ -1,4 +1,5 @@
-def checkio(number):
+
+def checkio(number:int) -> int:
     s = str(number)
     r = 1
     for v in s:

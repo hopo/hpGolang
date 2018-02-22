@@ -1,14 +1,15 @@
-def checkio(numbers_array):
+
+def checkio(numbers_array:tuple) -> list :
     arr = []
-    for v in numbers_array:
+    for v in numbers_array :
         arr.append(v)
 
     l = len(arr)
     i = 1
-    while (i < l):
+    while i < l :
         j = 0
-        while (j < l):
-            if abs(arr[i]) < abs(arr[j]):
+        while j < l :
+            if abs(arr[i]) < abs(arr[j]) :
                 arr[i], arr[j] = arr[j], arr[i]
             j += 1
         i += 1

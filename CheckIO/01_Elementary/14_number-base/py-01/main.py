@@ -1,6 +1,7 @@
+
 ALP = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-def checkio(str_number, radix):
+def checkio(str_number:str, radix:int) -> int:
     l = len(str_number)
     il = []
     for i in range(l):
