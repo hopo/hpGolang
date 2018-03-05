@@ -1,13 +1,11 @@
-bin/
-pkg/
-src/
-
 .DS_Store
 *.swp
 *.swo
-*.pyc
 
 cTest.out
 cTest.outr
+
+*.pyc
+*.class
 
 .gdb_history
