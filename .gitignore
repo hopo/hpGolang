@@ -8,9 +8,6 @@ cTest.outr
 
 *.pyc
 
-.metadata/
-.recommenders/
-.
 *.class
 
 .gdb_history
