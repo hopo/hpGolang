@@ -1,7 +1,8 @@
 package a01_BasicSyntax;
 
 class FreshJuice {
-   enum FreshJuiceSize{ SMALL, MEDIUM, LARGE }
+	/* enum */
+   enum FreshJuiceSize{SMALL, MEDIUM, LARGE}
    FreshJuiceSize size;
 }
 
