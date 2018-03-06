@@ -9,7 +9,7 @@ cTest.outr
 *.pyc
 
 .metadata/
-.recomenders/
+.recommenders/
 .
 *.class
 
