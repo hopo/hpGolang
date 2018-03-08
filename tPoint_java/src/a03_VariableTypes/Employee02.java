@@ -1,5 +1,6 @@
 package a03_VariableTypes;
-import java.io.*;
+
+//import java.io.*;
 
 public class Employee02 {
 

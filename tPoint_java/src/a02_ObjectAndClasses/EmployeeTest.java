@@ -1,5 +1,5 @@
 package a02_ObjectAndClasses;
-import java.io.*;
+//import java.io.*;
 
 public class EmployeeTest {
 	public static void main(String srgs[]) {
