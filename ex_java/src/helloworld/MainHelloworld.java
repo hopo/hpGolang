@@ -1,7 +1,10 @@
 package helloworld;
 
 public class MainHelloworld {
+
 	public static void main(String[] args) {
-		System.out.println("Hello World!");
+        String java = "java";
+		System.out.println("Hello " + java + " World!");
 	}
+
 }
