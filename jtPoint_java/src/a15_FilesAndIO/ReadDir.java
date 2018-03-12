@@ -19,7 +19,7 @@ public class ReadDir {
                 // prints filename and directory name
                 System.out.println(path);
             }
-        } catch(Exception) e {
+        } catch(Exception e) {
             // if any error occurs
             e.printStackTrace();
         }
