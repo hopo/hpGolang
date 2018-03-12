@@ -8,7 +8,7 @@ interface  Message {
 public class My_class03 {
     // method which accepts the object of interface Message
     public void displayMessage(Message m) {
-        System.out.println(m.greet() + ", This is an example of anonymous inner class as an argumet");<`0`>
+        System.out.println(m.greet() + ", This is an example of anonymous inner class as an argumet");
     }
 
     public static void main(String args[]) {
