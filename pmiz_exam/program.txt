@@ -1,3 +1,0 @@
-C programming is awesome.
-I love C programming.
-How aare you doing?
