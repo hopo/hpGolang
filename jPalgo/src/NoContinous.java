@@ -1,5 +1,5 @@
 // ing
-package level01;
+// package level01;
 
 public class NoContinous {
     public static void main(String args[]) {

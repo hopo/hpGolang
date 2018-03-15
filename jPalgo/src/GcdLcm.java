@@ -1,4 +1,4 @@
-package level01;
+// package level01;
 
 import java.util.Arrays;
 
@@ -28,7 +28,7 @@ public class GcdLcm {
 			mn = tmp;
 		}
 
-		int[] ret = {mx, (int)((a*b)/mx)};
+		int[] ret = {mx, (a*b)/mx};
 		return ret;
 	}
 }

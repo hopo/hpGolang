@@ -1,10 +1,13 @@
-package main
+// ing
 
-import (
-	"fmt"
-	"sort"
-)
+// package level01;
 
+public class SortDictionary {
+	public static void main(String args[]) {
+	}
+}
+
+/*
 func main() {
 	ncard := map[string]int{"김철수": 78, "이하나": 97, "정진원": 88}
 	ex1 := sort_dictionary(ncard)
@@ -27,3 +30,4 @@ func sort_dictionary(nc map[string]int) (ret []Ncard) {
 	}
 	return
 }
+*/
