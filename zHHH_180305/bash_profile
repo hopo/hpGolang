@@ -1,0 +1,44 @@
+
+#
+# ******************************
+# ***** HPMBA bash_profile *****
+# ******************************
+#
+
+
+
+#
+# *** PS1
+PS1='\h:\W $ '
+
+
+#
+# *** golang env
+export GOROOT=/usr/local/Cellar/go/1.10/libexec
+export GOPATH=/Users/hp/.golang
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+
+#
+# *** java env
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home
+
+#
+# *** bash-git-prompt set
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.bash-git-prompt/gitprompt.sh
+
+
+#
+# *** aliases
+alias cp='cp -i'
+alias cmat='cmatrix -bs'
+alias l='ls -GF'
+alias la='ls -aGF'
+alias ll='ls -lhG'
+alias mv='mv -i'
+alias rm='rm -iv'
+alias sfet='clear && screenfetch'
+
+alias python='python3'
+alias pip='pip3'
