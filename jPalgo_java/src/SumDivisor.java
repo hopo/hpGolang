@@ -1,4 +1,4 @@
-// package level01;
+package level01;
 
 public class SumDivisor {
     public static void main(String args[]) {

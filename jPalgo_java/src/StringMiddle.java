@@ -1,30 +1,29 @@
-// ing
-// package level01;
+package level01;
+
+import java.lang.String;
 
 public class StringMiddle {
 	public static void main(String[] args) {
-		StringMiddle sm1 = new StringMiddle();
 		String str1 = new String("power");
-		String ex1 = sm1.stringmiddle(str1); // w
+		String ex1 = stringmiddle(str1); // w
 		System.out.println(ex1);
 
-/*
-		StringMiddle sm2 = new StringMiddle();
 		String str2 = new String("java");
-		String ex2 = sm2.stringmiddle(str2); // av
+		String ex2 = stringmiddle(str2); // av
 		System.out.print(ex2);
-*/
 	}
 
-	String stringmiddle(String str) {
-		int str_len = str.length();
-		int str_len_half = str_len/2;
-		/*
-		if(str_len%2 == 0) {
-			return str[str_len_half-1] + len[str_len_half+1];
+	public static String stringmiddle(String str) {
+        char[] carr = str.toCharArray();
+		int lnth = carr.length;
+		int lnth_half = lnth/2;
+
+        String ret = "";
+        ret += carr[lnth_half];
+		if(lnth%2 == 0) {
+            ret = carr[lnth_half-1] + ret;
 		}
-		*/
-		return "break! String";
+		return ret;
 	}
 }
 

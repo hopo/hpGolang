@@ -1,28 +1,23 @@
-// ing
-// package level01;
+package level01;
+
+import java.lang.String;
 
 public class NoContinous {
     public static void main(String args[]) {
-        NoContinous nc1 = new NoContinous();
         String str1 = "13303";
-        String ex1 = nc1.no_continuous(str1); // "1 3 0 3"
+        String ex1 = nocontinuous(str1); // "1 3 0 3"
+        System.out.println(ex1);
     }
 
-    String no_continuous(String str) {
-        System.out.println(str); 
-        return "-1";
+    public static String nocontinuous(String str) {
+        char[] carr = str.toCharArray();
+        String ret = "";
+
+        for(int i = 1; i < carr.length; i++) {
+            if(carr[i-1] != carr[i]) { ret += " "+ carr[i]; }
+        }
+        ret = carr[0] + ret;
+
+        return ret;
     }
 }
-
-/*
-def no_continuous(s):
-
-    ret = []
-    for i in range(len(s)):
-        if s[i-1] != s[i]:
-        	ret.append(s[i])
-    return ret
-
-# 아래는 테스트로 출력해 보기 위한 코드입니다.
-print( no_continuous( "133303" ))
-*/
