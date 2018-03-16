@@ -1,3 +1,3 @@
 # !/bin/bash
 
-ssh mosa@192.168.0.15 #wireless
+ssh hp@192.168.0.15 #wireless
