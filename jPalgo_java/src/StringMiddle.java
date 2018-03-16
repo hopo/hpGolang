@@ -23,11 +23,7 @@ public class StringMiddle {
 		if(lnth%2 == 0) {
             ret = carr[lnth_half-1] + ret;
 		}
+
 		return ret;
 	}
 }
-
-
-/*
-return len(str)&1 and str[len(str)//2] or str[len(str)//2-1:len(str)//2+1]
-*/
