@@ -2,7 +2,7 @@ package booleanEx;
 
 import java.lang.*;
 
-// equals()
+// boolean equals(Object obj)
 public class BooleanDemo03 {
     public static void main(String args[]) {
 
@@ -13,8 +13,8 @@ public class BooleanDemo03 {
         boolean res;
 
         // assign values to b1, b2
-        b1 = true;
-        b2 = false;
+        b1 = new Boolean(true);
+        b2 = new Boolean(false);
 
         // assign the result of equals method on b1, b2 to res
         res = b1.equals(b2);

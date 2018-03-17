@@ -2,14 +2,15 @@ package booleanEx;
 
 import java.lang.*;
 
-// booleanValue()
+// boolean booleanValue()
 public class BooleanDemo {
     public static void main(String args[]) {
+
         // create a Boolean object b
-        Boolean b=true;
+        Boolean b;
         
-        // assign value to b (warning message)
-        // b = new Boolean(true);
+        // assign value to b
+        b = new Boolean(true);
 
         // create a boolean primitive type bool
         boolean bool;

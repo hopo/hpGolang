@@ -2,15 +2,15 @@ package booleanEx;
 
 import java.lang.*;
 
-// compareTo
+// int compareTo(Boolean b)
 public class BooleanDemo02 {
     public static void main(String args[]) {
         // create 2 Boolean objects b1, b2
-        Boolean b1=true, b2=false;
+        Boolean b1, b2;
 
-        // assign values to b1, b2 (warning message)
-        // b1 = new Boolean(true);
-        // b2 = new Boolean(false);
+        // assign values to b1, b2
+        b1 = new Boolean(true);
+        b2 = new Boolean(false);
 
         // create an int res
         int res;

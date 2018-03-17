@@ -1,6 +1,6 @@
 package booleanEx;
 
-// setProperty(); getProperty()
+// static boolean getProperty(String name)
 import java.lang.*;
 
 public class BooleanDemo04 {
