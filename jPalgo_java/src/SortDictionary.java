@@ -1,9 +1,15 @@
 // ing
+// map type style
 // package level01;
 
 public class SortDictionary {
 	public static void main(String args[]) {
+
 	}
+
+    public static void sortdictionary(String[] ncard) {
+
+    }
 }
 
 /*
