@@ -1,47 +1,33 @@
-// ing
 package level01;
 
 public class NumPY {
     public static void main(String args[]) {
         String str1 = "pPooyY";
-        boolean ex1 = numpy(str1);
+        boolean ex1 = numpy(str1); // true
         System.out.println(ex1);
 
-        /*
-        String cstr2 = "Pyy";
-        boolean ex2 = numpy(str2);
+        String str2 = "Pyy";
+        boolean ex2 = numpy(str2); // false
         System.out.println(ex2);
-        */
     }
 
     public static boolean numpy(String str) {
+        char t;
+        int ppp = 0, yyy = 0;
         boolean ret = false;
-        char[] cst = str.toCharArray();
-        System.out.println(cst[0]);
+        for(int i = 0; i < str.length(); i++) {
+            switch (str.charAt(i)) {
+                case 'P':
+                case 'p':
+                    ppp++;
+                    break;
+                case 'Y':
+                case 'y':
+                    yyy++;
+                    break;
+            }
+        }
 
-        
-        return ret;
+        return ppp == yyy;
     }
 }
-
-/*
-func main() {
-	ex1 := numPY("pPoooyY") // true
-	ex2 := numPY("Pyy")     // false
-	fmt.Println(ex1)
-	fmt.Println(ex2)
-}
-
-func numPY(s string) bool {
-	var ppp, yyy int
-	for _, v := range s {
-		switch string(v) {
-		case "p":
-			ppp++
-		case "y":
-			yyy++
-		}
-	}
-	return ppp == yyy
-}
-*/
