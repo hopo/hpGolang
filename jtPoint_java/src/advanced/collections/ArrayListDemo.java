@@ -1,6 +1,7 @@
 package advanced.collections;
 
-import java.util.*;
+// import java.util.*;
+import java.util.ArrayList;
 
 public class ArrayListDemo {
     public static void main(String args[]) {
