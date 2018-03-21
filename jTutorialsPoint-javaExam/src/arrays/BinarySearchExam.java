@@ -2,7 +2,7 @@ package arrays;
 
 import java.util.Arrays;
 
-public class MainClass {
+public class BinarySearchExam {
     public static void main(String args[]) {
         int[] array = {2, 5, -2, 6, -3, 8, 0, -7, -9, 4};
         Arrays.sort(array);

@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class MainClass {
+public class CaseInsensitiveOrder {
     public static void main(String args[]) {
         String[] coins = {"Penny", "nickle", "dime", "Quarter", "dollar"};
         Set set = new TreeSet();
