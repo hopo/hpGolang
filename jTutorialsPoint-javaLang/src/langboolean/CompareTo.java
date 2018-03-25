@@ -1,9 +1,7 @@
-package booleanEx;
-
-import java.lang.*;
+package langboolean;
 
 // int compareTo(Boolean b)
-public class BooleanDemo02 {
+public class CompareTo {
     public static void main(String args[]) {
         // create 2 Boolean objects b1, b2
         Boolean b1, b2;

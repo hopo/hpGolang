@@ -1,9 +1,7 @@
-package booleanEx;
-
-import java.lang.*;
+package langboolean;
 
 // boolean booleanValue()
-public class BooleanDemo {
+public class BooleanExam {
     public static void main(String args[]) {
 
         // create a Boolean object b

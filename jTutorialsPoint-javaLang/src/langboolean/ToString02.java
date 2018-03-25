@@ -1,9 +1,7 @@
-package booleanEx;
-
-import java.lang.*;
+package langboolean;
 
 // static String toString(boolean b)
-public class BooleanDemo08 {
+public class ToString02 {
 	public static void main(String[] args) {
 		
 		// create 2 boolean primitives bool1, bool2

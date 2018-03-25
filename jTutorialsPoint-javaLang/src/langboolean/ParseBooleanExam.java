@@ -1,9 +1,7 @@
-package booleanEx;
-
-import java.lang.*;
+package langboolean;
 
 // static boolean parseBoolean(String s)
-public class BooleanDemo06 {
+public class ParseBooleanExam {
 	public static void main(String[] args) {
 		
 		// create and assign values to String;s s1, s2

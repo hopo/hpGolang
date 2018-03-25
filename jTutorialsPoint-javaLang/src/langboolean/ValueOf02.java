@@ -1,9 +1,7 @@
-package booleanEx;
-
-import java.lang.*;
+package langboolean;
 
 // static Boolean valueOf(String s)
-public class BooleanDemo10 {
+public class ValueOf02 {
 	public static void main(String[] args) {
 		
 		// create 2 Boolean objects b1, b2

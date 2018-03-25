@@ -1,9 +1,7 @@
-package booleanEx;
+package langboolean;
 
 // static boolean getProperty(String name)
-import java.lang.*;
-
-public class BooleanDemo04 {
+public class GetBooleanExam {
     public static void main(String args[]) {
         
         // create 2 boolean primitives bool1, bool2
