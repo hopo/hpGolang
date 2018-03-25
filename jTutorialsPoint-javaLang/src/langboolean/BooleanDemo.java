@@ -1,7 +1,7 @@
 package langboolean;
 
 // boolean booleanValue()
-public class BooleanExam {
+public class BooleanDemo {
     public static void main(String args[]) {
 
         // create a Boolean object b
