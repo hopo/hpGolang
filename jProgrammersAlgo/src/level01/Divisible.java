@@ -10,7 +10,7 @@ public class Divisible {
         System.out.println(Arrays.toString(ex1));
     }
 
-    public static int[] divisible(int[] iarr, int n) {
+    static int[] divisible(int[] iarr, int n) {
         int b = 0, lnth = iarr.length;
         int[] box = new int[lnth];
 

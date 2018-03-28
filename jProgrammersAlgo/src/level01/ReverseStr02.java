@@ -1,7 +1,5 @@
 package level01;
 
-import java.util.Arrays;
-
 public class ReverseStr02 {
 	public static void main(String[] args) {
         String str1 = "Zbcdefg";
@@ -12,5 +10,4 @@ public class ReverseStr02 {
 	static String reversestr(String str){
         return new StringBuffer(str).reverse().toString();
 	}
-
 }

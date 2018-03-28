@@ -11,10 +11,8 @@ public class NumPY {
         System.out.println(ex2);
     }
 
-    public static boolean numpy(String str) {
-        char t;
+    static boolean numpy(String str) {
         int ppp = 0, yyy = 0;
-        boolean ret = false;
         for(int i = 0; i < str.length(); i++) {
             switch (str.charAt(i)) {
                 case 'P':

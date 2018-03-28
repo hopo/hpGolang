@@ -1,8 +1,8 @@
 package level01;
 
-import java.util.Arrays;
+// solution02: using StringBuffer
 
-public class HideNumbers {
+public class HideNumbers02 {
     public static void main(String args[]) {
         String pnum1 = "01033334444";
         String ex1 = hidenumber(pnum1); // "*******4444"
@@ -14,14 +14,12 @@ public class HideNumbers {
     }
 
     static String hidenumber(String pnum) {
-        char[] carr = pnum.toCharArray();
-        String ret = "";
-
-        for(int i = 0; i < carr.length; i++) {
-            if(i < carr.length-4) { ret += "*"; }
-            else { ret += carr[i]; }
-        }
-
-        return ret;
+    	int slnth = pnum.length()-4;
+    	StringBuffer sb = new StringBuffer(pnum);
+    	
+    	String stars = "";
+    	for(int i = 0; i < slnth; i++) { stars += "*"; }
+    	
+    	return sb.replace(0, slnth, stars).toString();
     }
 }
