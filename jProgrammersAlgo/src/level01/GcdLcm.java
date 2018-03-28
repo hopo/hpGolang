@@ -4,16 +4,16 @@ import java.util.Arrays;
 
 public class GcdLcm {
 	public static void main(String[] args) {
-		GcdLcm gl1 = new GcdLcm();
-		int[] ex1 = gl1.gcdlcm(3, 12);	// 3, 12
+		int a1 = 3, b1 = 12;
+		int[] ex1 = gcdlcm(a1, b1);	// [3, 12]
 		System.out.println(Arrays.toString(ex1));
 
-		GcdLcm gl2 = new GcdLcm();
-		int[] ex2 = gl2.gcdlcm(4, 7);	// 1, 28
+		int a2 = 4, b2 = 7;
+		int[] ex2 = gcdlcm(a2, b2);	// [1, 28]
 		System.out.println(Arrays.toString(ex2));
 	}
 
-	int[] gcdlcm(int a, int b) {
+	static int[] gcdlcm(int a, int b) {
 		int tmp;
 		if(a > b) {
 			tmp = a;
@@ -29,6 +29,7 @@ public class GcdLcm {
 		}
 
 		int[] ret = {mx, (a*b)/mx};
+
 		return ret;
 	}
 }

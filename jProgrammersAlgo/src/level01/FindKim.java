@@ -16,6 +16,7 @@ public class FindKim {
         for(int i = 0; i < fnames.length; i++){
             if(fnames[i] == "Kim"){ ret = i; }
         }
+
         return ret;
     }    
 }

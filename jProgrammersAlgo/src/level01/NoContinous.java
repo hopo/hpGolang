@@ -9,7 +9,7 @@ public class NoContinous {
         System.out.println(ex1);
     }
 
-    public static String nocontinuous(String str) {
+    static String nocontinuous(String str) {
         char[] carr = str.toCharArray();
         String ret = "";
 

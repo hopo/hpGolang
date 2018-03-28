@@ -11,7 +11,7 @@ public class EvenOrOdd {
         System.out.println(ex2);
     }
 
-    static String  evenorodd(int num) {
+    static String evenorodd(int num) {
         return (num%2 == 0)? "Even" : "Odd";
     }
 }
