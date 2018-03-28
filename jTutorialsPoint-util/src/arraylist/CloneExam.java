@@ -5,13 +5,13 @@ import java.util.ArrayList;
 public class CloneExam {
 	public static void main(String[] args) {
 		// create an empty array list
-		ArrayList<StringBuilder> arrlist1 = new ArrayList<StringBuilder>();
+		ArrayList<StringBuilder> arrlist1 = new ArrayList<>();
 		
 		// use add for new value
 		arrlist1.add(new StringBuilder("Learning-"));
 		
 		// using clone to affect the objects pointed to by the reference.
-		ArrayList arrlist2 = (ArrayList)arrlist1.clone();
+		ArrayList<StringBuilder> arrlist2 = (ArrayList)arrlist1.clone();
 		
 		// appending the string
 		StringBuilder strbuilder = arrlist1.get(0);
