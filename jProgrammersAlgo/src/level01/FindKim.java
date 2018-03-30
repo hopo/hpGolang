@@ -11,7 +11,7 @@ public class FindKim {
         System.out.println(ex2);
     }
 
-    static int findkim(String[]  fnames) {
+    static int findkim(String[] fnames) {
         int ret = -1;
         for(int i = 0; i < fnames.length; i++){
             if(fnames[i] == "Kim"){ ret = i; }
