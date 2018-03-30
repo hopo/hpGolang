@@ -1,15 +1,14 @@
-// package arraytest;
+ package arraytest;
 
-import java.util.Arrays;
-
-public class Extending {
+public class ArrExtending {
     public static void main(String args[]) {
         Arrlist list = new Arrlist();
         int num = 10;
+
         for(int i = 0; i < num; i++) {
             list.add(i);
+            System.out.print(i + ", ");
         }
-
     }
 }
 
