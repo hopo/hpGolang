@@ -2,7 +2,6 @@ package level02;
 
 public class LongestPalindrom {
 	public static void main(String[] args) {
-		/*
 		String str1 = "tomotmomtomot";
 		int ex1 = lpalindrom(str1); // 13
 		System.out.println(ex1);
@@ -14,11 +13,6 @@ public class LongestPalindrom {
 		String str3 = "xmmxaj";
 		int ex3 = lpalindrom(str3); // 4
 		System.out.println(ex3);
-		*/
-
-		String str4 = "xpxfsdkfjsxx";
-		int ex4 = lpalindrom(str4);
-		System.out.println(ex4);
 	}
 	
 	static int lpalindrom(String str) {
