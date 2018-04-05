@@ -18,6 +18,7 @@ public class LongestPalindrom {
 	static int lpalindrom(String str) {
 		char[] carr = str.toCharArray();
 
+		// end point. make array range
 		int endPoint = carr.length;
 		int endIdx = findEndIndex(carr, endPoint);
 		int mChk, ret = 0;
@@ -38,6 +39,7 @@ public class LongestPalindrom {
 		
 	}
 	
+	// find end index. to equal carr first character in array range
 	static int findEndIndex(char[] carr, int point) {
 		int ei = 0;
 
@@ -51,6 +53,7 @@ public class LongestPalindrom {
 		return ei;
 	}
 	
+	// mirrorCheck? (true) not changed endIdx : (false) new endPoint
 	static int mirrorCheck(char[] carr, int endIdx) {
 		int j, ret = endIdx;
 		int scope = endIdx/2;
