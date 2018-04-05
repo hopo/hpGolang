@@ -8,8 +8,9 @@ cfdisk /dev/sda
 {partioning}
 fdisk -l
 
-mkfs.ext /dev/sda1	(;root)
-mkfs.ext /dev/sda3	(;home)
+mkfs.ext4 /dev/sda1	(;root)
+mkfs.ext4 /dev/sda3	(;home)
+
 mkswap /dev/sda2	(;swap)
 swapon /dev/sda2
 
