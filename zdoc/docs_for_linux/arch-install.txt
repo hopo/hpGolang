@@ -86,7 +86,7 @@ reboot
  [ *** ]
 
 pacman -Syu
-pacman -S xorg xterm xorg-init xorg-apps
+pacman -S xorg xterm xorg-xinit xorg-apps
 pacman -S xorg-twm xorg-xclock 
 
 {; i3}
