@@ -96,10 +96,10 @@ pacman -S i3
 reboot
 
 (; xfce)
-pacman -S xfce4 xfce4-goodies 
 pcaman -S lightdm lightdm-gtk-greeter
 systemctl enable lightdm.service
 
+pacman -S xfce4 xfce4-goodies 
 pacman -S ttf-freefont noto-fonts-cjk
 pacman -S vim firefox
 pacman -S qt4 flashplugin archlinux-wallpaper
@@ -110,3 +110,7 @@ reboot
 systemctl disable dhcpcd@ (; for wireless)
 systemctl disable netctl-auto@
 systemctl enable NetworkManager
+
+(; case MBA)
+yaourt b43-firmware-classic broadcom-wl dkms
+
