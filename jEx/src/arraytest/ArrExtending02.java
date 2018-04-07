@@ -1,8 +1,8 @@
-// package arraytest;
+package arraytest;
 
 public class ArrExtending02 {
     public static void main(String args[]) {
-        Arrlist list = new Arrlist();
+        Alist list = new Alist();
         int num = 1000;
 
         // for test
@@ -13,7 +13,7 @@ public class ArrExtending02 {
     }
 }
 
-class Arrlist {
+class Alist {
     private int size = 0;
     private int capa = 100;
     private Object[] elementData = new Object[capa];
