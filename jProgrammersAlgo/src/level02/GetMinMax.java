@@ -6,14 +6,22 @@ public class GetMinMax {
 		int[] arra1 = {1, 2}, arrb1 = {3, 4};
 		int ex1 = getmm(arra1, arrb1); // 10
 
+		/*
 		int[] arra2 = {4, 2}, arrb2 = {3, 9};
 		int ex2 = getmm(arra2, arrb2); // 30
 
 		int[] arra3 = {2, 3}, arrb3 = {5, 7};
 		int ex3 = getmm(arra3, arrb3); // 29
+		*/
 	}
 	
 	static int getmm(int[] arra, int[] arrb) {
+		for(int a : arra) {
+			for(int b : arrb) {
+				System.out.printf("%d ", a*b);
+			}
+		}
+
 		return -1;
 	}
 }
