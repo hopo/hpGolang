@@ -1,53 +1,42 @@
 package level02;
 
+import java.util.Arrays;
+
 public class ProductMatrix {
     public static void main(String args[]) {
-        int[][] mata = {{1, 2}, {2, 3}};
-        int[][] matb = {{3, 4}, {5, 6}};
-    	int[][] ex1 = pdMatrix(mata, matb);	// [[13, 16], [21, 26]]
+    	// 2x2
+		int[][] mata1 = {{1, 2}, {2, 3}};
+		int[][] matb1 = {{3, 4}, {5, 6}};
+    	int[][] ex1 = pdMatrix(mata1, matb1);	// [[13, 16], [21, 26]]
+    	String ppp = Arrays.deepToString(ex1);
+    	System.out.println(ppp);
+
+    	// 3x3
+        int[][] mata2 = {{1, 2, 2}, {2, 3, 4}, {3, 3, 4}};
+        int[][] matb2 = {{3, 4, 7}, {5, 6, 8}, {2, 4, 1}};
+    	int[][] ex2 = pdMatrix(mata2, matb2);	// [[17, 24, 25], [29, 42, 42], [32, 46, 49]]	
+
+    	ppp = Arrays.deepToString(ex2);
+    	System.out.println(ppp);
     }
 
     static int[][] pdMatrix(int[][] ma, int[][] mb) {
-        int[][] ret = {{}, {}};
-        
+    	int raw = ma.length;
+    	int col = ma[0].length;
+    	int ele = 0;
+    	int[][] ret = new int[raw][col];
+    	if(raw == col) { 
+			for(int i = 0; i < raw; i++) {
+				for(int j = 0; j < col; j++) {
+					for(int k = 0; k < raw; k++) {
+						ele += ma[i][k] * mb[k][j];
+					}
+					ret[i][j] = ele;
+					ele = 0;
+				}
+			}
+    	}
+
         return ret;
     }
 }
-
-/*
-func productMatrix(A, B [][]int) [][]int {
-	if len(A[0]) != len(B) {
-		fmt.Println(" *** Operating impossible")
-		return nil
-	}
-
-	l := len(A[0])
-	var x, y int
-	var xsl, ysl []int
-	var xslsl, yslsl [][]int
-	for i := 0; i < l; i++ {
-		for j := 0; j < l; j++ {
-			x = A[i][0] * B[0][j]
-			y = A[i][1] * B[1][j]
-			xsl = append(xsl, x)
-			ysl = append(ysl, y)
-		}
-		xslsl = append(xslsl, xsl)
-		yslsl = append(yslsl, ysl)
-		xsl, ysl = []int{}, []int{}
-	}
-
-	var sumsl []int
-	var ret [][]int
-	for i := 0; i < l; i++ {
-		for j := 0; j < l; j++ {
-			sum := xslsl[i][j] + yslsl[i][j]
-			sumsl = append(sumsl, sum)
-		}
-		ret = append(ret, sumsl)
-		sumsl = []int{}
-	}
-
-	return ret
-}
-*/
