@@ -2,7 +2,7 @@ public class Ex02Person {
 
 	public static void main(String[] args) {
 
-		// 이름 나이 성별 체중 신장 결혼 전화 주소
+		// 과제: 이름 나이 성별 체중 신장 결혼 전화 주소
 		String name = "riceboy";
 		int age = 34;
 		char gender = 'M';
