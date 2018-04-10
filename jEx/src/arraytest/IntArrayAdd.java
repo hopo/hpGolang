@@ -6,8 +6,8 @@ public class IntArrayAdd {
     public static void main(String args[]) {
         ArrayList<Integer> ilist = new ArrayList<>();
 
-        Integer in1 = new Integer(42);
-        Integer in2 = new Integer(17);
+        Integer in1 = 42;
+        Integer in2 = 17;
         Integer in3 = 8;
         int in4 = 7;
 
