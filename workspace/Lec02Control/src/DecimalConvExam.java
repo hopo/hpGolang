@@ -6,8 +6,6 @@ public class DecimalConvExam {
 
 	public static void main(String[] args) throws IOException {
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
 		// 과제1> 10진수를 입력 받아 2진수, 8진수, 16진수로 출력하시오.
 		// 예시)
 		// 10진수 : 170
@@ -16,60 +14,79 @@ public class DecimalConvExam {
 		// 8진수 : 00000000252
 		// 16진수 : 000000AA
 
-		int num, tmp;
-		while (true) {
+		// 입력받기 위해 BufferdReader 참조형 변수 br 생성.
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		// variable declaration
+		int num, decimal;
+
+		// 최대 10회 질문.
+		for(int i = 0; i < 10; i++) {
+
+			// input number
 			System.out.print(">>> INPUT NUMBER (-1:quit) ? ");
-			num = Integer.parseInt(br.readLine());
-			tmp = num;
-			if (num == 0) {
-				System.out.println("_TERMINATE!");
+
+			// input number is decimal. 
+			decimal = Integer.parseInt(br.readLine());
+			
+			// if input number is -1 then program terminate.
+			if (decimal == -1) {
+				System.out.println("Program Terminated!");
 				break;
 			}
 
-			num = tmp;
+			// 2진수 변환.
+			num = decimal;	// num using operand
 			String binary = "";
-			for(int i = 0; i < 32; i++) {
-				if(num == 0) {
+			for(int j = 0; j < 32; j++) {
+				if(num == 0) {			// num이 0이 되었다면 나머지 자리에는 0으로 채운다.
 					binary = "0" + binary;
 					continue;
 				}
-				binary = (num%2) + "" + binary;
+				binary = (num%2) + binary;
+
 				num /= 2;
 			}
 
-			num = tmp;
+			// 8진수 변환.
+			num = decimal;	// num using operand
 			String octal = "";
-			for(int i = 0; i < 11; i++) {
-				if(num == 0) {
+			for(int j = 0; j < 11; j++) {
+				if(num == 0) {			// num이 0이 되었다면 나머지 자리에는 0으로 채운다.
 					octal = "0" + octal;
 					continue;
 				}
-				octal += (num%8) + "";
+				octal = (num%8) + octal;
+
 				num /= 8;
 			}
 
-			num = tmp;
-			String hexadeci = "";
-			for(int i = 0; i < 8; i++) {
-				if(num == 0) {
-					hexadeci = "0" + hexadeci;
+			// 16진수 변환.
+			num = decimal;	// num using operand
+			String hexadecimal = "";
+			for(int j = 0; j < 8; j++) {
+				if(num == 0) {		 // num이 0이 되었다면 나머지 자리에는 0으로 채운다.
+					hexadecimal = "0" + hexadecimal;
 					continue;
 				}
+
+				// num/16의 나머지가 10~15 라면 A~F.
 				if (num%16 > 9) {
-					hexadeci += (char)(num % 16 + 55) + "";
+					hexadecimal = (char)(num%16 + 55) + hexadecimal;
 				} else {
-					hexadeci += (num%16) + "";
+					hexadecimal = (num%16) + hexadecimal;
 				}
+
 				num /= 16;
 			}
 			
-			System.out.printf("10진수: %d\n", tmp);
-		    System.out.println("=== 출력결과 ===");
+			// print results
+			System.out.printf("10진수: %d\n", decimal);
+		    System.out.print("=== 출력결과 ===\n");
 			System.out.printf(" 2진수: %s\n", binary);
 			System.out.printf(" 8진수: %s\n", octal);
-			System.out.printf("16진수: %s\n", hexadeci);
+			System.out.printf("16진수: %s\n", hexadecimal);
 		    System.out.println();
-			num = 0;
 		}
 	}
 
