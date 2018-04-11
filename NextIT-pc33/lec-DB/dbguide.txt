@@ -1,0 +1,20 @@
+4/10/tue
+
+
+### in sql Devel
+create tablespace study datafile '/oracdata/sudy.dbf'
+size 100M autoextend on next 10M;
+
+create user java identified by oracle
+default tablespace study;
+
+grant connect to java;
+grant resource to java
+
+
+
+
+### dump imort
+
+$ imp help=y
+$ imp system/oracle file=expjava2.dmp fromuser=java touser=java log=expjava2.log ignore=y
