@@ -52,7 +52,7 @@ func noOvertime(n int, works []int) int {
 		ret += (div + q) * (div + q)
 	}
 
-	return ret
+	return ret;
 }
 
 func least_ot(n int, works []int) {
