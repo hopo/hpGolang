@@ -4,13 +4,13 @@ public class NoOvertime {
 	public static void main(String[] args) {
 		int n1 = 4;
 		int[] works1 = new int[]{4, 3, 3};
-		int ex1 = notime(n1, works1);
+		int ex1 = notime(n1, works1); // 12, (2**2)*3
 		System.out.println(ex1);
 		
 		/*
 		int n2 = 7;
 		int[] works2 = new int[]{9, 11};
-		int ex2 = notime(n2, works2);
+		int ex2 = notime(n2, works2); // 85, (7*7)+(6*6)
 		System.out.println(ex2);
 		*/
 	}
