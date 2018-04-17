@@ -1,10 +1,4 @@
-#
-# =========================
-#  *** Arch Linux ********
-#  *** /etc/profile.d/ ***
-# =========================
 
-/home/hp/hpWorks/zbin/keyRate-xset.sh
-/home/hp/hpWorks/zbin/swapKEYS-setxkbmap.sh
-
-redshift -O 4000
+/home/pc33/hpWorkspace/zbin/setHangulAsRalt-xmodmap.sh
+/home/pc33/hpWorkspace/zbin/swapEscTilde-xmodmap.sh
+/home/pc33/hpWorkspace/zbin/swapKEYS-setxkbmap.sh
