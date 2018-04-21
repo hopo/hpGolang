@@ -1,4 +1,6 @@
+# !/bin/bash
 
-/home/pc33/hpWorkspace/zbin/setHangulAsRalt-xmodmap.sh
-/home/pc33/hpWorkspace/zbin/swapEscTilde-xmodmap.sh
-/home/pc33/hpWorkspace/zbin/swapKEYS-setxkbmap.sh
+$HOME/hpWorkspace/zbin/setHangulAsRalt-xmodmap.sh
+$HOME/hpWorkspace/zbin/swapCapsCtrl-setxkbmap.sh
+
+redshift -O 4000
