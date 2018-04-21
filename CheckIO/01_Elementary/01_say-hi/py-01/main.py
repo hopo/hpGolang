@@ -7,4 +7,3 @@ if __name__ == '__main__':
     print(ex1)
     ex2 = say_hi("Frank", 68) # "Hi. My name is Frank and I'm 68 years old", "Second"
     print(ex2)
-

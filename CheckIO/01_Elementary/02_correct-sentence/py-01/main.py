@@ -1,13 +1,14 @@
 
 def correct_sentence(text: str) -> str:
+    # 타입 str의 일부 탐색
     if text[0].islower:
         u = text[0].upper()
-        text = text.replace(text[0], u, 1)
+        text = text.replace(text[0], u, 1) # str의 일부 바꾸기. replace()
+
     if text[len(text)-1] != ".":
         text = text + "." 
 
     return text
-
 
 if __name__ == '__main__':
     ex1 = correct_sentence("greetings, friends") # "Greetings, friends."

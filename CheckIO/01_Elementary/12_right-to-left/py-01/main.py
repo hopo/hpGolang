@@ -1,14 +1,14 @@
 
-def left_join(phrase:tuple) -> tuple:
-    s = ""
+def left_join(phrase: tuple) -> tuple:
+    string = ""
     lnth = len(phrase)
     i = 0
     while (i < lnth):
-        s += phrase[i]
+        string += phrase[i]
         if not i == lnth - 1:
-            s += ","
+            string += ","
         i += 1
-    ret = s.replace("right", "left")
+    ret = string.replace("right", "left")
     return ret
 
 # ",",join(phrase)

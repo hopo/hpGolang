@@ -1,8 +1,8 @@
 
-def checkio(number:int) -> int:
-    s = str(number)
+def checkio(number :int) -> int:
+    string = str(number)
     r = 1
-    for v in s:
+    for v in string:
         if not v == "0":
             r *= int(v)
     return r

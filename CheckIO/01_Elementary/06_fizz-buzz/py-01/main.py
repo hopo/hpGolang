@@ -1,3 +1,4 @@
+
 def checkio(number):
     if number % 15 == 0:
         return "Fizz Buzz"
@@ -6,7 +7,7 @@ def checkio(number):
     elif number % 5 == 0:
         return "Buzz"
 
-    return str(number)
+    return str(number) # int -> str casting
 
 if __name__ == '__main__':
     ex1 = checkio(15) # "Fizz Buzz", "15 is divisible by 3 and 5"
