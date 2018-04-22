@@ -1,11 +1,9 @@
-def evenOrOdd(num):
+
+def evenOrOdd(num): # (int) str
     if num%2 == 0: return 'Even'
     return 'Odd'
 
-"""
-def evenOrOdd(num):
-    return num % 2 and "Odd" or "Even"
-"""
-print("결과 : " + evenOrOdd(3))
-print("결과 : " + evenOrOdd(2))
+if __name__ == '__main__':
+    print("결과 : " + evenOrOdd(3)) # "Odd"
+    print("결과 : " + evenOrOdd(2)) # "Even"
 

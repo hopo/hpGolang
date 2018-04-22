@@ -1,5 +1,7 @@
-def nextSqaure(n):
-    from math import sqrt
-    return "no" if sqrt(n) % 1 else (sqrt(n)+1)**2
+from math import sqrt
 
-print("결과 : {}".format(nextSqaure(121)));
+def nextSqaure(n): # (int) int
+    return "no" if sqrt(n) % 1 else int((sqrt(n)+1)**2)
+
+if __name__ == '__main__':
+    print("결과 : {}".format(nextSqaure(121))); # 144

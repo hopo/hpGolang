@@ -1,4 +1,7 @@
-def strToInt(str):
+
+def strToInt(str): # (str) int
     return int(str)
 
-print(strToInt("-1234"))
+if __name__ == '__main__':
+    print(strToInt("-1234")) # -1234
+    print(strToInt("42")) # 42

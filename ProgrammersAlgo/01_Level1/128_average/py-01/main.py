@@ -1,8 +1,10 @@
-def average(list):
-    x = 0
-    for v in list:
-        x += v
-    return x/len(list)
 
-list = [5,3,4]
-print("평균값 : {}".format(average(list)));
+def average(mu_list): # (list) float
+    total = 0
+    for v in my_list:
+        total += v
+    return total/len(my_list)
+
+if __name__ == '__main__':
+    my_list = [5, 3, 4]
+    print("평균값 : {}".format(average(my_list))); # 4

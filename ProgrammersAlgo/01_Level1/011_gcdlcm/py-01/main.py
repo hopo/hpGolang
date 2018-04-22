@@ -1,6 +1,5 @@
 
-def gcdlcm(a, b):
-    # max and min
+def gcdlcm(a, b): # (int, int) list
     if a > b: a, b = b, a
     mn, mx = a, b
 
@@ -10,4 +9,5 @@ def gcdlcm(a, b):
     return [mx, int((a*b)/mx)]
 
 # 아래는 테스트로 출력해 보기 위한 코드입니다.
-print(gcdlcm(3,12))
+if __name__ == '__main__':
+    print(gcdlcm(3, 12)) # [3, 12]
