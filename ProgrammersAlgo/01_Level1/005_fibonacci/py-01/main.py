@@ -6,4 +6,7 @@ def fibonacci(num):
     return b
 
 # 아래는 테스트로 출력해 보기 위한 코드입니다.
-print(fibonacci(3))
+print(fibonacci(3)) # 2, [1, 1, 2]
+
+print(fibonacci(4)) # 3, [1, 1, 2, 3]
+print(fibonacci(6)) # 8, [1, 1, 2, 3, 5, 8]
