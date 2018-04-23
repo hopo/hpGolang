@@ -1,4 +1,3 @@
-# ... ing
 
 class Account:
 
@@ -14,13 +13,15 @@ class Account:
         if self.balance < amount:
             print("not enough money")
             return 0
-            self.balance -= amount
+        self.balance -= amount
         return amount
 
 if __name__ == '__main__':
-    acc = Account("223344", "Obama", 30000)
+    acc = Account("12-3344", "Obama", 30000)
     acc.deposit(700)
+    print("your deposit: %d\n" % acc.balance)
+
     money = acc.withdraw(2200)
-    print(money)
-    print(acc.balance)
+    print("withdraw money: %d" % money)
+    print("your deposit: %d" % acc.balance)
 
