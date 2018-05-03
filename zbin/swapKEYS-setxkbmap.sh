@@ -18,4 +18,4 @@ setxkbmap -option "ctrl:swapcaps"
 
 # hangul
 #setxkbmap -option "korean:rctrl_ralt" # Right Ctrl as Hangul, right Alt as Hanja
-setxkbmap -option "korean:ralt_rctrl"   
+#setxkbmap -option "korean:ralt_rctrl"   
