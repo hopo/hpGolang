@@ -1,4 +1,4 @@
-name = "S oo-ki"
+name = "Soo-ki"
 age = 34
 gender = 'W'
 weight = 45.9
