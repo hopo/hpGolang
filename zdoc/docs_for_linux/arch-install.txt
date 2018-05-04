@@ -87,23 +87,25 @@ reboot
 
 pacman -Syu
 pacman -S xorg xterm xorg-xinit xorg-apps
-pacman -S xorg-twm xorg-xclock 
-pacman -S vim firefox
-pacman -S ttf-freefont noto-fonts-cjk
+(pacman -S xorg-twm xorg-xclock)
+pacman xf86-video-***
 
-{; i3}
-nano /home/park/.xinitrc
-{exec i3}
-pacman -S i3
-reboot
-
-(; xfce)
 pcaman -S lightdm lightdm-gtk-greeter
 systemctl enable lightdm.service
 
+pacman -S i3
+reboot
+
+pacman -S vim firefox
+pacman -S ttf-freefont noto-fonts-cjk
+
+(; i3)
+nano /home/park/.xinitrc
+{exec i3}
+
+(; xfce)
 pacman -S xfce4 xfce4-goodies 
 pacman -S qt4 flashplugin archlinux-wallpaper
-reboot
 
 
  [ *** ]
