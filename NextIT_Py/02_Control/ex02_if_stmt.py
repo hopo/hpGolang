@@ -1,3 +1,4 @@
+
 kor = 77
 eng = 92
 math = 82

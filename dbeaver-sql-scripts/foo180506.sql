@@ -1,7 +1,12 @@
+
 SHOW databases ;
+
 create database foo ;
+
 use foo ;
+
 show tables ;
+
 create table programlang(
 	name varchar(20),
 	side varchar(50),
@@ -15,3 +20,4 @@ insert into programlang values ('JAVA', 'anyway', 'OTL ...') ;
 
 
 select * from foo.programlang ;
+
