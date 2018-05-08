@@ -1,7 +1,7 @@
 # !/bin/bash
 
-$HOME/hpWorkspace/zbin/swapKEYS-setxkbmap.sh
-$HOME/hpWorkspace/zbin/swapEscTilde-xmodmap.sh
+$HOME/workspace/zbin/swapKEYS-setxkbmap.sh
+$HOME/workspace/zbin/swapEscTilde-xmodmap.sh
 
 
 redshift -O 4000

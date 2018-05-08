@@ -1,8 +1,9 @@
 
 def say_hi(name, age):
-    ret = "Hi. My name is " + name + " and I'm " + str(age) + " years old"
 
-    return ret
+    """ python3 f"string" """
+    return f"Hi. My name is {name} and I'm {age} years old"
+
 
 if __name__ == '__main__':
     name1 = "Alex"

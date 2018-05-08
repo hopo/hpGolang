@@ -20,3 +20,6 @@ docker run -d -p 3306:3306 \
   -v /my/own/datadir:/var/lib/mysql \ # <- volume mount
   mysql:5.7
 
+
+# example
+docker run -d -p 3306:3306 -v /myDocker/var/lib/mysql:/var/lib/mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true --name mariadb mariadb
