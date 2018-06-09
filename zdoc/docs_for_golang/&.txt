@@ -1,5 +1,0 @@
-composite-literal
-&
-
-
-https://gosudaweb.gitbooks.io/effective-go-in-korean/content/data.html#생성자와-합성-리터럴

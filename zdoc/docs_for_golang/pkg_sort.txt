@@ -1,7 +1,0 @@
-pkg_sort
-
-sort.Sort()
-sort.StringSlice(x []string)
-sort.IntSlice(x []int)
-sort.Reverse(x interface)
-sort.Ints(x []int)

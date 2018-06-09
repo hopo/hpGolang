@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>request gohtml</title>
+    </head>
+    <body>
+
+        <header>
+            {{if .Submissions}}
+                <p><strong>variable names</strong> (identifiers) and <em>values</em>:</p>
+                {{range $key, $value := .Submissions}}
+                    <p><strong>{{$key}}</strong></p>
+                    <ul>
+                        {{range $value}}
+                            <li><em>{{.}}</em></li>
+                        {{end}}
+                    </ul>
+                {{end}}
+            {{end}}
+        </header>
+
+        <form action="/" method="post">
+            <input type="text" name="fname" placeholder="first name" autofocus autocomplete="off">
+            <input type="submit" name="submit-btn" value="onda button">
+        </form>
+
+    </body>
+</html>

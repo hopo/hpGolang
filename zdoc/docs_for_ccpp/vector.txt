@@ -1,6 +1,0 @@
-<vector>
-
-
-vc.begin()
-
-vc.end()
