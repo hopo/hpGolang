@@ -7,6 +7,6 @@ func main() {
 	var f float64
 	var b bool
 	var s string
-    var a []int
+	var a []int
 	fmt.Printf("%v %v %v %q %v\n", i, f, b, s, a)
 }
