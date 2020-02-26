@@ -9,9 +9,10 @@ import (
 	"strings"
 )
 
+// LongestWord function
 func LongestWord(rdr io.Reader) string {
 	currentLongestWord := ""
-	scanner := buffio.NewScanner(rdr)
+	scanner := bufio.NewScanner(rdr)
 	scanner.Split(bufio.ScanWords)
 	for scanner.Scan() {
 		wordOrManyWords := scanner.Text()

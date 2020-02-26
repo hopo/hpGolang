@@ -14,7 +14,7 @@ type record struct {
 }
 
 func makeRecord(row []string) record {
-	oprn, _ := strconv.ParseFloat(row[1], 64)
+	open, _ := strconv.ParseFloat(row[1], 64)
 	return record{
 		Date: row[0],
 		Open: open,
@@ -73,7 +73,7 @@ func main() {
 
 	}
 
-	fmt.Prtintln(`
+	fmt.Println(`
 		</tbody>
 	</table>
 
