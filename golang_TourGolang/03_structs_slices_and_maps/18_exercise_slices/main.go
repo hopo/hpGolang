@@ -5,12 +5,13 @@ package main
 import "golang.org/x/tour/pic"
 
 func Pic(dx, dy int) [][]uint8 {
+	p := [][]uint8 // nil
+	return p
 }
 
 func main() {
 	pic.Show(Pic)
 }
-
 
 //Exercise: Slices
 
