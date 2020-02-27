@@ -1,6 +1,6 @@
-// https://tour.golang.org/moretypes/18
-
 package main
+
+// https://tour.golang.org/moretypes/18
 
 import "golang.org/x/tour/pic"
 
