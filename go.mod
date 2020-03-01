@@ -1,4 +1,4 @@
-module github.com/hopo/hpGolang
+module hpGolang
 
 go 1.13
 
