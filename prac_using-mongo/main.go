@@ -69,7 +69,6 @@ func GetPersonEndpoint(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 	json.NewEncoder(response).Encode(person)
-
 }
 
 func main() {
