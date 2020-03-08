@@ -15,5 +15,7 @@ func main() {
 }
 
 func GetAPIEndpoint(resp http.ResponseWriter, req *http.Request) {
-	log.Println("CALLED~ GetAPIEndpoint")
+	message := "CALLED~ GetAPIEndpoint"
+	log.Println(message)
+	resp.Write([]byte(`{"message": "` + message + `"}`))
 }
