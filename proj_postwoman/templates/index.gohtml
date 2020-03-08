@@ -1,10 +1,55 @@
 <html>
 <head>
+	<h1>index.gohtml</h1>
 	<hr />
 </head>
 <body>
-	<h1>index.gohtml</h1>
 	<div>Hello Postwoman</div>
+	<form action="">
+		<table>
+			<tr>
+				<td>
+					<span>url</span>
+				</td>
+				<td>
+					<input name="url" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>pathname</span>
+				</td>
+				<td>
+					<input name="pathname" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>method</span>
+				</td>
+				<td>
+					<input type="radio" id="get" name="method" value="get" checked />
+					<label for="get">GET</label>
+					<input type="radio" id="post" name="method" value="post" />
+					<label for="post">POST</label>
+					<input type="radio" id="put" name="method" value="put" />
+					<label for="put">PUT</label>
+					<input type="radio" id="delete" name="method" value="delete" />
+					<label for="delete">DELETE</label>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>body</span>
+				</td>
+				<td>
+					key<input name="key01" />
+					value<input name="value01" />
+				</td>
+			</tr>
+		</table>
+		<button>SEND</button>
+	</form>
 </body>
 <footer>
 	<hr />
