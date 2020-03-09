@@ -1,6 +1,7 @@
 package main
 
 import (
+	gohandlers "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"html/template"
 	"log"
@@ -15,11 +16,20 @@ func init() {
 
 func main() {
 	log.Println(" = = = = = POSTWOMAN Run Server = = = = =")
+
 	router := mux.NewRouter()
+
+	// todo: how to use allowed
+	headers := gohandlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"})
+	methods := gohandlers.AllowedMethods([]string{"GET", "POST"})
+	origins := gohandlers.AllowedOrigins([]string{"127.0.0.1"})
+
 	router.HandleFunc("/", GetIndexEndpoint).Methods("GET")
 	router.HandleFunc("/api", GetAPIEndpoint).Methods("GET")
 
-	http.ListenAndServe(":8080", router)
+	ch := gohandlers.CORS(headers, methods, origins)
+
+	http.ListenAndServe(":8080", ch(router))
 }
 
 func GetIndexEndpoint(resp http.ResponseWriter, req *http.Request) {
