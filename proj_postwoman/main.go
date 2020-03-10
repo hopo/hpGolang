@@ -11,7 +11,7 @@ import (
 var tpl *template.Template
 
 func init() {
-	tpl = template.Must(template.ParseGlob("templates/*"))
+	tpl = template.Must(template.ParseGlob("templates/*.html"))
 }
 
 func main() {
@@ -29,14 +29,14 @@ func main() {
 
 	ch := gohandlers.CORS(headers, methods, origins)
 
-	http.ListenAndServe(":8080", ch(router))
+	http.ListenAndServe(":9090", ch(router))
 }
 
 func GetIndexEndpoint(resp http.ResponseWriter, req *http.Request) {
 	message := "CALLED~ GetIndexEndpoint"
 	log.Println(message)
 
-	err := tpl.ExecuteTemplate(resp, "index.gohtml", nil)
+	err := tpl.ExecuteTemplate(resp, "index.html", nil)
 	if err != nil {
 		log.Panic(err)
 	}
