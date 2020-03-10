@@ -8,6 +8,15 @@ import (
 	"net/http"
 )
 
+// Todo: Database
+// Todo: Sessions
+// Todo: Crypt
+// Todo: Logger
+// Todo: Auth - JWT
+// Todo: Validate - go-play
+// Todo: Middleware - authrequired
+
+// set templates
 var tpl *template.Template
 
 func init() {
@@ -36,27 +45,27 @@ func main() {
 	http.ListenAndServe(":9090", ch(router))
 }
 
-func GetIndexEndpoint(resp http.ResponseWriter, req *http.Request) {
+func GetIndexEndpoint(res http.ResponseWriter, req *http.Request) {
 	message := "CALLED~ GetIndexEndpoint"
 	log.Println(message)
 
-	err := tpl.ExecuteTemplate(resp, "index.html", nil)
+	err := tpl.ExecuteTemplate(res, "index.html", nil)
 	if err != nil {
 		log.Panic(err)
 	}
 
 	// >case1
-	//resp.Header().Set("Content-Type", "text/html; charset=utf-8")
+	//res.Header().Set("Content-Type", "text/html; charset=utf-8")
 	// >case2
-	//fmt.Fprintln(resp, "<script>alert(\"move /api\");window.location.pathname=\"/api\"</script>")
+	//fmt.Fprintln(res, "<script>alert(\"move /api\");window.location.pathname=\"/api\"</script>")
 }
 
-func GetAPIEndpoint(resp http.ResponseWriter, req *http.Request) {
+func GetAPIEndpoint(res http.ResponseWriter, req *http.Request) {
 	message := "CALLED~ GetAPIEndpoint"
 	log.Println(message)
 
-	resp.Header().Set("Content-Type", "application/json;")
-	resp.Write([]byte(`{"message": "` + message + `"}`))
-	//resp.Header().Set("Content-Type", "text/html; charset=utf-8")
-	////fmt.Fprintln(resp, "<h1>"+message+"</h1>")
+	res.Header().Set("Content-Type", "application/json;")
+	res.Write([]byte(`{"message": "` + message + `"}`))
+	//res.Header().Set("Content-Type", "text/html; charset=utf-8")
+	////fmt.Fprintln(res, "<h1>"+message+"</h1>")
 }
