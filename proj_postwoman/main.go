@@ -19,7 +19,7 @@ func main() {
 
 	router := mux.NewRouter()
 
-	// todo: how to use allowed
+	// Todo: how to use allowed
 	headers := gohandlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"})
 	methods := gohandlers.AllowedMethods([]string{"GET", "POST"})
 	origins := gohandlers.AllowedOrigins([]string{"127.0.0.1"})
@@ -28,6 +28,10 @@ func main() {
 	router.HandleFunc("/api", GetAPIEndpoint).Methods("GET")
 
 	ch := gohandlers.CORS(headers, methods, origins)
+
+	// set fileserver
+	fs := http.FileServer(http.Dir("./static/"))
+	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", fs))
 
 	http.ListenAndServe(":9090", ch(router))
 }
