@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	gohandlers "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"html/template"
@@ -35,6 +36,7 @@ func main() {
 
 	router.HandleFunc("/", GetIndexEndpoint).Methods("GET")
 	router.HandleFunc("/api", GetAPIEndpoint).Methods("GET")
+	router.HandleFunc("/api/apitest", GetAPITest).Methods("GET") // @@@
 
 	ch := gohandlers.CORS(headers, methods, origins)
 
@@ -43,6 +45,23 @@ func main() {
 	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", fs))
 
 	http.ListenAndServe(":9090", ch(router))
+}
+
+type Book struct {
+	ID    string `json:"id"`
+	Title string `json:"title"`
+}
+
+var books []Book
+
+// @@@
+func GetAPITest(res http.ResponseWriter, req *http.Request) {
+	message := "CALLED~ GetAPITest"
+	log.Println(message)
+	var book1 Book = Book{ID: "1", Title: "go go go"}
+	var book2 Book = Book{ID: "2", Title: "show me the money"}
+	res.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(res).Encode([]Book{book1, book2})
 }
 
 func GetIndexEndpoint(res http.ResponseWriter, req *http.Request) {
