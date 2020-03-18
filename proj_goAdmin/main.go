@@ -11,7 +11,7 @@ import (
 	"github.com/GoAdminGroup/go-admin/plugins/example"
 	_ "github.com/GoAdminGroup/themes/adminlte"
 	"github.com/gin-gonic/gin"
-	//"proj_goadmin/tables"
+	"proj_goadmin/tables"
 	//"github.com/GoAdminGroup/go-admin/modules/config"
 	//_ "github.com/GoAdminGroup/go-admin/modules/db/drivers/mysql"
 )
@@ -19,13 +19,15 @@ import (
 func main() {
 	r := gin.Default()
 
-	gin.SetMode(gin.ReleaseMode)
+	//gin.SetMode(gin.ReleaseMode)
+	gin.SetMode(gin.DebugMode)
 
 	eng := engine.Default()
 
-	adminPlugin := admin.NewAdmin()
+	adminPlugin := admin.NewAdmin(tables.Generators)
 	//adminPlugin := admin.NewAdmin(tables.Generators)
-	//adminPlugin.AddGenerator("users", tables.GetUsersTable)
+
+	//adminPlugin.AddGenerator("posts", tables.GetPostsTable)
 
 	examplePlugin := example.NewExample()
 
@@ -37,7 +39,7 @@ func main() {
 	r.Static("/uploads", "./uploads")
 
 	r.GET("/admin", func(ctx *gin.Context) {
-		fmt.Println("CALLED~~ \"/admin\"")
+		fmt.Println("### CALLED~~ \"/admin\"")
 		return
 	})
 
