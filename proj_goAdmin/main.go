@@ -48,7 +48,8 @@ func main() {
 	r.GET("/admin", EndpointGetAdmin)
 
 	fmt.Println("= = = = = Run Server = = = = =")
-	r.Run(":9090")
+	//r.Run(":9090")
+	r.Run(":8080")
 }
 
 // EndpointGetAdmin "/admin"
