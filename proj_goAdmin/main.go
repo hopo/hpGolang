@@ -27,7 +27,7 @@ func main() {
 	adminPlugin := admin.NewAdmin(tables.Generators)
 	//adminPlugin := admin.NewAdmin(tables.Generators)
 
-	//adminPlugin.AddGenerator("posts", tables.GetPostsTable)
+	adminPlugin.AddGenerator("books", tables.GetBooksTable)
 
 	examplePlugin := example.NewExample()
 
