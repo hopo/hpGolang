@@ -18,7 +18,9 @@ func GetBooksTable(ctx *context.Context) table.Table {
 	info.AddField("Publisher", "publisher", db.Char)
 	info.AddField("Author", "author", db.Char)
 	info.AddField("Created_at", "created_at", db.Timestamp)
+	//info.AddField("Created_at", "created_at", db.Timestamp).FieldFilterable(types.FilterType{FormType: form.DatetimeRange})
 	info.AddField("Updated_at", "updated_at", db.Timestamp)
+	//info.AddField("Updated_at", "updated_at", db.Timestamp).FieldEditAble(editType.Datetime)
 
 	info.SetTable("books").SetTitle("Books").SetDescription("Books")
 
@@ -28,8 +30,8 @@ func GetBooksTable(ctx *context.Context) table.Table {
 	formList.AddField("Title", "title", db.Char, form.Text)
 	formList.AddField("Publisher", "publisher", db.Char, form.Text)
 	formList.AddField("Author", "author", db.Char, form.Text)
-	formList.AddField("Created_at", "created_at", db.Timestamp, form.Datetime)
-	formList.AddField("Updated_at", "updated_at", db.Timestamp, form.Datetime)
+	formList.AddField("Created_at", "created_at", db.Timestamp, form.Datetime).FieldNotAllowAdd()
+	formList.AddField("Updated_at", "updated_at", db.Timestamp, form.Datetime).FieldNotAllowAdd()
 
 	formList.SetTable("books").SetTitle("Books").SetDescription("Books")
 
